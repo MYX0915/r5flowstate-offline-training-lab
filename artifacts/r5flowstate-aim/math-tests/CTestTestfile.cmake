@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe
+# Build directory: E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(entity_probe_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/Debug/entity_probe_math_tests.exe")
+  set_tests_properties(entity_probe_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;6;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(entity_probe_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/Release/entity_probe_math_tests.exe")
+  set_tests_properties(entity_probe_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;6;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(entity_probe_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/MinSizeRel/entity_probe_math_tests.exe")
+  set_tests_properties(entity_probe_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;6;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(entity_probe_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/RelWithDebInfo/entity_probe_math_tests.exe")
+  set_tests_properties(entity_probe_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;6;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+else()
+  add_test(entity_probe_math NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(training_aim_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/Debug/training_aim_math_tests.exe")
+  set_tests_properties(training_aim_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;9;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(training_aim_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/Release/training_aim_math_tests.exe")
+  set_tests_properties(training_aim_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;9;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(training_aim_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/MinSizeRel/training_aim_math_tests.exe")
+  set_tests_properties(training_aim_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;9;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(training_aim_math "E:/Users/MYX/Desktop/apex/artifacts/r5flowstate-aim/math-tests/RelWithDebInfo/training_aim_math_tests.exe")
+  set_tests_properties(training_aim_math PROPERTIES  _BACKTRACE_TRIPLES "E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;9;add_test;E:/Users/MYX/Desktop/apex/tests/r5flowstate-entity-probe/CMakeLists.txt;0;")
+else()
+  add_test(training_aim_math NOT_AVAILABLE)
+endif()

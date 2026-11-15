@@ -1,0 +1,69 @@
+{
+  "recordedUtc": "2026-11-15T10:37:26.838983+00:00",
+  "timezone": "Asia/Shanghai",
+  "checks": {
+    "r301_recoil_toggle": true,
+    "r301_real_hit": true,
+    "r99_recoil_toggle": true,
+    "r99_real_hit": true,
+    "safe_ground_occlusion": true,
+    "direction_cases": true
+  },
+  "passed": true,
+  "results": {
+    "r301": {
+      "recoilPeaks": [
+        5.66073179,
+        0.0,
+        5.64323044
+      ],
+      "visibleDamageOffOn": [
+        0,
+        98
+      ]
+    },
+    "r99": {
+      "recoilPeaks": [
+        10.25750256,
+        0.0,
+        10.60788536
+      ],
+      "visibleDamageOffOn": [
+        0,
+        90
+      ]
+    }
+  },
+  "safeOcclusion": {
+    "eye": [
+      -6399.93994,
+      -930.0,
+      -25.5902252
+    ],
+    "damage": 0,
+    "trace": "0.31537184 0"
+  },
+  "files": [
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\weapon-training\\menu-weapon-training.png",
+      "sha256": "dfc2ccfca5de2ec22fbe582074d085be9f2da02c3cc8bbda1e3440f9c2fae751"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\weapon-training\\script-manifest.json",
+      "sha256": "4e4db870fcb6e884b1491113bd6cd7f72f9e06a2e0fa96a6a18584d8409f4c27"
+    },
+    {
+      "path": "D:\\R5Flowstate\\Game\\client.dll",
+      "sha256": "05a7526ed596685bdaa492b8fda062748290dbbd542374967ece06ec517d48e4"
+    },
+    {
+      "path": "D:\\R5Flowstate\\Game\\server.dll",
+      "sha256": "a315f6b81394f95a4fb87019c45e17056eb166c3d71d57b172b1a9bbcbcc7320"
+    }
+  ],
+  "scope": "Observed offline R-301 and R-99 tests. Other wrapped weapons and long-running stability have not been fully verified.",
+  "diagnosticEvents": [
+    "Boolean formatting error aborted an early probe before firing; map reloaded.",
+    "A low-height test was followed by an engine task wait; client recovered; causal attribution remains unproven; ground-height occlusion retested."
+  ]
+}

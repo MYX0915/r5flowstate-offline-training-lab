@@ -1,0 +1,37 @@
+{
+  "verifiedLocalDate": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "dllSha256": "65ABFD00B6562D2EE9805FDDC50803864E8B0CCF036CF8917A4B8EAFA7E34FBB",
+  "pid": 18184,
+  "menu": {
+    "control": "平滑度",
+    "range": [
+      0,
+      100
+    ],
+    "direction": "higher is softer/slower",
+    "beforeDisplayed": 26.8,
+    "afterActualClickDisplayed": 75.6,
+    "observedBackendSpeed": 2.71561956,
+    "derivedSmoothness": 75.599998703936
+  },
+  "restored": {
+    "backendSpeed": 20,
+    "radius": 180,
+    "part": 2,
+    "aim": true,
+    "highlight": true,
+    "menuLeftOpen": true
+  },
+  "ctest": {
+    "passed": 2,
+    "failed": 0
+  },
+  "screenshots": [
+    "smoothness-menu-default.png",
+    "smoothness-menu-adjusted.png"
+  ],
+  "restorationResponse": "{\r\n  \"ran\": true,\r\n  \"error\": false,\r\n  \"reply\": null,\r\n  \"log\": [],\r\n  \"logDropped\": 0\r\n}\r\n{\r\n  \"ran\": true,\r\n  \"error\": false,\r\n  \"reply\": \"speed=20.000000 radius=180.000000 part=2 aim=1 highlight=1\",\r\n  \"log\": [],\r\n  \"logDropped\": 0\r\n}\r\n",
+  "originalOptionsResponse": "{\r\n  \"ran\": true,\r\n  \"error\": false,\r\n  \"reply\": \"npc=1 players=1 circle=1 position=<-7021.70508, 350.073608, -19.96875> angles=<4.16438103, -82.3334579, 0>\",\r\n  \"log\": [],\r\n  \"logDropped\": 0\r\n}\r\n",
+  "scope": "Verified menu interaction, underlying parameter change and mathematical response. Subjective feel remains user-adjustable."
+}

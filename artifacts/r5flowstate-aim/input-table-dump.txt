@@ -1,0 +1,80 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.016 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 29
+
+Microsoft (R) Windows Debugger Version 10.0.26100.6584 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [D:\R5Flowstate\Game\platform\logs\client\632ac3bd-f0b4-4720-9a2c-4a3db1780a89\minidump.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             D:\R5Flowstate\Game
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\Users\MYX\Desktop\apex\artifacts\r5flowstate-aim
+Symbol search path is: E:\Users\MYX\Desktop\apex\artifacts\r5flowstate-aim
+Executable search path is: D:\R5Flowstate\Game
+Windows 10 Version 26200 MP (8 procs) Free x64
+Product: WinNt, suite: SingleUserTS Personal
+Edition build lab: 26100.1.amd64fre.ge_release.240331-1435
+Debug session time: Sun Nov 15 16:47:50.000 2026 (UTC + 8:00)
+System Uptime: 0 days 18:15:55.849
+Process Uptime: 0 days 0:01:11.000
+................................................................
+................................................................
+..........
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(1fa4.7014): Access violation - code c0000005 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtGetContextThread+0x14:
+00007ffd`9ee98334 c3              ret
+0:000> cdb: Reading initial command '.ecxr;dps 00007ff755e927f0 L1;dps poi(00007ff755e927f0)+48 L1;q'
+*** WARNING: Unable to verify checksum for client.dll
+rax=0000000000000000 rbx=0000000000000001 rcx=0000000000000000
+rdx=0000004717dadd70 rsi=0000000000530d00 rdi=000000000001138a
+rip=00007ffc6bed6ea6 rsp=0000004717dadd00 rbp=0000004717daecd0
+ r8=00007ff7554099b0  r9=00007ff755e927f0 r10=00007ffc6c1121a1
+r11=0000004717dabe20 r12=00000000ffffffff r13=0000000000000000
+r14=00000000ffffffff r15=0000000000000000
+iopl=0         nv up ei pl nz na po nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010206
+client!DevWarning+0xf5da6:
+00007ffc`6bed6ea6 8b471c          mov     eax,dword ptr [rdi+1Ch] ds:00000000`000113a6=????????
+00007ff7`55e927f0  ????????`????????
+Memory access error at ')+48 '
+0:000> NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

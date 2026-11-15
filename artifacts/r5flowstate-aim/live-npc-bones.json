@@ -1,0 +1,48 @@
+{
+  "ran": true,
+  "error": false,
+  "reply": null,
+  "log": [
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=0 name=def_c_head bone=12 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=1 name=def_c_neck bone=-1 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=2 name=def_c_spine3 bone=-1 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=2 name=def_c_spine4 bone=-1 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=3 name=def_l_hand bone=-1 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=3 name=def_r_hand bone=-1 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=4 name=def_l_knee bone=61 valid=0 position=(0.00 0.00 0.00)"
+    },
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-BONES] handle=139170 part=4 name=def_r_knee bone=66 valid=0 position=(0.00 0.00 0.00)"
+    }
+  ],
+  "logDropped": 0
+}

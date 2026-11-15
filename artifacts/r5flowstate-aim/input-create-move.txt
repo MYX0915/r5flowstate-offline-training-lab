@@ -1,0 +1,37 @@
+FUNCTION 0x1407e9720..0x1407e9771
+ 0x1407e9720: mov qword ptr [rsp + 8], rbx
+ 0x1407e9725: push rdi
+ 0x1407e9726: sub rsp, 0x30
+ 0x1407e972a: mov edi, edx
+ 0x1407e972c: movaps xmmword ptr [rsp + 0x20], xmm6
+ 0x1407e9731: xor edx, edx
+ 0x1407e9733: movzx ebx, r9b
+ 0x1407e9737: movaps xmm6, xmm2
+ 0x1407e973a: lea r8d, [rdx + 1]
+ 0x1407e973e: call 0x1407341e0
+ 0x1407e9743: mov rax, qword ptr [rip + 0x1aa90a6]
+ 0x1407e974a: lea rcx, [rip + 0x1aa909f]
+ 0x1407e9751: movzx r9d, bl
+ 0x1407e9755: movaps xmm2, xmm6
+ 0x1407e9758: mov edx, edi
+ 0x1407e975a: call qword ptr [rax + 0x20]
+ 0x1407e975d: mov rbx, qword ptr [rsp + 0x40]
+ 0x1407e9762: movaps xmm6, xmmword ptr [rsp + 0x20]
+ 0x1407e9767: add rsp, 0x30
+ 0x1407e976b: pop rdi
+ 0x1407e976c: jmp 0x140734390
+FUNCTION 0x1407e9780..0x1407e97ba
+ 0x1407e9780: sub rsp, 0x28
+ 0x1407e9784: mov rax, qword ptr [rip + 0x1aa9065]
+ 0x1407e978b: lea rcx, [rip + 0x1aa905e]
+ 0x1407e9792: mov r8d, edx
+ 0x1407e9795: mov edx, 0xffffffff
+ 0x1407e979a: call qword ptr [rax + 0x48]
+ 0x1407e979d: test rax, rax
+ 0x1407e97a0: je 0x1407e97ae
+ 0x1407e97a2: mov rax, qword ptr [rax + 0x220]
+ 0x1407e97a9: add rsp, 0x28
+ 0x1407e97ad: ret 
+ 0x1407e97ae: mov rax, 0xffffffffffffffff
+ 0x1407e97b5: add rsp, 0x28
+ 0x1407e97b9: ret 

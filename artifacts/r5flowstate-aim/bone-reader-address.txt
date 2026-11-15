@@ -1,0 +1,74 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.031 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 29
+
+Microsoft (R) Windows Debugger Version 10.0.26100.6584 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+*** wait with pending attach
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Symbol search path is: E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Executable search path is: 
+WARNING: Process 28372 is not attached as a debuggee
+         The process can be examined but debug events will not be received
+................................................................
+................................................................
+.........
+Loading unloaded module list
+.....
+(6ed4.6e0c): Wake debugger - code 80000007 (first chance)
+*** WARNING: Unable to verify checksum for D:\R5Flowstate\Game\r5apex.exe
+r5apex!GetDenuvoTimeTicketRequest+0x1ffc14:
+00007ff7`54e841a4 48895c2408      mov     qword ptr [rsp+8],rbx ss:0000004a`895abc70=0000004a895abcd0
+0:000> cdb: Reading initial command 'x client!*s_origin*;dq client!s_origin L1;lm m r5apex;qd'
+*** WARNING: Unable to verify checksum for D:\R5Flowstate\Game\client.dll
+00007ffc`6cd04730 client!s_origin = 0x00007ff7`54277840
+00007ffc`6cd39278 client!s_origInitExt = 0x00000000`00000000
+00007ffc`6cd39270 client!s_origInit = 0x00000000`00000000
+00007ffc`6ab0be88 client!bhit_abs_origin$initializer$ = 0x00007ffc`6a773d40
+00007ffc`6cd39280 client!s_origInitProject = 0x00000000`00000000
+00007ffc`6ac50dc0 client!bhit_abs_origin = class ConVar
+00007ffc`6aafa21c client!``dynamic initializer for 'bhit_abs_origin'''::`1'::dtor$3 (void)
+00007ffc`6ab06ec0 client!`dynamic atexit destructor for 'bhit_abs_origin'' (void)
+00007ffc`6aafa228 client!``dynamic initializer for 'bhit_abs_origin'''::`1'::dtor$2 (void)
+00007ffc`6a773d40 client!`dynamic initializer for 'bhit_abs_origin'' (void)
+00007ffc`6aafa20c client!``dynamic initializer for 'bhit_abs_origin'''::`1'::dtor$1 (void)
+00007ffc`6aafa200 client!``dynamic initializer for 'bhit_abs_origin'''::`1'::dtor$0 (void)
+00007ffc`6a909712 client!NetObs_OriginEntityPoolAddr =  (inline caller) client!NetObserver_Install+672
+00007ffc`6cd04730  00007ff7`54277840
+start             end                 module name
+00007ff7`53c00000 00007ff7`65676000   r5apex   C (export symbols)       D:\R5Flowstate\Game\r5apex.exe
+quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

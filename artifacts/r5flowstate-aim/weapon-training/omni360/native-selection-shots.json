@@ -1,0 +1,57 @@
+{
+  "scope": "Actual offline shots; direction fixed at launch",
+  "targetArrayIndex": 0,
+  "targetEntityIndex": 8098,
+  "aimOffsetDegrees": 180.0,
+  "correctionHalfAngle": 180.0,
+  "phases": [
+    {
+      "name": "disabled_visible",
+      "enabled": false,
+      "eye": [
+        -6220.0,
+        -1150.0,
+        -24.0
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        2.7096719504789757,
+        -1.2644833835947509
+      ],
+      "flags": 1,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.97120076 1",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 100,
+      "damage": 0,
+      "ammoBefore": 35,
+      "ammoAfter": 31,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    }
+  ],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  },
+  "cleanupError": "[WinError 10061] 由于目标计算机积极拒绝，无法连接。"
+}

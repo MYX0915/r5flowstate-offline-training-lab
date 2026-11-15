@@ -1,0 +1,1676 @@
+/******************************************************************************
+-------------------------------------------------------------------------------
+File : IConsole.cpp
+Date : 15:06:2021
+Author : Kawe Mazidjatari
+Purpose: Implements the in-game console front-end
+-------------------------------------------------------------------------------
+History
+- 15:06:2021 | 14:56 : Created by Kawe Mazidjatari
+- 07:08:2021 | 15:22 : Multi-thread 'CommandExecute' operations to prevent deadlock in render thread
+- 07:08:2021 | 15:25 : Fix a race condition that occurred when detaching the 'CommandExecute' thread
+
+******************************************************************************/
+
+#include "core/stdafx.h"
+#include "core/init.h"
+#include "core/resource.h"
+#include "tier0/frametask.h"
+#include "tier0/commandline.h"
+#include "windows/id3dx.h"
+#include "windows/console.h"
+#include "windows/resource.h"
+#include "engine/cmd.h"
+#include "engine/client/cl_rcon.h"
+#include "engine/client/cl_rcon_launcher.h"
+#include "gameui/IConsole.h"
+#include "gameui/IBrowser.h"
+#include "imgui_system.h"
+#include <algorithm> // Required for std::remove_if
+#include <sstream>   // Required for std::stringstream
+#include "ITopBar.h"
+
+//-----------------------------------------------------------------------------
+// Console variables
+//-----------------------------------------------------------------------------
+static ConVar con_max_lines("con_max_lines", "1024", FCVAR_DEVELOPMENTONLY | FCVAR_ACCESSIBLE_FROM_THREADS, "Maximum number of lines in the console before cleanup starts", true, 1.f, false, 0.f);
+static ConVar con_max_history("con_max_history", "512", FCVAR_DEVELOPMENTONLY, "Maximum number of command submission items before history cleanup starts", true, 0.f, false, 0.f);
+static ConVar con_max_suggest("con_max_suggest", "128", FCVAR_DEVELOPMENTONLY, "Maximum number of suggestions the autocomplete panel can hold for the console", true, 0.f, false, 0.f);
+
+static ConVar con_suggest_helptext("con_suggest_helptext", "1", FCVAR_RELEASE, "Show CommandBase help text in autocomplete panel");
+static ConVar con_suggest_textures("con_suggest_textures", "1", FCVAR_RELEASE, "Show help textures in autocomplete panel");
+
+static ConVar con_suggest_panel_width("con_suggest_panel_width", "0.0f", FCVAR_RELEASE, "The maximum width of the console's autocomplete panel", true, 0.f, false, 0.f);
+static ConVar con_suggest_panel_height("con_suggest_panel_height", "220.0f", FCVAR_RELEASE, "The maximum height of the console's autocomplete panel", true, 0.f, false, 0.f);
+
+static ConVar con_suggest_scroll_snap_adjust_min("con_suggest_scroll_snap_adjust_min", "2.0f", FCVAR_RELEASE, "The adjustment value subtracted from the item's min bounds to correct scroll snapping in the autocomplete panel");
+static ConVar con_suggest_scroll_snap_adjust_max("con_suggest_scroll_snap_adjust_max", "1.0f", FCVAR_RELEASE, "The adjustment value subtracted from the item's max bounds to correct scroll snapping in the autocomplete panel");
+
+//-----------------------------------------------------------------------------
+// Console commands
+//-----------------------------------------------------------------------------
+static ConCommand toggleconsole("toggleconsole", CConsole::ToggleConsole_f, "Show/hide the developer console.", FCVAR_CLIENTDLL | FCVAR_RELEASE);
+
+static ConCommand con_history("con_history", CConsole::LogHistory_f, "Shows the developer console submission history", FCVAR_CLIENTDLL | FCVAR_RELEASE);
+static ConCommand con_removeline("con_removeline", CConsole::RemoveLine_f, "Removes a range of lines from the developer console", FCVAR_CLIENTDLL | FCVAR_RELEASE);
+static ConCommand con_clearlines("con_clearlines", CConsole::ClearLines_f, "Clears all lines from the developer console", FCVAR_CLIENTDLL | FCVAR_RELEASE);
+static ConCommand con_clearhistory("con_clearhistory", CConsole::ClearHistory_f, "Clears all submissions from the developer console history", FCVAR_CLIENTDLL | FCVAR_RELEASE);
+
+//-----------------------------------------------------------------------------
+// Purpose
+//-----------------------------------------------------------------------------
+CConsole::CConsole(void)
+    : m_loggerLabel("LoggingRegion")
+    , m_currentTab(kTabConsole)
+    , m_selectTab(-1)
+    , m_historyPos(ConAutoCompletePos_e::kPark)
+    , m_suggestPos(ConAutoCompletePos_e::kPark)
+    , m_scrollBackAmount(0)
+    , m_selectBackAmount(0)
+    , m_selectedSuggestionTextLen(0)
+    , m_lastFrameScrollPos(0.f, 0.f)
+    , m_inputTextBufModified(false)
+    , m_canAutoComplete(false)
+    , m_autoCompleteActive(false)
+    , m_autoCompletePosMoved(false)
+{
+    m_surfaceLabel = "Console";
+
+    memset(m_inputTextBuf, '\0', sizeof(m_inputTextBuf));
+    snprintf(m_summaryTextBuf, sizeof(m_summaryTextBuf), "%zu history items", m_vecHistory.size());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose
+//-----------------------------------------------------------------------------
+CConsole::~CConsole(void)
+{
+    Shutdown();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: game console initialization
+// Output: true on success, false otherwise
+//-----------------------------------------------------------------------------
+bool CConsole::Init(void)
+{
+    SetStyleVar();
+    return LoadFlagIcons();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: game console shutdown
+//-----------------------------------------------------------------------------
+void CConsole::Shutdown(void)
+{
+    for (MODULERESOURCE& flagIcon : m_vecFlagIcons)
+    {
+        if (flagIcon.m_idIcon)
+        {
+            flagIcon.m_idIcon->Release();
+            flagIcon.m_idIcon = nullptr;
+        }
+        if (flagIcon.m_dx12Texture)
+        {
+            flagIcon.m_dx12Texture->Release();
+            flagIcon.m_dx12Texture = nullptr;
+        }
+        if (flagIcon.m_dx12Upload)
+        {
+            flagIcon.m_dx12Upload->Release();
+            flagIcon.m_dx12Upload = nullptr;
+        }
+        flagIcon.m_imguiTextureId = 0;
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: game console main render loop
+//-----------------------------------------------------------------------------
+void CConsole::RunFrame(void)
+{
+    // Uncomment these when adjusting the theme or layout.
+    {
+        //ImGui::ShowStyleEditor;
+        //ImGui::ShowDemoWindow;
+    }
+
+    /**************************
+     * BASE PANEL SETUP *
+     **************************/
+    if (!m_initialized)
+    {
+        Init();
+        m_initialized = true;
+    }
+
+    Animate();
+
+    int baseWindowStyleVars = 0;
+    ImVec2 minBaseWindowRect;
+
+    if (m_surfaceStyle == ImGuiStyle_t::MODERN)
+    {
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 8.f, 10.f }); baseWindowStyleVars++;
+        minBaseWindowRect = ImVec2(621.f, 532.f);
+    }
+    else
+    {
+        minBaseWindowRect = m_surfaceStyle == ImGuiStyle_t::LEGACY
+            ? ImVec2(619.f, 530.f)
+            : ImVec2(618.f, 524.f);
+
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 6.f, 6.f });  baseWindowStyleVars++;
+    }
+
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, m_fadeAlpha);                     baseWindowStyleVars++;
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowMinSize, minBaseWindowRect);       baseWindowStyleVars++;
+
+    const bool drawn = DrawSurface();
+    ImGui::PopStyleVar(baseWindowStyleVars);
+
+    // If we didn't draw the console, don't draw the suggest panel
+    if (!drawn)
+        return;
+
+    /**************************
+     * SUGGESTION PANEL SETUP *
+     **************************/
+    if (m_currentTab == kTabConsole && RunAutoComplete())
+    {
+        if (m_surfaceStyle == ImGuiStyle_t::MODERN)
+        {
+            const ImGuiStyle& style = ImGui::GetStyle();
+            m_autoCompleteWindowPos.y = m_autoCompleteWindowPos.y + style.WindowPadding.y + 1.5f;
+        }
+
+        ImGui::SetNextWindowPos(m_autoCompleteWindowPos);
+        ImGui::SetNextWindowSize(m_autoCompleteWindowRect);
+
+        int autoCompleteStyleVars = 0;
+
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 1.0f);         autoCompleteStyleVars++;
+        ImGui::PushStyleVar(ImGuiStyleVar_Alpha, m_fadeAlpha);             autoCompleteStyleVars++;
+
+        DrawAutoCompletePanel();
+
+        ImGui::PopStyleVar(autoCompleteStyleVars);
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: draws the console's main surface
+// Output: true if a frame has been drawn, false otherwise
+//-----------------------------------------------------------------------------
+bool CConsole::DrawSurface(void)
+{
+    if (!IsVisible())
+        return false;
+
+    g_TopBar.RenderShowMainBar();
+
+    if (!ImGui::Begin(m_surfaceLabel, &m_activated, ImGuiWindowFlags_None, &ResetInput))
+    {
+        ImGui::End();
+        return false;
+    }
+
+    SetRect(1200, 524, 50, 50);
+    m_mainWindow = ImGui::GetCurrentWindow();
+
+    const int selectTab = m_selectTab;
+    m_selectTab = -1;
+
+    if (ImGui::BeginTabBar("##SdkOverlayTabs"))
+    {
+        const ImGuiTabItemFlags consoleFlags = (selectTab == kTabConsole) ? ImGuiTabItemFlags_SetSelected : 0;
+        const ImGuiTabItemFlags browserFlags = (selectTab == kTabBrowser) ? ImGuiTabItemFlags_SetSelected : 0;
+        const ImGuiTabItemFlags localFlags = (selectTab == kTabManageLocal) ? ImGuiTabItemFlags_SetSelected : 0;
+
+        if (ImGui::BeginTabItem("Console##SdkOverlay", nullptr, consoleFlags))
+        {
+            m_currentTab = kTabConsole;
+            DrawConsolePanel();
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem("Server Browser##SdkOverlay", nullptr, browserFlags))
+        {
+            m_currentTab = kTabBrowser;
+            ImGui::PushID("tab_browser");
+            g_Browser.DrawBrowserPanel();
+            ImGui::PopID();
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem("Manage Local##SdkOverlay", nullptr, localFlags))
+        {
+            m_currentTab = kTabManageLocal;
+            ImGui::PushID("tab_local");
+            g_Browser.DrawManageLocalPanel();
+            ImGui::PopID();
+            ImGui::EndTabItem();
+        }
+
+        ImGui::EndTabBar();
+    }
+
+    ImGui::End();
+    return true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: draws the console log, filter, and input field
+//-----------------------------------------------------------------------------
+void CConsole::DrawConsolePanel(void)
+{
+    const ImGuiStyle& style = ImGui::GetStyle();
+    const ImVec2 fontSize = ImGui::GetFont()->CalcTextSizeA(ImGui::GetFontSize(), FLT_MAX, -1.0f, "#", nullptr, nullptr);
+
+    ///////////////////////////////////////////////////////////////////////
+    if (ImGui::BeginPopup("Options##Console_DrawSurface"))
+    {
+        DrawOptionsPanel();
+    }
+    if (ImGui::Button("Options##Console_DrawSurface"))
+    {
+        ImGui::OpenPopup("Options##Console_DrawSurface");
+    }
+
+    ImGui::SameLine();
+
+    // Reserve enough left-over height and width for 1 separator + 1 input text
+    const float footerWidthReserve = style.ItemSpacing.y + ImGui::GetWindowWidth();
+    m_colorTextLogger.GetFilter().Draw("Filter (inc,-exc)", footerWidthReserve - 350);
+
+    ImGui::Separator();
+
+    ///////////////////////////////////////////////////////////////////////
+    if (!m_colorTextLogger.IsScrolledToBottom() && m_scrollBackAmount > 0)
+    {
+        const ImGuiID windowId = m_mainWindow->GetID(m_loggerLabel);
+
+        char windowName[128];
+        snprintf(windowName, sizeof(windowName), "%s/%s_%08X", m_surfaceLabel, m_loggerLabel, windowId);
+
+        ImGui::SetWindowScrollY(windowName, m_lastFrameScrollPos.y - m_scrollBackAmount * fontSize.y);
+    }
+    m_scrollBackAmount = 0;
+
+    // Reserve enough left-over height for 2 text elements.
+    float footerHeightReserve = ImGui::GetFrameHeight() * 2;
+    ImGuiChildFlags loggerFlags = ImGuiChildFlags_None;
+
+    const bool isLegacyStyle = m_surfaceStyle == ImGuiStyle_t::LEGACY;
+    int numLoggerStyleVars = 0;
+
+    if (isLegacyStyle)
+    {
+        loggerFlags |= ImGuiChildFlags_Border;
+
+        // Eliminate padding around logger child. This padding gets added when
+        // ImGuiChildFlags_Border flag gets set.
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 1.f, 1.f }); numLoggerStyleVars++;
+
+        // if we use the legacy theme, also account for one extra space as the
+        // legacy theme has an extra separator at the bottom of the logger.
+        footerHeightReserve += style.ItemSpacing.y;
+    }
+
+    const static int colorLoggerWindowFlags =
+        ImGuiWindowFlags_NoMove |
+        ImGuiWindowFlags_HorizontalScrollbar |
+        ImGuiWindowFlags_NoNavInputs |
+        ImGuiWindowFlags_OverlayHorizontalScrollbar;
+
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, m_fadeAlpha); numLoggerStyleVars++;
+    ImGui::BeginChild(m_loggerLabel, ImVec2(0, -footerHeightReserve), loggerFlags, colorLoggerWindowFlags);
+
+    // NOTE: scoped so the mutex releases after we have rendered.
+    // this is currently the only place the color logger is used
+    // during the drawing of the base panel.
+    {
+        AUTO_LOCK(m_colorTextLoggerMutex);
+        m_colorTextLogger.Render(m_fadeAlpha);
+    }
+
+    m_lastFrameScrollPos = ImVec2(ImGui::GetScrollX(), ImGui::GetScrollY());
+
+    ImGui::EndChild();
+
+    if (numLoggerStyleVars)
+        ImGui::PopStyleVar(numLoggerStyleVars);
+
+    // The legacy theme also has a spacer here.
+    if (isLegacyStyle)
+        ImGui::Separator();
+
+    ImGui::Text("%s", m_summaryTextBuf);
+
+    ///////////////////////////////////////////////////////////////////////
+    const static int inputTextFieldFlags =
+        ImGuiInputTextFlags_EnterReturnsTrue |
+        ImGuiInputTextFlags_CallbackCompletion |
+        ImGuiInputTextFlags_CallbackHistory |
+        ImGuiInputTextFlags_CallbackAlways |
+        ImGuiInputTextFlags_CallbackCharFilter |
+        ImGuiInputTextFlags_CallbackEdit |
+        ImGuiInputTextFlags_AutoCaretEnd;
+
+    ImGui::PushItemWidth(footerWidthReserve - 80);
+    if (ImGui::InputText("##Console_DrawSurface_Input", m_inputTextBuf, IM_ARRAYSIZE(m_inputTextBuf), inputTextFieldFlags, &TextEditCallbackStub, reinterpret_cast<void*>(this)))
+    {
+        // If we selected something in the suggestions window, create the
+        // command from that instead
+        if (m_suggestPos > ConAutoCompletePos_e::kPark)
+        {
+            HandleSuggest();
+        }
+        else
+        {
+            HandleCommand();
+        }
+    }
+
+    if (ImGui::IsKeyPressed(ImGuiKey_Tab))
+    {
+        HandleSuggest();
+    }
+
+    // Auto-focus input field on window apparition.
+    ImGui::SetItemDefaultFocus();
+
+    // Auto-focus input field if reclaim is demanded.
+    if (m_reclaimFocus)
+    {
+        ImGui::SetKeyboardFocusHere(-1); // -1 means previous widget.
+        m_reclaimFocus = false;
+    }
+
+    DetermineAutoCompleteWindowPosAndWidth();
+
+    ImGui::SameLine();
+    if (ImGui::Button("Submit##Console_DrawSurface"))
+    {
+        HandleCommand();
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: draws the options panel
+//-----------------------------------------------------------------------------
+void CConsole::DrawOptionsPanel(void)
+{
+    ImGui::Checkbox("Auto-scroll##Console_DrawOptionsPanel", &m_colorTextLogger.m_bAutoScroll);
+
+    ImGui::SameLine();
+    ImGui::Spacing();
+    ImGui::SameLine();
+
+    if (ImGui::SmallButton("Clear Text##Console_DrawOptionsPanel"))
+    {
+        ClearLog();
+    }
+
+    ImGui::SameLine();
+    ImGui::Spacing();
+    ImGui::SameLine();
+
+    // Copies all logged text to the clip board
+    if (ImGui::SmallButton("Copy Text##Console_DrawOptionsPanel"))
+    {
+        AUTO_LOCK(m_colorTextLoggerMutex);
+        m_colorTextLogger.Copy(true);
+    }
+
+    ImGui::TextEx("Console HotKey:", nullptr, ImGuiTextFlags_NoWidthForLargeClippedText);
+    ImGui::SameLine();
+
+    int selected = g_ImGuiConfig.m_ConsoleConfig.m_nBind0;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleConsolePrimary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_ConsoleConfig.m_nBind0 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::SameLine();
+    selected = g_ImGuiConfig.m_ConsoleConfig.m_nBind1;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleConsoleSecondary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_ConsoleConfig.m_nBind1 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::TextEx("Browser HotKey:", nullptr, ImGuiTextFlags_NoWidthForLargeClippedText);
+    ImGui::SameLine();
+
+    selected = g_ImGuiConfig.m_BrowserConfig.m_nBind0;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleBrowserPrimary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_BrowserConfig.m_nBind0 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::SameLine();
+    selected = g_ImGuiConfig.m_BrowserConfig.m_nBind1;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleBrowserSecondary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_BrowserConfig.m_nBind1 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::TextEx("Local HotKey:", nullptr, ImGuiTextFlags_NoWidthForLargeClippedText);
+    ImGui::SameLine();
+
+    selected = g_ImGuiConfig.m_LocalConfig.m_nBind0;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleLocalPrimary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_LocalConfig.m_nBind0 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::SameLine();
+    selected = g_ImGuiConfig.m_LocalConfig.m_nBind1;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleLocalSecondary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_LocalConfig.m_nBind1 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::TextEx("DevMenu HotKey:", nullptr, ImGuiTextFlags_NoWidthForLargeClippedText);
+    ImGui::SameLine();
+
+    selected = g_ImGuiConfig.m_DevMenuConfig.m_nBind0;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleDevMenuPrimary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_DevMenuConfig.m_nBind0 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::SameLine();
+    selected = g_ImGuiConfig.m_DevMenuConfig.m_nBind1;
+
+    if (ImGui::Hotkey("##Console_DrawOptionsPanel_ToggleDevMenuSecondary", &selected, ImVec2(80, 80)) &&
+        !g_ImGuiConfig.KeyUsed(selected))
+    {
+        g_ImGuiConfig.m_DevMenuConfig.m_nBind1 = selected;
+        g_ImGuiConfig.Save();
+    }
+
+    ImGui::EndPopup();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: returns flag texture index for CommandBase (must be aligned with resource.h!)
+// in the future we should build the texture procedurally with use of popcnt.
+// Input: nFlags - 
+//-----------------------------------------------------------------------------
+static int GetFlagTextureIndex(const int flags)
+{
+    switch (flags) // All indices for single/dual flag textures.
+    {
+    case FCVAR_DEVELOPMENTONLY:
+        return 9;
+    case FCVAR_GAMEDLL:
+        return 10;
+    case FCVAR_CLIENTDLL:
+        return 11;
+    case FCVAR_REPLICATED:
+        return 12;
+    case FCVAR_CHEAT:
+        return 13;
+    case FCVAR_RELEASE:
+        return 14;
+    case FCVAR_MATERIAL_SYSTEM_THREAD:
+        return 15;
+    case FCVAR_DEVELOPMENTONLY | FCVAR_GAMEDLL:
+        return 16;
+    case FCVAR_DEVELOPMENTONLY | FCVAR_CLIENTDLL:
+        return 17;
+    case FCVAR_DEVELOPMENTONLY | FCVAR_REPLICATED:
+        return 18;
+    case FCVAR_DEVELOPMENTONLY | FCVAR_CHEAT:
+        return 19;
+    case FCVAR_DEVELOPMENTONLY | FCVAR_MATERIAL_SYSTEM_THREAD:
+        return 20;
+    case FCVAR_REPLICATED | FCVAR_CHEAT:
+        return 21;
+    case FCVAR_REPLICATED | FCVAR_RELEASE:
+        return 22;
+    case FCVAR_GAMEDLL | FCVAR_CHEAT:
+        return 23;
+    case FCVAR_GAMEDLL | FCVAR_RELEASE:
+        return 24;
+    case FCVAR_CLIENTDLL | FCVAR_CHEAT:
+        return 25;
+    case FCVAR_CLIENTDLL | FCVAR_RELEASE:
+        return 26;
+    case FCVAR_MATERIAL_SYSTEM_THREAD | FCVAR_CHEAT:
+        return 27;
+    case FCVAR_MATERIAL_SYSTEM_THREAD | FCVAR_RELEASE:
+        return 28;
+    case COMMAND_COMPLETION_MARKER:
+        return 29;
+
+    default: // Hit when flag is zero/non-indexed or 3+ bits are set.
+
+        const unsigned int v = __popcnt(flags);
+        switch (v)
+        {
+        case 0:
+            return 0; // Pink checker texture (FCVAR_NONE)
+        case 1:
+            return 1; // Yellow checker texture (non-indexed).
+        default:
+
+            // If 3 or more bits are set, we test the flags
+            // and display the appropriate checker texture.
+            const bool mul = v > 2;
+
+            if (flags & FCVAR_DEVELOPMENTONLY)
+            {
+                return mul ? 4 : 3;
+            }
+            else if (flags & FCVAR_CHEAT)
+            {
+                return mul ? 6 : 5;
+            }
+            else if (flags & FCVAR_RELEASE && // RELEASE command but no context restriction.
+                !(flags & FCVAR_SERVER_CAN_EXECUTE) &&
+                !(flags & FCVAR_CLIENTCMD_CAN_EXECUTE))
+            {
+                return mul ? 8 : 7;
+            }
+
+            // Rainbow checker texture (user needs to manually check flags).
+            // These commands are not restricted if ran from the same context.
+            return 2;
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: adds an icon hint to the suggest panel
+// Input: &cvarInfo - 
+// &flagIconHandles - 
+//-----------------------------------------------------------------------------
+static void AddHint(const ConVarFlags::FlagDesc_t& cvarInfo, const vector<MODULERESOURCE>& flagIconHandles)
+{
+    const int hintTexIdx = GetFlagTextureIndex(cvarInfo.bit);
+    const MODULERESOURCE& hintRes = flagIconHandles[hintTexIdx];
+
+    const ImTextureID textureId = hintRes.m_imguiTextureId
+        ? (ImTextureID)hintRes.m_imguiTextureId
+        : (ImTextureID)(intptr_t)hintRes.m_idIcon;
+    ImGui::Image(textureId, ImVec2(float(hintRes.m_nWidth), float(hintRes.m_nHeight)));
+    ImGui::SameLine();
+    ImGui::TextEx(cvarInfo.shortdesc, nullptr, ImGuiTextFlags_NoWidthForLargeClippedText);
+};
+
+//-----------------------------------------------------------------------------
+// Purpose: draws the autocomplete panel with results based on user input
+//-----------------------------------------------------------------------------
+void CConsole::DrawAutoCompletePanel(void)
+{
+    const static int autoCompleteWindowFlags =
+        ImGuiWindowFlags_NoTitleBar |
+        ImGuiWindowFlags_NoMove |
+        ImGuiWindowFlags_NoSavedSettings |
+        ImGuiWindowFlags_NoFocusOnAppearing |
+        ImGuiWindowFlags_AlwaysVerticalScrollbar |
+        ImGuiWindowFlags_AlwaysHorizontalScrollbar;
+
+    ImGui::Begin("##Console_DrawAutoCompletePanel_Suggest", nullptr, autoCompleteWindowFlags);
+    ImGui::PushAllowKeyboardFocus(false);
+
+    ImGuiWindow* const autocompleteWindow = ImGui::GetCurrentWindow();
+
+    // NOTE: this makes sure we always draw this window behind the main console
+    // window, this is necessary as otherwise if you were to drag another
+    // window above the console, and then focus on the console again, that
+    // window will now be in between the console window and the autocomplete
+    // suggest window.
+    ImGui::BringWindowToDisplayBehind(autocompleteWindow, m_mainWindow);
+
+    const ImGuiStyle& style = ImGui::GetStyle();
+    const ImVec2 startCursorPos = ImGui::GetCursorScreenPos();
+
+    const float startY = startCursorPos.y; // Initial Y position in screen space.
+    ImGui::SetCursorScreenPos({ startCursorPos.x, startY + style.FramePadding.y });
+
+    for (size_t i = 0, ns = m_vecSuggest.size(); i < ns; i++)
+    {
+        const ConAutoCompleteSuggest_s& suggest = m_vecSuggest[i];
+        const bool isIndexActive = m_suggestPos == ssize_t(i);
+
+        ImGui::PushID(static_cast<int>(i));
+
+        if (m_autoCompleteTexturesLoaded && con_suggest_textures.GetBool())
+        {
+            // Show the flag texture before the cvar name.
+            const int mainTexIdx = GetFlagTextureIndex(suggest.flags);
+            const MODULERESOURCE& mainRes = m_vecFlagIcons[mainTexIdx];
+
+            const ImTextureID textureId = mainRes.m_imguiTextureId
+                ? (ImTextureID)mainRes.m_imguiTextureId
+                : (ImTextureID)(intptr_t)mainRes.m_idIcon;
+            ImGui::Image(textureId, ImVec2(float(mainRes.m_nWidth), float(mainRes.m_nHeight)));
+
+            // Show a more detailed description of the flag when user hovers over the texture.
+            if (ImGui::IsItemHovered(ImGuiHoveredFlags_RectOnly) &&
+                suggest.flags != COMMAND_COMPLETION_MARKER)
+            {
+                ImGui::BeginTooltip();
+                bool isFlagSet = false;
+
+                // Reverse loop to display the most significant flag first.
+                for (int j = IM_ARRAYSIZE(g_ConVarFlags.m_FlagsToDesc); (j--) > 0;)
+                {
+                    const ConVarFlags::FlagDesc_t& info = g_ConVarFlags.m_FlagsToDesc[j];
+                    if (suggest.flags & info.bit)
+                    {
+                        isFlagSet = true;
+                        AddHint(info, m_vecFlagIcons);
+                    }
+                }
+                if (!isFlagSet) // Display the FCVAR_NONE flag if no flags are set.
+                {
+                    AddHint(g_ConVarFlags.m_FlagsToDesc[0], m_vecFlagIcons);
+                }
+
+                ImGui::EndTooltip();
+            }
+
+            ImGui::SameLine();
+        }
+
+        if (ImGui::Selectable(suggest.text.c_str(), isIndexActive))
+        {
+            ImGui::Separator();
+            string newInputText;
+
+            DetermineInputTextFromSelectedSuggestion(suggest, newInputText);
+            // Suggestion names include mod-registered ConVars of any length.
+            V_strncpy(m_inputTextBuf, newInputText.c_str(), sizeof(m_inputTextBuf));
+
+            m_canAutoComplete = true;
+            m_reclaimFocus = true;
+
+            BuildSummaryText(newInputText.c_str(), newInputText.size());
+        }
+
+        ImGui::PopID();
+
+        // Update the suggest position
+        if (m_autoCompletePosMoved)
+        {
+            if (isIndexActive) // Bring the 'active' element into view
+            {
+                ImRect imRect = ImGui::GetCurrentContext()->LastItemData.Rect;
+
+                // Reset to keep flag icon in display.
+                imRect.Min.x = autocompleteWindow->InnerRect.Min.x;
+                imRect.Max.x = autocompleteWindow->InnerRect.Max.x;
+
+                // Eliminate misalignment during item snap when going up/down in the menu.
+                imRect.Min.y -= con_suggest_scroll_snap_adjust_min.GetFloat();
+                imRect.Max.y -= con_suggest_scroll_snap_adjust_max.GetFloat();
+
+                ImGui::ScrollToRect(autocompleteWindow, imRect);
+                m_autoCompletePosMoved = false;
+            }
+            else if (m_suggestPos == ConAutoCompletePos_e::kPark)
+            {
+                // Reset position; kPark = no active element.
+                ImGui::SetScrollX(0.0f);
+                ImGui::SetScrollY(0.0f);
+
+                m_autoCompletePosMoved = false;
+            }
+        }
+    }
+
+    DetermineAutoCompleteWindowHeight(startY);
+
+    ImGui::PopAllowKeyboardFocus();
+    ImGui::End();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: runs the auto complete for the console
+// Output: true if auto complete is performed, false otherwise
+//-----------------------------------------------------------------------------
+bool CConsole::RunAutoComplete(void)
+{
+    // g_pCVar may be NULL; autocomplete still walks our static ConCommandBase list.
+
+    // Don't suggest if user tries to assign value to ConVar or execute ConCommand.
+    if (!m_inputTextBuf[0] || strstr(m_inputTextBuf, ";"))
+    {
+        if (m_autoCompleteActive)
+        {
+            ResetAutoCompleteData();
+        }
+
+        return false;
+    }
+
+    if (!strstr(m_inputTextBuf, " "))
+    {
+        if (m_canAutoComplete)
+        {
+            CreateSuggestionsFromPartial();
+        }
+    }
+    else if (m_canAutoComplete) // Command completion callback.
+    {
+        ResetAutoCompleteData();
+
+        char szCommand[sizeof(m_inputTextBuf)];
+        size_t i = 0;
+
+        // Truncate everything past (and including) the space to get the
+        // command string.
+        for (; i < sizeof(m_inputTextBuf); i++)
+        {
+            const char c = m_inputTextBuf[i];
+
+            if (c == '\0' || V_isspace(c))
+            {
+                break;
+            }
+
+            szCommand[i] = c;
+        }
+
+        szCommand[i] = '\0';
+        ConCommand* const pCommand = (g_pCVar != nullptr)
+            ? g_pCVar->FindCommand(szCommand)
+            : Sdk_FindStaticConCommand(szCommand);
+
+        if (pCommand && pCommand->CanAutoComplete())
+        {
+            CUtlVector< CUtlString > commands;
+            // Qualified ConCommand::AutoCompleteSuggest: the engine virtual uses a smaller array.
+            const int iret = pCommand->ConCommand::AutoCompleteSuggest(m_inputTextBuf, commands);
+
+            if (!iret)
+            {
+                return false;
+            }
+
+            for (int j = 0; j < iret; ++j)
+            {
+                const CUtlString& cmdToAdd = commands[j];
+                m_vecSuggest.emplace_back(cmdToAdd.String(), cmdToAdd.Length(), COMMAND_COMPLETION_MARKER);
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    if (m_vecSuggest.empty())
+    {
+        return false;
+    }
+
+    m_autoCompleteActive = true;
+    return true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: resets the auto complete window
+//-----------------------------------------------------------------------------
+void CConsole::ResetAutoCompleteData(void)
+{
+    m_suggestPos = ConAutoCompletePos_e::kPark;
+    m_canAutoComplete = false;
+    m_autoCompleteActive = false;
+    m_autoCompletePosMoved = true;
+    m_vecSuggest.clear();
+}
+
+template <size_t N1, size_t N2>
+static void EncaseAppendString(string& targetString, const char* toEncase, const char(&open)[N1], const char(&close)[N2])
+{
+    const size_t appLen = strlen(toEncase);
+    const size_t newLen = targetString.length() + (N1 - 1) + (N2 - 1) + appLen + 1;
+
+    targetString.reserve(newLen);
+
+    targetString.append(open, N1 - 1);
+    targetString.append(toEncase, appLen);
+    targetString.append(close, N2 - 1);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: format appends the value string
+//-----------------------------------------------------------------------------
+static void AppendValueString(string& targetString, const char* const toAppend)
+{
+    EncaseAppendString(targetString, toAppend, " = [", "]");
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: format appends the doc string
+//-----------------------------------------------------------------------------
+static void AppendDocString(string& targetString, const char* const toAppend)
+{
+    if (!VALID_CHARSTAR(toAppend))
+    {
+        return;
+    }
+
+    EncaseAppendString(targetString, toAppend, " - \"", "\"");
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: find ConVars/ConCommands from user input and add to vector
+// - Ignores ConVars marked FCVAR_HIDDEN
+//-----------------------------------------------------------------------------
+bool CConsole::CollectSuggestionsFromRegistry(void)
+{
+    const size_t maxSuggest = static_cast<size_t>(con_max_suggest.GetInt());
+    const bool showHelp = con_suggest_helptext.GetBool();
+
+    auto appendOne = [&](const ConCommandBase* const commandBase) -> bool
+    {
+        if (!commandBase)
+            return true; // keep iterating
+
+        if (commandBase->IsFlagSet(FCVAR_HIDDEN))
+            return true;
+
+        const char* const commandName = commandBase->GetName();
+        if (!commandName || !V_stristr(commandName, m_inputTextBuf))
+            return true;
+
+        if (std::find(m_vecSuggest.begin(), m_vecSuggest.end(), commandName)
+            != m_vecSuggest.end())
+            return true;
+
+        string docString;
+        if (!commandBase->IsCommand())
+        {
+            const ConVar* const conVar = reinterpret_cast<const ConVar*>(commandBase);
+            AppendValueString(docString, conVar->GetString());
+        }
+        if (showHelp)
+        {
+            AppendDocString(docString, commandBase->GetHelpText());
+            AppendDocString(docString, commandBase->GetUsageText());
+        }
+        m_vecSuggest.emplace_back(commandName + docString, commandBase->GetFlags());
+        return m_vecSuggest.size() < maxSuggest;
+    };
+
+    // Engine registry if g_pCVar is set; else the static pre-registration list.
+    if (g_pCVar != nullptr)
+    {
+        ICvar::Iterator iter(g_pCVar);
+        for (iter.SetFirst(); iter.IsValid(); iter.Next())
+        {
+            if (!appendOne(iter.Get()))
+                break;
+        }
+    }
+    else
+    {
+        for (ConCommandBase* cur = Sdk_GetStaticConCommandBaseHead();
+            cur != nullptr; cur = cur->m_pNext)
+        {
+            if (!appendOne(cur))
+                break;
+        }
+    }
+
+    std::sort(m_vecSuggest.begin(), m_vecSuggest.end());
+    return true;
+}
+
+void CConsole::CreateSuggestionsFromPartial(void)
+{
+    ResetAutoCompleteData();
+
+    bool ok = false;
+    __try
+    {
+        ok = CollectSuggestionsFromRegistry();
+    }
+    __except(EXCEPTION_EXECUTE_HANDLER)
+    {
+        ok = false;
+    }
+
+    if (!ok)
+    {
+        // Registry walk faulted (dedi header vs S21 CCvar). Drop partial suggestions.
+        m_vecSuggest.clear();
+        static bool s_warnedIterCrash = false;
+        if (!s_warnedIterCrash)
+        {
+            s_warnedIterCrash = true;
+            Warning(eDLL_T::UI,
+                "Autocomplete iterator faulted (likely CCvar vtable mismatch "
+                "between S3 header and S21 engine). Suggestions disabled.\n");
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: processes submitted commands for the main thread
+// Input: inputText - 
+//-----------------------------------------------------------------------------
+void CConsole::ProcessCommand(const char* const inputText)
+{
+    string commandFormatted(inputText);
+    StringRTrim(commandFormatted, " "); // Remove trailing white space characters to prevent history duplication.
+
+    // Engine `clear` is Con_Clear_f on the native console; this overlay is a
+    // separate buffer. Swallow `/clear` too so it is not forwarded as a stringcmd.
+    const char* pszVerb = commandFormatted.c_str();
+    if (pszVerb[0] == '/')
+        pszVerb++;
+    if (!V_stricmp(pszVerb, "clear") || !V_stricmp(pszVerb, "con_clearlines"))
+    {
+        ClearLog();
+        AddHistory(commandFormatted.c_str());
+        m_historyPos = ConAutoCompletePos_e::kPark;
+        m_colorTextLogger.ShouldScrollToStart(true);
+        m_colorTextLogger.ShouldScrollToBottom(true);
+        return;
+    }
+
+    const ImU32 commandColor = ImGui::ColorConvertFloat4ToU32(ImVec4(1.00f, 0.80f, 0.60f, 1.00f));
+    AddLog(commandColor, "%s] %s\n", Plat_GetProcessUpTime(), commandFormatted.c_str());
+
+    // Unknown first token: kCommandSrcNetClient so the engine forwards it. Local commands stay kCommandSrcCode.
+    cmd_source_t cmdSource = cmd_source_t::kCommandSrcCode;
+    string submitText = commandFormatted;
+    bool bSwallowed = false;
+    {
+        CCommand args;
+        if (g_pCVar &&
+            args.Tokenize(commandFormatted.c_str(), cmd_source_t::kCommandSrcCode) &&
+            args.ArgC() > 0)
+        {
+            // Play Local: dedi-owned verbs go over host RCON; unknown tokens still stringcmd.
+            if (RCON_LauncherClient_Ready())
+            {
+                if (strpbrk(commandFormatted.c_str(), "\n\r"))
+                {
+                    Warning(eDLL_T::CLIENT, "[BRIDGE-CONSOLE] refused command with line breaks\n");
+                    bSwallowed = true;
+                }
+                else if (RCON_LauncherClient_ShouldForward(args.Arg(0)))
+                {
+                    // Do not Cbuf: ';' splits the buffer. Queue on the RCON thread.
+                    if (!RCON_LauncherClient_QueueExec(commandFormatted.c_str()))
+                    {
+                        Warning(eDLL_T::CLIENT, "[BRIDGE-CONSOLE] '%s' not queued\n", args.Arg(0));
+                    }
+                    else
+                    {
+                        Msg(eDLL_T::CLIENT, "[BRIDGE-CONSOLE] '%s' -> dedi via host RCON\n", args.Arg(0));
+                    }
+                    bSwallowed = true;
+                }
+                else if (g_pCVar->FindCommandBase(args.Arg(0)) == nullptr)
+                {
+                    cmdSource = cmd_source_t::kCommandSrcNetClient;
+                    DevMsg(eDLL_T::CLIENT, "[BRIDGE-CONSOLE] '%s' not local -> forwarding to dedi\n", args.Arg(0));
+                }
+            }
+            else if (RCON_IsServerAuthorityCmd(args.Arg(0)))
+            {
+                Warning(eDLL_T::CLIENT,
+                    "[BRIDGE-CONSOLE] '%s' is a server-authority verb; host console is only on Play Local -- use netconsole.exe\n",
+                    args.Arg(0));
+                bSwallowed = true;
+            }
+            else if (g_pCVar->FindCommandBase(args.Arg(0)) == nullptr)
+            {
+                cmdSource = cmd_source_t::kCommandSrcNetClient;
+                DevMsg(eDLL_T::CLIENT, "[BRIDGE-CONSOLE] '%s' not local -> forwarding to dedi\n", args.Arg(0));
+            }
+        }
+    }
+
+    if (!bSwallowed)
+        Cbuf_AddText(Cbuf_GetCurrentPlayer(), submitText.c_str(), cmdSource);
+    m_historyPos = ConAutoCompletePos_e::kPark;
+
+    AddHistory(commandFormatted.c_str());
+
+    m_colorTextLogger.ShouldScrollToStart(true);
+    m_colorTextLogger.ShouldScrollToBottom(true);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: builds the console summary, this function will attempt to search
+// for a ConVar first, from which it formats the current and default
+// value. If the string is empty, or no ConVar is found, the function
+// formats the number of history items instead
+// Input: inputText - 
+//-----------------------------------------------------------------------------
+void CConsole::BuildSummaryText(const char* const inputText, const size_t textLen)
+{
+    // g_pCVar may be null; skip FindVar and show the history-count summary.
+    if (textLen > 0)
+    {
+        string conVarFormatted(inputText, textLen);
+
+        // Trim trailing space/semicolon. If g_pCVar is null, look up the static list.
+        StringRTrim(conVarFormatted, " ;", true);
+        const ConVar* const conVar = (g_pCVar != nullptr)
+            ? g_pCVar->FindVar(conVarFormatted.c_str())
+            : Sdk_FindStaticConVar(conVarFormatted.c_str());
+
+        if (conVar && !conVar->IsFlagSet(FCVAR_HIDDEN))
+        {
+            // Display the current and default value of ConVar if found.
+            snprintf(m_summaryTextBuf, sizeof(m_summaryTextBuf), "(\"%s\", default \"%s\")",
+                conVar->GetString(), conVar->GetDefault());
+
+            return;
+        }
+    }
+
+    snprintf(m_summaryTextBuf, sizeof(m_summaryTextBuf), "%zu history items", m_vecHistory.size());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: creates the selected suggestion for input field
+// Input: &suggest - 
+//-----------------------------------------------------------------------------
+void CConsole::DetermineInputTextFromSelectedSuggestion(const ConAutoCompleteSuggest_s& suggest, string& svInput)
+{
+    if (suggest.flags == COMMAND_COMPLETION_MARKER)
+    {
+        svInput = suggest.text + ' ';
+    }
+    else // Remove the default value from ConVar before assigning it to the input buffer.
+    {
+        svInput = suggest.text.substr(0, suggest.text.find(' ')) + ' ';
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: determines the autocomplete window position and width
+//-----------------------------------------------------------------------------
+void CConsole::DetermineAutoCompleteWindowPosAndWidth(void)
+{
+    const size_t itemCount = m_vecSuggest.size();
+
+    if (itemCount == 0)
+        return; // No items, no rect bounds to calculate.
+
+    // NOTE: last item rect = the input text box, the idea here is to set the
+    // pos to that of the input text bar, whilst also clamping the width to it.
+    const ImVec2 lastItemRectMin = ImGui::GetItemRectMin();
+    const ImVec2 lastItemRectSize = ImGui::GetItemRectSize();
+
+    m_autoCompleteWindowPos = lastItemRectMin;
+    m_autoCompleteWindowPos.y += lastItemRectSize.y;
+
+    const float maxWindowWidth = con_suggest_panel_width.GetFloat();
+
+    const float flWindowWidth = maxWindowWidth > 0
+        ? ImMin(maxWindowWidth, lastItemRectSize.x)
+        : lastItemRectSize.x;
+
+    m_autoCompleteWindowRect.x = flWindowWidth;
+    return;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: determines the autocomplete window height
+//-----------------------------------------------------------------------------
+void CConsole::DetermineAutoCompleteWindowHeight(const float startPos)
+{
+    const size_t itemCount = m_vecSuggest.size();
+
+    if (itemCount == 0)
+        return; // No items, no rect bounds to calculate.
+
+    const ImGuiStyle& style = ImGui::GetStyle();
+
+    const float addAmount = (style.WindowPadding.y + style.ScrollbarSize);
+    const float contentHeight = ((ImGui::GetCursorScreenPos().y - startPos) + addAmount);
+
+    m_autoCompleteWindowRect.y = ImMin(contentHeight, con_suggest_panel_height.GetFloat());
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: loads flag images from resource section (must be aligned with resource.h!)
+// Output: true on success, false on failure 
+//-----------------------------------------------------------------------------
+bool CConsole::LoadFlagIcons(void)
+{
+    HMODULE sdkModule = reinterpret_cast<HMODULE>(g_SDKDll.GetModuleBase());
+    bool ret = false;
+
+    // Get all flag image resources for displaying flags.
+    for (int i = IDB_PNG3, k = NULL; i <= IDB_PNG32; i++, k++)
+    {
+        m_vecFlagIcons.emplace_back(GetModuleResource(sdkModule, i));
+        MODULERESOURCE& rFlagIcon = m_vecFlagIcons[k];
+
+        ret = LoadTextureBuffer(reinterpret_cast<unsigned char*>(rFlagIcon.m_pData), // !TODO: Fall-back texture.
+            static_cast<int>(rFlagIcon.m_nSize), &rFlagIcon.m_idIcon, &rFlagIcon.m_nWidth, &rFlagIcon.m_nHeight,
+            &rFlagIcon.m_imguiTextureId, &rFlagIcon.m_dx12Texture, &rFlagIcon.m_dx12Upload);
+
+        Assert(ret, "Texture flags load failed for %i", i);
+    }
+
+    m_autoCompleteTexturesLoaded = ret;
+    return ret;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: console input box callback
+// Input: *iData - 
+// Output 
+//-----------------------------------------------------------------------------
+int CConsole::TextEditCallback(ImGuiInputTextCallbackData* iData)
+{
+    switch (iData->EventFlag)
+    {
+    case ImGuiInputTextFlags_CallbackCompletion:
+    {
+        // Locate beginning of current word.
+        const char* pszWordEnd = iData->Buf + iData->CursorPos;
+        const char* pszWordStart = pszWordEnd;
+        while (pszWordStart > iData->Buf)
+        {
+            const char c = pszWordStart[-1];
+            if (c == ' ' || c == '\t' || c == ',' || c == ';')
+            {
+                break;
+            }
+            pszWordStart--;
+        }
+        break;
+    }
+    case ImGuiInputTextFlags_CallbackHistory:
+    {
+        if (m_autoCompleteActive)
+        {
+            if (iData->EventKey == ImGuiKey_UpArrow && m_suggestPos > -1)
+            {
+                m_suggestPos--;
+                m_autoCompletePosMoved = true;
+            }
+            else if (iData->EventKey == ImGuiKey_DownArrow)
+            {
+                if (m_suggestPos < static_cast<int>(m_vecSuggest.size()) - 1)
+                {
+                    m_suggestPos++;
+                    m_autoCompletePosMoved = true;
+                }
+            }
+        }
+        else // Allow user to navigate through the history if suggest panel isn't drawn.
+        {
+            const int prevHistoryPos = m_historyPos;
+
+            if (iData->EventKey == ImGuiKey_UpArrow)
+            {
+                if (m_historyPos == ConAutoCompletePos_e::kPark)
+                {
+                    m_historyPos = static_cast<int>(m_vecHistory.size()) - 1;
+                }
+                else if (m_historyPos > 0)
+                {
+                    m_historyPos--;
+                }
+            }
+            else if (iData->EventKey == ImGuiKey_DownArrow)
+            {
+                if (m_historyPos != ConAutoCompletePos_e::kPark)
+                {
+                    if (++m_historyPos >= static_cast<int>(m_vecHistory.size()))
+                    {
+                        m_historyPos = ConAutoCompletePos_e::kPark;
+                    }
+                }
+            }
+
+            if (prevHistoryPos != m_historyPos)
+            {
+                string historyText = (m_historyPos >= 0) ? m_vecHistory[m_historyPos] : "";
+
+                if (!historyText.empty())
+                {
+                    if (historyText.find(' ') == string::npos)
+                    {
+                        // Append whitespace to previous entered command if 
+                        // absent or no parameters where passed. This is to
+                        // the user could directly start adding their own
+                        // params without needing to hit the space bar first.
+                        historyText.append(" ");
+                    }
+                }
+
+                iData->DeleteChars(0, iData->BufTextLen);
+                iData->InsertChars(0, historyText.c_str());
+            }
+        }
+
+        BuildSummaryText(iData->Buf, iData->BufTextLen);
+        break;
+    }
+    case ImGuiInputTextFlags_CallbackAlways:
+    {
+        m_selectedSuggestionTextLen = iData->BufTextLen;
+
+        if (m_inputTextBufModified) // User entered a value in the input field.
+        {
+            iData->DeleteChars(0, m_selectedSuggestionTextLen);
+
+            if (!m_selectedSuggestionText.empty()) // User selected a ConVar from the suggestion window, copy it to the buffer.
+            {
+                iData->InsertChars(0, m_selectedSuggestionText.c_str());
+                m_selectedSuggestionText.clear();
+
+                m_canAutoComplete = true;
+                m_reclaimFocus = true;
+            }
+
+            m_inputTextBufModified = false;
+        }
+
+        break;
+    }
+    case ImGuiInputTextFlags_CallbackCharFilter:
+    {
+        const ImWchar c = iData->EventChar;
+
+        if (!m_selectedSuggestionTextLen)
+        {
+            if (c == '~') // Discard tilde character as first input.
+            {
+                iData->EventChar = 0;
+                return 1;
+            }
+        }
+
+        if (c == '`') // Discard back quote character (default console invoke key).
+        {
+            iData->EventChar = 0;
+            return 1;
+        }
+
+        return 0;
+    }
+    case ImGuiInputTextFlags_CallbackEdit:
+    {
+        // If user selected all text in the input field and replaces it with
+        // a tilde or space character, it will be set as the first character
+        // in the input field as m_nInputTextLen is set before the actual edit.
+        while (iData->Buf[0] == '~' || iData->Buf[0] == ' ')
+        {
+            iData->DeleteChars(0, 1);
+        }
+
+        if (iData->BufTextLen)
+        {
+            m_canAutoComplete = true;
+        }
+        else // Reset state and enable history scrolling when buffer is empty.
+        {
+            ResetAutoCompleteData();
+        }
+
+        BuildSummaryText(iData->Buf, iData->BufTextLen);
+        break;
+    }
+    }
+
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: console input box callback stub
+// Input: *iData - 
+// Output 
+//-----------------------------------------------------------------------------
+int CConsole::TextEditCallbackStub(ImGuiInputTextCallbackData* iData)
+{
+    CConsole* const pConsole = reinterpret_cast<CConsole*>(iData->UserData);
+    return pConsole->TextEditCallback(iData);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: handle anything in the command buffer
+//-----------------------------------------------------------------------------
+void CConsole::HandleCommand()
+{
+    if (m_inputTextBuf[0])
+    {
+        ProcessCommand(m_inputTextBuf);
+        ResetAutoCompleteData();
+
+        m_inputTextBufModified = true;
+    }
+
+    BuildSummaryText("", 0);
+    m_reclaimFocus = true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: handle the suggested item that was selected
+//-----------------------------------------------------------------------------
+void CConsole::HandleSuggest()
+{
+    const bool parked = m_suggestPos == ConAutoCompletePos_e::kPark;
+
+    if (parked && m_vecSuggest.empty())
+    {
+        return;
+    }
+
+    // Note: we should never be able to move the suggest pos
+    // if the suggest list is empty. Suggest pos must always
+    // be cleared if the list is cleared.
+    Assert(!m_vecSuggest.empty());
+
+    // Use the first item if the suggest position is parked.
+    const int vecIndex = parked ? 0 : m_suggestPos;
+
+    DetermineInputTextFromSelectedSuggestion(m_vecSuggest[vecIndex], m_selectedSuggestionText);
+    BuildSummaryText(m_selectedSuggestionText.c_str(), m_selectedSuggestionText.size());
+
+    m_inputTextBufModified = true;
+    m_reclaimFocus = true;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: adds logs to the console; this is the only place text is added to
+// the vector, do not call 'm_Logger.InsertText' elsewhere as we also manage
+// the size of the vector here !!!
+// Input: &conLog - 
+//-----------------------------------------------------------------------------
+void CConsole::AddLog(const char* const text, const ImU32 color)
+{
+    if (!ImguiSystem()->IsEnabled())
+    {
+        return;
+    }
+
+    AUTO_LOCK(m_colorTextLoggerMutex);
+
+    m_colorTextLogger.InsertText(text, color);
+    ClampLogSize();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: adds logs to the console (internal)
+// Input: &color - 
+// *fmt - 
+//          ... - 
+//-----------------------------------------------------------------------------
+void CConsole::AddLog(const ImU32 color, const char* fmt, ...) /*IM_FMTARGS(2)*/
+{
+    va_list args;
+    va_start(args, fmt);
+
+    string result = FormatV(fmt, args);
+    va_end(args);
+
+    AddLog(result.c_str(), color);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: removes lines from console with sanitized start and end indices
+// Input: nStart - 
+// nEnd - 
+//-----------------------------------------------------------------------------
+void CConsole::RemoveLog(int nStart, int nEnd)
+{
+    AUTO_LOCK(m_colorTextLoggerMutex);
+
+    const int numLines = m_colorTextLogger.GetTotalLines();
+
+    if (nEnd >= numLines)
+    {
+        // Sanitize for last array elem.
+        nEnd = (numLines - 1);
+    }
+
+    if (nStart >= nEnd)
+    {
+        if (nEnd > 0)
+        {
+            nStart = (nEnd - 1);
+        }
+        else
+        {
+            // First elem cannot be removed!
+            return;
+        }
+    }
+    else if (nStart < 0)
+    {
+        nStart = 0;
+    }
+
+    // User wants to remove everything.
+    if (numLines <= (nStart - nEnd))
+    {
+        ClearLog();
+        return;
+    }
+
+    m_colorTextLogger.RemoveLine(nStart, nEnd);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: clears the entire log vector
+//-----------------------------------------------------------------------------
+void CConsole::ClearLog(void)
+{
+    AUTO_LOCK(m_colorTextLoggerMutex);
+    m_colorTextLogger.RemoveLine(0, (m_colorTextLogger.GetTotalLines() - 1));
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: adds a preset command to the dev menu tree
+//-----------------------------------------------------------------------------
+// Dev preset menu moved to top bar
+
+//-----------------------------------------------------------------------------
+// Purpose: removes a preset command from the dev menu tree by its path
+//-----------------------------------------------------------------------------
+// Dev preset menu moved to top bar
+
+//-----------------------------------------------------------------------------
+// Purpose: removes all preset commands from the console top bar
+//-----------------------------------------------------------------------------
+// Dev preset menu moved to top bar
+
+//-----------------------------------------------------------------------------
+// Purpose: clamps the size of the log vector
+//-----------------------------------------------------------------------------
+void CConsole::ClampLogSize(void)
+{
+    // +1 since the first row is a dummy
+    const int maxLines = con_max_lines.GetInt() + 1;
+
+    if (m_colorTextLogger.GetTotalLines() > maxLines)
+    {
+        while (m_colorTextLogger.GetTotalLines() > maxLines)
+        {
+            m_colorTextLogger.RemoveLine(0);
+
+            m_scrollBackAmount++;
+            m_selectBackAmount++;
+        }
+
+        m_colorTextLogger.MoveSelection(m_selectBackAmount, false);
+        m_colorTextLogger.MoveCursor(m_selectBackAmount, false);
+
+        m_selectBackAmount = 0;
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: adds a command to the history vector; this is the only place text 
+// is added to the vector, do not call 'm_History.emplace_back' elsewhere as we
+// also manage the size of the vector here !!!
+//-----------------------------------------------------------------------------
+void CConsole::AddHistory(const char* const command)
+{
+    // If this command was already in the history, remove it so when we push it
+    // in, it would appear all the way at the top of the list
+    for (size_t i = m_vecHistory.size(); i-- > 0;)
+    {
+        if (m_vecHistory[i].compare(command) == 0)
+        {
+            m_vecHistory.erase(m_vecHistory.begin() + i);
+            break;
+        }
+    }
+
+    m_vecHistory.emplace_back(command);
+    ClampHistorySize();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: gets all console submissions
+// Output: vector of strings
+//-----------------------------------------------------------------------------
+const vector<string>& CConsole::GetHistory(void) const
+{
+    return m_vecHistory;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: clears the entire submission history vector
+//-----------------------------------------------------------------------------
+void CConsole::ClearHistory(void)
+{
+    m_vecHistory.clear();
+    BuildSummaryText("", 0);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: clamps the size of the history vector
+//-----------------------------------------------------------------------------
+void CConsole::ClampHistorySize(void)
+{
+    while (m_vecHistory.size() > con_max_history.GetInt())
+    {
+        m_vecHistory.erase(m_vecHistory.begin());
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: open the overlay on a tab, or close it if that tab is already shown
+//-----------------------------------------------------------------------------
+void CConsole::ToggleTab(const OverlayTab_e tab)
+{
+	if (tab < kTabConsole || tab > kTabManageLocal)
+		return;
+
+	if (!m_activated)
+	{
+		SetActive(true);
+		m_selectTab = tab;
+	}
+	else if (m_currentTab == tab)
+	{
+		SetActive(false);
+	}
+	else
+	{
+		m_selectTab = tab;
+		if (tab == kTabConsole)
+			m_reclaimFocus = true;
+	}
+
+	ResetInput();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: toggles the console
+//-----------------------------------------------------------------------------
+void CConsole::ToggleConsole_f()
+{
+	// Serial-gate against ImguiWindowProc: a key bind that both flips the
+	// surface in WndProc and executes toggleconsole would XOR twice and
+	// cancel the open (flaky console show).
+	extern volatile LONG g_imguiWndProcToggleSerial;
+	static LONG s_seenWndProcSerial = 0;
+	const LONG wndSerial = InterlockedCompareExchange(&g_imguiWndProcToggleSerial, 0, 0);
+	if (wndSerial != s_seenWndProcSerial)
+	{
+		s_seenWndProcSerial = wndSerial;
+		return;
+	}
+
+	g_Console.ToggleTab(kTabConsole);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: shows the game console submission history.
+//-----------------------------------------------------------------------------
+void CConsole::LogHistory_f()
+{
+    const vector<string>& vHistory = g_Console.GetHistory();
+    for (size_t i = 0, nh = vHistory.size(); i < nh; i++)
+    {
+        Msg(eDLL_T::COMMON, "%3d: %s\n", i, vHistory[i].c_str());
+    }
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: removes a range of lines from the console.
+//-----------------------------------------------------------------------------
+void CConsole::RemoveLine_f(const CCommand& args)
+{
+    if (args.ArgC() < 3)
+    {
+        Msg(eDLL_T::CLIENT, "Usage 'con_removeline': start(int) end(int)\n");
+        return;
+    }
+
+    const int start = atoi(args[1]);
+    const int end = atoi(args[2]);
+
+    g_Console.RemoveLog(start, end);
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: clears all lines from the developer console.
+//-----------------------------------------------------------------------------
+void CConsole::ClearLines_f()
+{
+    g_Console.ClearLog();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: clears all submissions from the developer console history.
+//-----------------------------------------------------------------------------
+void CConsole::ClearHistory_f()
+{
+    g_Console.ClearHistory();
+}
+
+CConsole g_Console;

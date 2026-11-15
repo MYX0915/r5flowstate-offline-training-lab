@@ -1,0 +1,13 @@
+{
+  "scope": "Actual offline R-301 shots with an eight-degree initial aim error",
+  "targetArrayIndex": 1,
+  "phases": [],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  },
+  "cleanupError": "SDK request failed: RESULT probe err {\"ran\":false,\"error\":true,\"reply\":null,\"log\":[],\"logDropped\":0,\"message\":\"server VM is not running (no map loaded)\"}"
+}

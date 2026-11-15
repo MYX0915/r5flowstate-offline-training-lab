@@ -1,0 +1,87 @@
+[
+  {
+    "source": "artifacts\\r5flowstate-aim\\rpak-analysis\\common_early-patch.body",
+    "offset": 268077,
+    "size": 14976,
+    "sha256": "b6863841c84a31f0b3f3a532318ef943236caec25b1be978b396373d61e38df2",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\patch-shaders\\b6863841c84a31f0b3f3.dxbc"
+  },
+  {
+    "source": "artifacts\\r5flowstate-aim\\rpak-analysis\\common_early-patch.body",
+    "offset": 283053,
+    "size": 15032,
+    "sha256": "fded2f3b1c363adcaaf2a0d550e3c20c9b4173ca2729fac4234a7d7c67682048",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\patch-shaders\\fded2f3b1c363adcaaf2.dxbc"
+  },
+  {
+    "source": "artifacts\\r5flowstate-aim\\rpak-analysis\\common_early-patch.body",
+    "offset": 298085,
+    "size": 14992,
+    "sha256": "b48d88f53861b12f4b2875faf866cc3272421c1c1e4209c38350be73c96fc862",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\patch-shaders\\b48d88f53861b12f4b28.dxbc"
+  },
+  {
+    "source": "artifacts\\r5flowstate-aim\\rpak-analysis\\common_early-patch.body",
+    "offset": 313077,
+    "size": 14824,
+    "sha256": "e887b6b7acf17d7b87b3bb52c1675343d2963fb87a676327407bbca39eb8b470",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\patch-shaders\\e887b6b7acf17d7b87b3.dxbc"
+  },
+  {
+    "source": "artifacts\\r5flowstate-aim\\rpak-analysis\\common_early-patch.body",
+    "offset": 327901,
+    "size": 14864,
+    "sha256": "1c4a6a53e252284cd0318d189617d7a41612d288f74685e4f726c2c73c5c0660",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\patch-shaders\\1c4a6a53e252284cd031.dxbc"
+  }
+]

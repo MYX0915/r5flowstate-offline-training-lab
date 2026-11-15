@@ -1,0 +1,57 @@
+{
+  "scope": "Actual offline shots; direction fixed at launch",
+  "targetArrayIndex": 0,
+  "targetEntityIndex": 8098,
+  "aimOffsetDegrees": 180.0,
+  "correctionHalfAngle": 180.0,
+  "phases": [
+    {
+      "name": "enabled_visible",
+      "enabled": true,
+      "eye": [
+        -6220.36572,
+        -1149.94189,
+        -24.0
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        2.7151225745232197,
+        -1.248745870144063
+      ],
+      "flags": 3,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.97655416 1",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 19,
+      "damage": 81,
+      "ammoBefore": 35,
+      "ammoAfter": 31,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    }
+  ],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  },
+  "targetShieldCleanup": "Restored to the dummy's normal full shield capacity"
+}

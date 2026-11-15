@@ -1,0 +1,60 @@
+0x1408d385f mov qword ptr [r15 + 0xe8], rcx
+0x1408d3866 mov dword ptr [r15 + 0xf0], 0xffffff
+0x1408d3871 mov qword ptr [r15 + 0xf4], rdx
+0x1408d3878 mov qword ptr [r15 + 0xfc], rcx
+0x1408d387f mov dword ptr [r15 + 0x104], ecx
+0x1408d3886 mov eax, dword ptr [r15 + 0x108]
+0x1408d388d mov dword ptr [rdi + 0xd0], eax
+0x1408d3893 mov eax, dword ptr [r15 + 0x10c]
+0x1408d389a mov dword ptr [rdi + 0xd4], eax
+0x1408d38a0 mov eax, dword ptr [r15 + 0x110]
+0x1408d38a7 mov dword ptr [rdi + 0xd8], eax
+0x1408d38ad mov eax, dword ptr [r15 + 0x114]
+0x1408d38b4 mov dword ptr [rdi + 0xdc], eax
+0x1408d38ba mov eax, dword ptr [r15 + 0x118]
+0x1408d38c1 mov dword ptr [rdi + 0xe0], eax
+0x1408d38c7 mov eax, dword ptr [r15 + 0x11c]
+0x1408d38ce mov dword ptr [rdi + 0xe4], eax
+0x1408d38d4 mov eax, dword ptr [r15 + 0x120]
+0x1408d38db mov dword ptr [rdi + 0xe8], eax
+0x1408d38e1 mov eax, dword ptr [r15 + 0x124]
+0x1408d3de9 call qword ptr [rax + 0x800]
+0x1408d3def mov r14, qword ptr [rsp + 0x1da8]
+0x1408d3df7 test al, al
+0x1408d3df9 je 0x1408d3e0f
+0x1408d3dfb mov dword ptr [rdi + 0x38], ebx
+0x1408d3dfe mov qword ptr [rdi + 0x24], 0
+0x1408d3e06 mov dword ptr [rdi + 0x2c], ebx
+0x1408d3e09 mov word ptr [rdi + 0x3d], 0xffff
+0x1408d3e0f movss xmm6, dword ptr [r15 + 0xd4]
+0x1408d3e18 mov rbx, qword ptr [rsp + 0x1df0]
+0x1408d3e20 test rsi, rsi
+0x1408d3e23 je 0x1408d3ea2
+0x1408d3e25 movss xmm0, dword ptr [rsi + 0x2a34]
+0x1408d3e2d comiss xmm0, dword ptr [rsi + 0x2a38]
+0x1408d3e34 jbe 0x1408d3e4d
+0x1408d3e36 movss xmm0, dword ptr [rdi + 0x24]
+0x1408d3e3b comiss xmm0, dword ptr [rip + 0xca9b02]
+0x1408d3e42 jb 0x1408d3e4d
+0x1408d3e44 mov dword ptr [rdi + 0x24], 0x3f800000
+0x1408d3e4b jmp 0x1408d3ea2
+0x1408d3efb movaps xmm2, xmm0
+0x1408d3efe movss xmm0, dword ptr [rdi + 0x24]
+0x1408d3f03 minss xmm2, xmm3
+0x1408d3f07 maxss xmm0, xmm4
+0x1408d3f0b movss dword ptr [rdi + 0x34], xmm2
+0x1408d3f10 movaps xmm2, xmm0
+0x1408d3f13 minss xmm2, xmm3
+0x1408d3f17 movss dword ptr [rdi + 0x24], xmm2
+0x1408d3f1c movss dword ptr [r15 + 0xd4], xmm2
+0x1408d3f25 mov r15, qword ptr [rsp + 0x1da0]
+0x1408d3f2d test rsi, rsi
+0x1408d3f30 je 0x1408d3f51
+0x1408d3f32 cmp byte ptr [rsi + 0x754], 0
+0x1408d3f39 jne 0x1408d3f51
+0x1408d3f3b mov r9d, dword ptr [rdi + 0x38]
+0x1408d3f3f mov rcx, rsi
+0x1408d3f42 movss xmm2, dword ptr [rdi + 0x28]
+0x1408d3f47 movss xmm1, dword ptr [rdi + 0x24]
+0x1408d3f4c call 0x140ac1d30
+0x1408d3f51 mov rcx, rdi

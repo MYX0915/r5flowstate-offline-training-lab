@@ -1,0 +1,128 @@
+[
+  {
+    "file": "43172268592628481100.dxbc",
+    "size": 19116,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "886463a8a9a0b94011b8.dxbc",
+    "size": 19412,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "7174e2450273bb223a02.dxbc",
+    "size": 19352,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "8e371bd0115cb7fdd9ff.dxbc",
+    "size": 19648,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "9c53e40d98f1f8f62743.dxbc",
+    "size": 20920,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "1a79c4df0f26de8cea97.dxbc",
+    "size": 21220,
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "//   float c_tsaaDepthAlphaThreshold;   // Offset:  208 Size:     4 [unused]",
+      "//   float4 c_outlineColorAndWidthSDF;  // Offset:  224 Size:    16 [unused]",
+      "//   float4 c_depthBlendScalarAndL0_emissiveTint;// Offset:  368 Size:    16",
+      "//   float4 c_edgeDetectOutlineColorAndAlpha;// Offset:  528 Size:    16 [unused]",
+      "//   float c_edgeDetectOutlineWidth;    // Offset:  544 Size:     4 [unused]",
+      "//   float c_edgeDetectOutlineFalloffExp;// Offset:  548 Size:     4 [unused]"
+    ]
+  }
+]

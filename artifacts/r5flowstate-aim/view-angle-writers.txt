@@ -1,0 +1,59 @@
+getter=0x140218830 anglesBase=0x1418099b0
+GETTER DATA REFERENCE 0x1413cd470
+0x1413cd458 0x140218630
+0x1413cd460 0x140218700
+0x1413cd468 0x1402187b0
+0x1413cd470 0x140218830
+0x1413cd478 0x140218880
+0x1413cd480 0x140219670
+0x1413cd488 0x1402196b0
+0x1413cd490 0x1402196f0
+0x1413cd498 0x140213370
+
+XREF=0x14021884d FUNCTION=0x140218830..0x140218877
+ 0x140218830: push rbx
+ 0x140218832: sub rsp, 0x20
+ 0x140218836: mov rax, qword ptr [rip + 0x15d0323]
+ 0x14021883d: lea rcx, [rip + 0x15d031c]
+ 0x140218844: mov rbx, rdx
+ 0x140218847: call qword ptr [rax + 0x28]
+ 0x14021884a: movsxd rcx, eax
+ 0x14021884d: lea rax, [rip + 0x15f115c]
+ 0x140218854: imul r8, rcx, 0x41358
+ 0x14021885b: add r8, rax
+ 0x14021885e: mov eax, dword ptr [r8]
+ 0x140218861: mov dword ptr [rbx], eax
+ 0x140218863: mov eax, dword ptr [r8 + 4]
+ 0x140218867: mov dword ptr [rbx + 4], eax
+ 0x14021886a: mov eax, dword ptr [r8 + 8]
+ 0x14021886e: mov dword ptr [rbx + 8], eax
+ 0x140218871: add rsp, 0x20
+ 0x140218875: pop rbx
+ 0x140218876: ret 
+
+XREF=0x14021950c FUNCTION=0x1402194f8..0x140219570
+ 0x1402194f8: mov rax, qword ptr [rip + 0x15cf661]
+ 0x1402194ff: lea rcx, [rip + 0x15cf65a]
+ 0x140219506: call qword ptr [rax + 0x28]
+ 0x140219509: movsxd rcx, eax
+ 0x14021950c: lea rax, [rip + 0x15f049d]
+ 0x140219513: imul rbx, rcx, 0x41358
+ 0x14021951a: mov rcx, r14
+ 0x14021951d: add rbx, rax
+ 0x140219520: call 0x140210440
+ 0x140219525: test al, al
+ 0x140219527: jne 0x14021955b
+ 0x140219529: movss xmm0, dword ptr [rip + 0xcd047ff]
+ 0x140219531: movss xmm1, dword ptr [rip + 0xcd047fb]
+ 0x140219539: movss dword ptr [rbx], xmm0
+ 0x14021953d: movss xmm0, dword ptr [rip + 0xcd047f3]
+ 0x140219545: movss dword ptr [rbx + 8], xmm0
+ 0x14021954a: movss dword ptr [rbx + 4], xmm1
+ 0x14021954f: add rsp, 0x15e0
+ 0x140219556: pop r14
+ 0x140219558: pop rbx
+ 0x140219559: pop rbp
+ 0x14021955a: ret 
+ 0x14021955b: movss xmm0, dword ptr [r14]
+ 0x140219560: movaps xmmword ptr [rsp + 0x15b0], xmm6
+ 0x140219568: movaps xmmword ptr [rsp + 0x15a0], xmm7

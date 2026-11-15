@@ -1,0 +1,13 @@
+{
+  "ran": true,
+  "error": false,
+  "reply": "bounded two-model highlight experiment started",
+  "log": [
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-HIGHLIGHT] configured green=42 red=7 count=81"
+    }
+  ],
+  "logDropped": 0
+}

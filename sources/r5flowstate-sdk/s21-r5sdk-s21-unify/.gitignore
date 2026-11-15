@@ -1,0 +1,37 @@
+# Local A/B only - never attach live remotes
+/build_intermediate/
+/build_cert/
+/game/
+*.pdb
+*.dll
+*.exp
+*.lib
+*.ilk
+# Vendored middleware import libs are part of the source drop
+!src/thirdparty/**/*.lib
+!src/thirdparty/**/*.dll
+# ...except the FidelityFX runtime redistributable (fetch from AMD)
+src/thirdparty/fidelityfx/bin/
+
+# Build / session logs (never commit)
+*.log
+/artifacts/
+build_dedi_console*.txt
+*_console*.txt
+
+# Local RE notes + one-shot tooling (not product source)
+/RE/
+/tools/*
+/docs/
+
+
+# One-shot root scratch (never re-add)
+legit_rescue_fields.txt
+resolve_syms.py
+/RE
+/.dispatch
+
+# RSX extractor cache dropped in the tree by the asset tooling
+rsx_cache_db.bin
+build_fuzz/
+/src/fuzz

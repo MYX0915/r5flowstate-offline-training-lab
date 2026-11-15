@@ -1,0 +1,88 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.016 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 29
+
+Microsoft (R) Windows Debugger Version 10.0.26100.6584 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+*** wait with pending attach
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Symbol search path is: E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Executable search path is: 
+WARNING: Process 30180 is not attached as a debuggee
+         The process can be examined but debug events will not be received
+...................................................
+(75e4.7020): Wake debugger - code 80000007 (first chance)
+ntdll!ZwDelayExecution+0x14:
+00007ffd`9ee96a64 c3              ret
+0:000> cdb: Reading initial command '.symopt+0x40;dx -r5 server!s_trainingShotTargets.m_storage;qd'
+Symbol options are 0xB0367:
+  0x00000001 - SYMOPT_CASE_INSENSITIVE
+  0x00000002 - SYMOPT_UNDNAME
+  0x00000004 - SYMOPT_DEFERRED_LOADS
+  0x00000020 - SYMOPT_OMAP_FIND_NEAREST
+  0x00000040 - SYMOPT_LOAD_ANYTHING
+  0x00000100 - SYMOPT_NO_UNQUALIFIED_LOADS
+  0x00000200 - SYMOPT_FAIL_CRITICAL_ERRORS
+  0x00010000 - SYMOPT_AUTO_PUBLICS
+  0x00020000 - SYMOPT_NO_IMAGE_SEARCH
+  0x00080000 - SYMOPT_NO_PROMPTS
+*** WARNING: Unable to verify checksum for D:\R5Flowstate\Game\server.dll
+server!s_trainingShotTargets.m_storage : { size=0x1 } [Type: std::unordered_map<SDKEntityHandle,TrainingShotTarget_t,SDKEntityHandleHasher,std::equal_to<SDKEntityHandle>,std::allocator<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >]
+    [<Raw View>]     [Type: std::unordered_map<SDKEntityHandle,TrainingShotTarget_t,SDKEntityHandleHasher,std::equal_to<SDKEntityHandle>,std::allocator<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >]
+    [bucket_count]   : 0x8 [Type: unsigned __int64]
+    [load_factor]    : 0.125000
+    [max_load_factor] : 1.000000 [Type: float]
+    [hash_function]  : {...} [Type: std::_Compressed_pair<SDKEntityHandleHasher,std::_Compressed_pair<std::equal_to<SDKEntityHandle>,float,1>,1>]
+        [<Raw View>]     [Type: std::_Compressed_pair<SDKEntityHandleHasher,std::_Compressed_pair<std::equal_to<SDKEntityHandle>,float,1>,1>]
+    [key_eq]         : equal_to [Type: std::_Compressed_pair<std::equal_to<SDKEntityHandle>,float,1>]
+        [<Raw View>]     [Type: std::_Compressed_pair<std::equal_to<SDKEntityHandle>,float,1>]
+    [allocator]      : allocator [Type: std::_Compressed_pair<std::allocator<std::_List_node<std::pair<SDKEntityHandle const ,TrainingShotTarget_t>,void *> >,std::_List_val<std::_List_simple_types<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >,1>]
+        [<Raw View>]     [Type: std::_Compressed_pair<std::allocator<std::_List_node<std::pair<SDKEntityHandle const ,TrainingShotTarget_t>,void *> >,std::_List_val<std::_List_simple_types<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >,1>]
+    [allocator]      : allocator [Type: std::_Compressed_pair<std::allocator<std::_List_node<std::pair<SDKEntityHandle const ,TrainingShotTarget_t>,void *> >,std::_List_val<std::_List_simple_types<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >,1>]
+        [<Raw View>]     [Type: std::_Compressed_pair<std::allocator<std::_List_node<std::pair<SDKEntityHandle const ,TrainingShotTarget_t>,void *> >,std::_List_val<std::_List_simple_types<std::pair<SDKEntityHandle const ,TrainingShotTarget_t> > >,1>]
+    [0x0]            : {...}, {...} [Type: std::pair<SDKEntityHandle const ,TrainingShotTarget_t>]
+        [<Raw View>]     [Type: std::pair<SDKEntityHandle const ,TrainingShotTarget_t>]
+        first            [Type: SDKEntityHandle]
+            [+0x000] m_Index          : 0x20001 [Type: unsigned int]
+        second           [Type: TrainingShotTarget_t]
+            [+0x000] point            [Type: Vector3D]
+                [+0x000] x                : 0.000000 [Type: float]
+                [+0x004] y                : 0.000000 [Type: float]
+                [+0x008] z                : 0.000000 [Type: float]
+            [+0x00c] command          : -1 [Type: int]
+            [+0x010] valid            : false [Type: bool]
+quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

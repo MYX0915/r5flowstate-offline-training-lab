@@ -1,0 +1,95 @@
+{
+  "scope": "Real geometry/function tests with explicit origins; no shots in this script",
+  "cases": [
+    {
+      "name": "disabled",
+      "enabled": false,
+      "origin": "<-6220,-1150,-10>",
+      "input": [
+        -0.987248123,
+        0.138214737,
+        -0.0789798498
+      ],
+      "output": [
+        -0.987248123,
+        0.138214737,
+        -0.0789798498
+      ],
+      "changed": false,
+      "expectedChange": false,
+      "passed": true
+    },
+    {
+      "name": "visible",
+      "enabled": true,
+      "origin": "<-6220,-1150,-10>",
+      "input": [
+        -0.987248123,
+        0.138214737,
+        -0.0789798498
+      ],
+      "output": [
+        -0.992152691,
+        0.0218997784,
+        -0.123099148
+      ],
+      "changed": true,
+      "expectedChange": true,
+      "passed": true
+    },
+    {
+      "name": "outside_cone",
+      "enabled": true,
+      "origin": "<-6220,-1150,-10>",
+      "input": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "output": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "changed": false,
+      "expectedChange": false,
+      "passed": true
+    },
+    {
+      "name": "stone_occluded",
+      "enabled": true,
+      "origin": "<-6399.94,-930,-56>",
+      "input": [
+        0.136939377,
+        -0.978138447,
+        0.156502143
+      ],
+      "output": [
+        0.136939377,
+        -0.978138447,
+        0.156502143
+      ],
+      "changed": false,
+      "expectedChange": false,
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [
+      {
+        "level": "info",
+        "source": "engine",
+        "text": "[BRIDGE-C2S] userinfo resync 'local_bullet_assist' '1' -> '0'"
+      },
+      {
+        "level": "info",
+        "source": "script_client",
+        "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-334: dynamicprop [-334])"
+      }
+    ],
+    "logDropped": 0
+  }
+}

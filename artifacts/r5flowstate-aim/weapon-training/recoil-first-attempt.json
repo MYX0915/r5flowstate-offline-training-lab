@@ -1,0 +1,258 @@
+{
+  "scope": "Owned offline training; aim and bullet correction disabled during recoil comparison",
+  "phases": [
+    {
+      "enabled": false,
+      "samples": [
+        {
+          "flags": 0,
+          "punch": 0.0
+        },
+        {
+          "flags": 0,
+          "punch": 0.55865186
+        },
+        {
+          "flags": 0,
+          "punch": 1.29601097
+        },
+        {
+          "flags": 0,
+          "punch": 2.29086637
+        },
+        {
+          "flags": 0,
+          "punch": 3.04523659
+        },
+        {
+          "flags": 0,
+          "punch": 3.41346359
+        },
+        {
+          "flags": 0,
+          "punch": 4.00709772
+        },
+        {
+          "flags": 0,
+          "punch": 4.42548752
+        },
+        {
+          "flags": 0,
+          "punch": 4.77694416
+        },
+        {
+          "flags": 0,
+          "punch": 5.06276035
+        },
+        {
+          "flags": 0,
+          "punch": 4.98789454
+        },
+        {
+          "flags": 0,
+          "punch": 4.74489641
+        },
+        {
+          "flags": 0,
+          "punch": 4.34999895
+        }
+      ],
+      "before": {
+        "flags": 0,
+        "punch": 0.0
+      },
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      },
+      "peakServerPunch": 5.06276035,
+      "client": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [
+          {
+            "level": "info",
+            "source": "client",
+            "text": "[TRAINING-WEAPON] recoil=0 ready=1 clears=20490 nonzero=0 peak=0.000000 bullet=0 cone=10.00"
+          }
+        ],
+        "logDropped": 0
+      }
+    },
+    {
+      "enabled": true,
+      "samples": [
+        {
+          "flags": 1,
+          "punch": 0.5650984
+        },
+        {
+          "flags": 1,
+          "punch": 0.77687472
+        },
+        {
+          "flags": 1,
+          "punch": 1.12542546
+        },
+        {
+          "flags": 1,
+          "punch": 2.03440428
+        },
+        {
+          "flags": 1,
+          "punch": 2.6321857
+        },
+        {
+          "flags": 1,
+          "punch": 3.08850551
+        },
+        {
+          "flags": 1,
+          "punch": 3.97631049
+        },
+        {
+          "flags": 1,
+          "punch": 4.56208801
+        },
+        {
+          "flags": 1,
+          "punch": 4.90727615
+        },
+        {
+          "flags": 1,
+          "punch": 5.16511488
+        },
+        {
+          "flags": 1,
+          "punch": 5.17239857
+        },
+        {
+          "flags": 1,
+          "punch": 4.99855709
+        },
+        {
+          "flags": 1,
+          "punch": 4.79490232
+        }
+      ],
+      "before": {
+        "flags": 1,
+        "punch": 0.63502651
+      },
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      },
+      "peakServerPunch": 5.17239857,
+      "client": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [
+          {
+            "level": "info",
+            "source": "client",
+            "text": "[TRAINING-WEAPON] recoil=1 ready=1 clears=20976 nonzero=21 peak=31.634062 bullet=0 cone=10.00"
+          }
+        ],
+        "logDropped": 0
+      }
+    },
+    {
+      "enabled": false,
+      "samples": [
+        {
+          "flags": 0,
+          "punch": 0.63091391
+        },
+        {
+          "flags": 0,
+          "punch": 0.93085849
+        },
+        {
+          "flags": 0,
+          "punch": 1.26571536
+        },
+        {
+          "flags": 0,
+          "punch": 2.20813131
+        },
+        {
+          "flags": 0,
+          "punch": 2.80790734
+        },
+        {
+          "flags": 0,
+          "punch": 3.40028429
+        },
+        {
+          "flags": 0,
+          "punch": 4.1607399
+        },
+        {
+          "flags": 0,
+          "punch": 4.65132809
+        },
+        {
+          "flags": 0,
+          "punch": 4.75160742
+        },
+        {
+          "flags": 0,
+          "punch": 4.75639677
+        },
+        {
+          "flags": 0,
+          "punch": 4.64284039
+        },
+        {
+          "flags": 0,
+          "punch": 4.41609192
+        },
+        {
+          "flags": 0,
+          "punch": 4.06455994
+        }
+      ],
+      "before": {
+        "flags": 0,
+        "punch": 0.70722967
+      },
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      },
+      "peakServerPunch": 4.75639677,
+      "client": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [
+          {
+            "level": "info",
+            "source": "client",
+            "text": "[TRAINING-WEAPON] recoil=0 ready=1 clears=21141 nonzero=28 peak=31.634062 bullet=0 cone=10.00"
+          }
+        ],
+        "logDropped": 0
+      }
+    }
+  ],
+  "finalRelease": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  }
+}

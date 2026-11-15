@@ -1,0 +1,58 @@
+FUNCTION 0x140ab3360..0x140ab342a
+ 0x140ab3360: push rbx
+ 0x140ab3362: sub rsp, 0x30
+ 0x140ab3366: mov rax, qword ptr [rcx + 0x48]
+ 0x140ab336a: mov rbx, rcx
+ 0x140ab336d: cmp dword ptr [rax + 0x10], 0x40000002
+ 0x140ab3374: jne 0x140ab337b
+ 0x140ab3376: mov edx, dword ptr [rax + 0x18]
+ 0x140ab3379: jmp 0x140ab3380
+ 0x140ab337b: cvttss2si edx, dword ptr [rax + 0x18]
+ 0x140ab3380: xor r8d, r8d
+ 0x140ab3383: mov eax, r8d
+ 0x140ab3386: test edx, edx
+ 0x140ab3388: js 0x140ab33ab
+ 0x140ab338a: cmp edx, dword ptr [rip + 0xa625bf8]
+ 0x140ab3390: jge 0x140ab33ab
+ 0x140ab3392: cmp edx, 0xff
+ 0x140ab3398: je 0x140ab33ab
+ 0x140ab339a: movsxd rax, edx
+ 0x140ab339d: imul rcx, rax, 0x34
+ 0x140ab33a1: mov rax, qword ptr [rip + 0xa625bc8]
+ 0x140ab33a8: mov eax, dword ptr [rcx + rax]
+ 0x140ab33ab: mov ecx, dword ptr [rbx + 0x68]
+ 0x140ab33ae: shr eax, 0x1e
+ 0x140ab33b1: and eax, 1
+ 0x140ab33b4: mov qword ptr [rsp + 0x28], r8
+ 0x140ab33b9: mov dword ptr [rsp + 0x28], eax
+ 0x140ab33bd: lea eax, [rcx + 1]
+ 0x140ab33c0: mov qword ptr [rsp + 0x20], 0x10000008
+ 0x140ab33c9: movups xmm0, xmmword ptr [rsp + 0x20]
+ 0x140ab33ce: mov dword ptr [rbx + 0x68], eax
+ 0x140ab33d1: mov eax, ecx
+ 0x140ab33d3: shl rax, 4
+ 0x140ab33d7: add rax, qword ptr [rbx + 0x78]
+ 0x140ab33db: cmp dword ptr [rax], r8d
+ 0x140ab33de: jge 0x140ab33f5
+ 0x140ab33e0: mov rcx, qword ptr [rax + 8]
+ 0x140ab33e4: movups xmmword ptr [rax], xmm0
+ 0x140ab33e7: add dword ptr [rcx + 0x10], -1
+ 0x140ab33eb: jne 0x140ab33f8
+ 0x140ab33ed: mov rax, qword ptr [rcx]
+ 0x140ab33f0: call qword ptr [rax + 8]
+ 0x140ab33f3: jmp 0x140ab33f8
+ 0x140ab33f5: movups xmmword ptr [rax], xmm0
+ 0x140ab33f8: mov rcx, qword ptr [rbx + 0x50]
+ 0x140ab33fc: cmp dword ptr [rcx + 0x4454], 0
+ 0x140ab3403: jne 0x140ab3410
+ 0x140ab3405: mov eax, 1
+ 0x140ab340a: add rsp, 0x30
+ 0x140ab340e: pop rbx
+ 0x140ab340f: ret 
+ 0x140ab3410: mov rcx, qword ptr [rcx + 0x4448]
+ 0x140ab3417: mov rdx, rbx
+ 0x140ab341a: call 0x140df51b0
+ 0x140ab341f: mov eax, 0xffffffff
+ 0x140ab3424: add rsp, 0x30
+ 0x140ab3428: pop rbx
+ 0x140ab3429: ret 

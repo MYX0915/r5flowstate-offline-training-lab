@@ -1,0 +1,110 @@
+[
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 92248,
+    "size": 19116,
+    "sha256": "43172268592628481100b15b76ac49a9bea0d5c062c1ea9530fc1307079312f0",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\43172268592628481100.dxbc"
+  },
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 111368,
+    "size": 19412,
+    "sha256": "886463a8a9a0b94011b852cb5b1d147a4dae2b1701e73920eb9bf29f3a12f6ef",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\886463a8a9a0b94011b8.dxbc"
+  },
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 6267814,
+    "size": 19352,
+    "sha256": "7174e2450273bb223a02840fb541523837bb0898d3ef225276711c007d180be0",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\7174e2450273bb223a02.dxbc"
+  },
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 6287166,
+    "size": 19648,
+    "sha256": "8e371bd0115cb7fdd9ff1dcad1c897c983297259c09f016971d1819143846e02",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\8e371bd0115cb7fdd9ff.dxbc"
+  },
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 6306878,
+    "size": 20920,
+    "sha256": "9c53e40d98f1f8f627437a4d7d70ec7ed3ef9e510e113a76370c3be927b29f3e",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\9c53e40d98f1f8f62743.dxbc"
+  },
+  {
+    "source": "D:\\R5Flowstate\\Game\\paks\\Win64\\common_flowstate.rpak",
+    "offset": 6327798,
+    "size": 21220,
+    "sha256": "1a79c4df0f26de8cea978bd8aa90ba8c35886f9e19f0d880b2dec2c4bb310d52",
+    "chunks": [
+      "RDEF",
+      "ISGN",
+      "OSGN",
+      "SHEX",
+      "STAT"
+    ],
+    "keywords": [
+      "highlight",
+      "outline"
+    ],
+    "file": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\override-shaders\\1a79c4df0f26de8cea97.dxbc"
+  }
+]

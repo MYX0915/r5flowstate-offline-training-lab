@@ -1,0 +1,37 @@
+{
+  "recordedUtc": "2026-11-15T12:41:32.361143+00:00",
+  "timezone": "Asia/Shanghai",
+  "checks": {
+    "back_facing_fixture": true,
+    "disabled_misses": true,
+    "enabled_hits": true,
+    "occluded_target_not_damaged": true,
+    "attack_released": true,
+    "cleanup_completed": true
+  },
+  "passed": true,
+  "damage": {
+    "disabled": 0,
+    "enabled": 81,
+    "blocked": 0
+  },
+  "files": [
+    {
+      "path": "D:\\R5Flowstate\\Game\\client.dll",
+      "sha256": "05b5c0588900e472524478be5525f03e84e38ecc2aa1d7e6595a47a14410627c"
+    },
+    {
+      "path": "D:\\R5Flowstate\\Game\\server.dll",
+      "sha256": "dacd2d7bf66d306dcd9609de7efeb386e0f12b8ee7b5d3e7f74de05a09e9ac91"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\weapon-training\\omni360\\menu-enabled.png",
+      "sha256": "ae7dfc48c990fac336486ceb34becc8efcf5c26bc106b66a2b8a4d5457af22b0"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\weapon-training\\omni360\\verified-real-shots.json",
+      "sha256": "15fa2c3334cf619a96dcfa38fcca58deaab8ffcb466466017661c375a0736840"
+    }
+  ],
+  "limits": "Observed current machine-gun fixture. No claim of all weapons, moving targets, long range or long-running stability."
+}

@@ -1,0 +1,18 @@
+FUNCTION 0x140218880..0x1402188d1
+ 0x140218880: mov qword ptr [rsp + 0x10], rdx
+ 0x140218885: push rbp
+ 0x140218886: push rbx
+ 0x140218887: push r14
+ 0x140218889: lea rbp, [rsp - 0x14e0]
+ 0x140218891: mov eax, 0x15e0
+ 0x140218896: call 0x141244870
+ 0x14021889b: sub rsp, rax
+ 0x14021889e: imul eax, dword ptr [rip + 0x14dba64], 0x343fd
+ 0x1402188a8: mov r14, rdx
+ 0x1402188ab: add eax, 0x269ec3
+ 0x1402188b0: mov dword ptr [rip + 0x14dba56], eax
+ 0x1402188b6: test eax, 0x30000
+ 0x1402188bb: jne 0x1402194f8
+ 0x1402188c1: cmp qword ptr [rip + 0xa5edb6f], 0
+ 0x1402188c9: je 0x1402194f8
+ 0x1402188cf: xor eax, eax

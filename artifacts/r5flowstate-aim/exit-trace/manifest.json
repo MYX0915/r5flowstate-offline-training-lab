@@ -1,0 +1,20 @@
+[
+  {
+    "relative": "menu_main.nut",
+    "backup": "menu_main.nut.original",
+    "originalSha256": "ca77869952c3c747d11365e720cd82b76347d5c22324b297d088d7bf6ad03a4e",
+    "patchedSha256": "70bb2b0430212b70ae37d7942f785507af065745f0ea0bc441dd5cba200a7928"
+  },
+  {
+    "relative": "menu_system.nut",
+    "backup": "menu_system.nut.original",
+    "originalSha256": "840c9f79bd2f3f603090e98d780b13a661cf8287ec47502db005dc2998f71541",
+    "patchedSha256": "f3c9858135b7f65d5acda8d147edb5a30548f5c83983c97e7a3ee52e33347ab3"
+  },
+  {
+    "relative": "dialogs/confirm_exit_to_desktop.nut",
+    "backup": "dialogs_confirm_exit_to_desktop.nut.original",
+    "originalSha256": "8bab62b94dac217c9cf7729d73fc21b08f1dc7fb9a3ff8a1178e8bbd93818b1d",
+    "patchedSha256": "2c038518d9a088934b065977f3ade47b6d525a857f37d1e4a0340aba9350d30f"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "file": "b6863841c84a31f0b3f3.dxbc",
+    "size": 14976,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "fded2f3b1c363adcaaf2.dxbc",
+    "size": 15032,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "// SV_Depth                 0    N/A   oDepth    DEPTH   float    YES",
+      "dcl_output oDepth",
+      "  mov oDepth, r2.w",
+      "mov oDepth, r2.w"
+    ]
+  },
+  {
+    "file": "b48d88f53861b12f4b28.dxbc",
+    "size": 14992,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]",
+      "// SV_Depth                 0    N/A   oDepth    DEPTH   float    YES",
+      "dcl_output oDepth",
+      "  mov oDepth, r2.w",
+      "mov oDepth, r2.w"
+    ]
+  },
+  {
+    "file": "e887b6b7acf17d7b87b3.dxbc",
+    "size": 14824,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "1c4a6a53e252284cd031.dxbc",
+    "size": 14864,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]"
+    ]
+  }
+]

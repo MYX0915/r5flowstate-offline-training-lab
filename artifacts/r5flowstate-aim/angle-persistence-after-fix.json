@@ -1,0 +1,48 @@
+{
+  "before": {
+    "ran": true,
+    "error": false,
+    "reply": "7.325704 -179.794540 0.000000",
+    "log": [],
+    "logDropped": 0
+  },
+  "probe": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [
+      {
+        "level": "info",
+        "source": "client",
+        "text": "[TRAINING-VIEW-PROBE] requested=(7.3257 -174.7945)"
+      },
+      {
+        "level": "info",
+        "source": "client",
+        "text": "[TRAINING-VIEW-PROBE] remaining=10 engineValid=1 engine=(7.3257 -174.7945) cameraValid=1 camera=(7.4104 -174.7956) expected=(7.3257 -174.7945) dt=0.054235"
+      },
+      {
+        "level": "info",
+        "source": "client",
+        "text": "[TRAINING-AIM-TRACE] t=326.025 state=2 held=0 part=0 target=4294967295 bone=-1 errorPx=0.000 writes=582 viewValid=1 view=(7.3257 -174.7945 0.0000)"
+      }
+    ],
+    "logDropped": 0
+  },
+  "after": {
+    "ran": true,
+    "error": false,
+    "reply": "7.325704 -174.794540 0.000000",
+    "log": [],
+    "logDropped": 0
+  },
+  "observedYawDeltaDegrees": 5.0,
+  "fiveDegreeProbePassed": true,
+  "restore": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  }
+}

@@ -1,0 +1,75 @@
+array<entity> actors=GetNPCArray()
+entity viewer=GetLocalClientPlayer()
+if(actors.len()==0||!IsValid(viewer)||viewer.GetHealth()<=0){AgentLink_Reply("scene unavailable");return;}
+entity target=actors[0]
+float nearest=999999999.0
+foreach(entity actor in actors)
+{
+	if(!IsValid(actor)||actor.GetHealth()<=0)continue
+	float distance=DistanceSqr(actor.GetOrigin(),viewer.GetOrigin())
+	if(distance<nearest){target=actor;nearest=distance;}
+}
+if(@TARGET@>=0)
+{
+	bool matched=false
+	foreach(entity actor in actors)if(IsValid(actor)&&actor.GetEntIndex()==@TARGET@){target=actor;matched=true;break;}
+	if(!matched){AgentLink_Reply("requested target unavailable");return;}
+}
+int headIndex=target.LookupBone("def_c_head")
+int kneeIndex=target.LookupBone("def_l_knee")
+int chestIndex=target.LookupBone("def_c_spineC")
+if(headIndex<0||kneeIndex<0||chestIndex<0){AgentLink_Reply("test bones unavailable");return;}
+vector head=target.GetBoneOrigin(headIndex)
+vector knee=target.GetBoneOrigin(kneeIndex)
+vector chest=target.GetBoneOrigin(chestIndex)
+array<entity> ignore=[viewer,target]
+array<vector> directions=[<0,1,0>,<0,-1,0>,<1,0,0>,<-1,0,0>,<0.707,0.707,0>,<-0.707,0.707,0>,<0.707,-0.707,0>,<-0.707,-0.707,0>]
+bool found=false
+vector chosen=<0,0,0>
+foreach(vector direction in directions)
+{
+	if(found)break
+	foreach(float distance in [120.0,220.0,350.0,550.0])
+	{
+		if(found)break
+		foreach(float height in [30.0,60.0,100.0,180.0])
+		{
+			vector eye=target.GetOrigin()+direction*distance+<0,0,height>
+			TraceResults space=TraceLine(eye,eye+<0,0,1>,ignore,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+			if(space.startSolid)continue
+			TraceResults h=TraceLine(eye,head,ignore,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+			TraceResults k=TraceLine(eye,knee,ignore,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+			TraceResults c=TraceLine(eye,chest,ignore,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+			bool matches="@PHASE@"=="partial" ? h.fraction>0.99&&k.fraction<0.95 : h.fraction<0.95&&k.fraction<0.95&&c.fraction<0.95
+			if("@PHASE@"=="visible")matches=h.fraction>0.99&&k.fraction>0.99&&c.fraction>0.99
+			if(matches&&"@PHASE@"=="full")
+			{
+				foreach(string name in ["def_l_ankle","def_r_ankle","def_l_wrist","def_r_wrist"])
+				{
+					int bone=target.LookupBone(name)
+					if(bone<0){matches=false;break;}
+					TraceResults limb=TraceLine(eye,target.GetBoneOrigin(bone),ignore,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+					if(limb.fraction>0.95){matches=false;break;}
+				}
+			}
+			if(matches){chosen=eye;found=true;break;}
+		}
+	}
+}
+if(!found){AgentLink_Reply("no suitable existing-geometry viewpoint");return;}
+entity camera=CreateClientSidePointCamera(chosen,VectorToAngles(chest-chosen),90.0)
+if(!IsValid(camera)){AgentLink_Reply("camera unavailable");return;}
+bool previousAim=GetConVarBool("local_aim_enable")
+SetConVarBool("local_aim_enable",false)
+viewer.SetMenuCameraEntityWithAudio(camera)
+thread(void function(entity player,entity pointCamera,bool aimEnabled)
+{
+	OnThreadEnd(void function():(player,pointCamera,aimEnabled)
+	{
+		if(IsValid(player))player.ClearMenuCameraEntity()
+		if(IsValid(pointCamera))pointCamera.Destroy()
+		SetConVarBool("local_aim_enable",aimEnabled)
+	})
+	wait 16.0
+})(viewer,camera,previousAim)
+AgentLink_Reply(format("@PHASE@ camera=%s target=%d; auto restore after 16 seconds",string(chosen),target.GetEntIndex()))

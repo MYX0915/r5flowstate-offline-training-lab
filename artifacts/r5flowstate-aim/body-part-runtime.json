@@ -1,0 +1,82 @@
+[
+  {
+    "part": 0,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=0 target=270289 bone=12 errorPx=14.20 writes=0 considered=7 missing=0 blocked=0 point=(-6420.08 2158.99 13.52)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 1,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=1 target=270289 bone=11 errorPx=7.83 writes=0 considered=14 missing=0 blocked=0 point=(-6418.01 2159.53 10.24)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 2,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=2 target=270289 bone=7 errorPx=27.45 writes=0 considered=14 missing=0 blocked=0 point=(-6410.64 2162.78 0.43)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 3,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=3 target=270289 bone=41 errorPx=24.38 writes=0 considered=14 missing=0 blocked=0 point=(-6423.48 2159.95 2.15)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 4,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=4 target=270289 bone=66 errorPx=106.50 writes=0 considered=14 missing=0 blocked=1 point=(-6418.46 2169.78 -25.06)"
+        }
+      ],
+      "logDropped": 0
+    }
+  }
+]

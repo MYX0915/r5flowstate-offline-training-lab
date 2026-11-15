@@ -1,0 +1,54 @@
+{
+  "scope": "Actual offline R-301 shots with an eight-degree initial aim error",
+  "targetArrayIndex": 1,
+  "phases": [
+    {
+      "name": "enabled_stone_occluded",
+      "enabled": true,
+      "eye": [
+        -6399.93994,
+        -930.0,
+        -25.5902252
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        1.868689108687274,
+        -98.66592108144734
+      ],
+      "flags": 3,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.31537184 0",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 100,
+      "damage": 0,
+      "ammoBefore": 18,
+      "ammoAfter": 11,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    }
+  ],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  },
+  "targetShieldCleanup": "Restored to the dummy's normal full shield capacity"
+}

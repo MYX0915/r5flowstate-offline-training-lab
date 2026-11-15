@@ -1,0 +1,61 @@
+0x14021955b movss xmm0, dword ptr [r14]
+0x140219560 movaps xmmword ptr [rsp + 0x15b0], xmm6
+0x140219568 movaps xmmword ptr [rsp + 0x15a0], xmm7
+0x140219570 movaps xmmword ptr [rsp + 0x1590], xmm8
+0x140219579 movss xmm8, dword ptr [rip + 0x1364142]
+0x140219582 movaps xmm1, xmm8
+0x140219586 movaps xmmword ptr [rsp + 0x1580], xmm10
+0x14021958f call 0x14128f844
+0x140219594 movss xmm10, dword ptr [rip + 0x13644e7]
+0x14021959d movaps xmm6, xmm0
+0x1402195a0 comiss xmm6, dword ptr [rip + 0x13640e1]
+0x1402195a7 jbe 0x1402195b3
+0x1402195a9 addss xmm6, dword ptr [rip + 0x13644e7]
+0x1402195b1 jmp 0x1402195be
+0x1402195b3 comiss xmm10, xmm6
+0x1402195b7 jbe 0x1402195be
+0x1402195b9 addss xmm6, xmm8
+0x1402195be movss xmm0, dword ptr [r14 + 4]
+0x1402195c4 movaps xmm1, xmm8
+0x1402195c8 call 0x14128f844
+0x1402195cd movaps xmm7, xmm0
+0x1402195d0 comiss xmm7, dword ptr [rip + 0x13640b1]
+0x1402195d7 jbe 0x1402195e3
+0x1402195d9 addss xmm7, dword ptr [rip + 0x13644b7]
+0x1402195e1 jmp 0x1402195ee
+0x1402195e3 comiss xmm10, xmm7
+0x1402195e7 jbe 0x1402195ee
+0x1402195e9 addss xmm7, xmm8
+0x1402195ee movss xmm0, dword ptr [r14 + 8]
+0x1402195f4 movaps xmm1, xmm8
+0x1402195f8 call 0x14128f844
+0x1402195fd comiss xmm0, dword ptr [rip + 0x1364084]
+0x140219604 jbe 0x140219610
+0x140219606 addss xmm0, dword ptr [rip + 0x136448a]
+0x14021960e jmp 0x14021961b
+0x140219610 comiss xmm10, xmm0
+0x140219614 jbe 0x14021961b
+0x140219616 addss xmm0, xmm8
+0x14021961b ucomiss xmm6, dword ptr [rbx]
+0x14021961e movaps xmm10, xmmword ptr [rsp + 0x1580]
+0x140219627 movaps xmm8, xmmword ptr [rsp + 0x1590]
+0x140219630 jp 0x140219644
+0x140219632 jne 0x140219644
+0x140219634 ucomiss xmm7, dword ptr [rbx + 4]
+0x140219638 jp 0x140219644
+0x14021963a jne 0x140219644
+0x14021963c ucomiss xmm0, dword ptr [rbx + 8]
+0x140219640 jp 0x140219644
+0x140219642 je 0x140219652
+0x140219644 movss dword ptr [rbx], xmm6
+0x140219648 movss dword ptr [rbx + 4], xmm7
+0x14021964d movss dword ptr [rbx + 8], xmm0
+0x140219652 movaps xmm6, xmmword ptr [rsp + 0x15b0]
+0x14021965a movaps xmm7, xmmword ptr [rsp + 0x15a0]
+0x140219662 add rsp, 0x15e0
+0x140219669 pop r14
+0x14021966b pop rbx
+0x14021966c pop rbp
+0x14021966d ret 
+0x14021966e int3 
+0x14021966f int3 

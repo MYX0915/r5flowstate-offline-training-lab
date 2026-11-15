@@ -1,0 +1,13 @@
+{
+  "ran": true,
+  "error": false,
+  "reply": null,
+  "log": [
+    {
+      "level": "info",
+      "source": "client",
+      "text": "[TRAINING-AIM] state=游戏未获得焦点 held=0 part=0 target=4294967295 bone=-1 errorPx=0.00 writes=660 considered=0 missing=0 blocked=0 point=(0.00 0.00 0.00)"
+    }
+  ],
+  "logDropped": 0
+}

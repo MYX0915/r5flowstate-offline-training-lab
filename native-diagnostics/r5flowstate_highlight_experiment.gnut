@@ -1,0 +1,57 @@
+// Bounded offline rendering experiment. All created props are destroyed on exit.
+thread (void function()
+{
+	int green=HighlightContext_GetId("decoy_prop")
+	int red=HighlightContext_GetId("enemy_ai")
+	if(!TrainingHighlight_Configure(green,red))return
+	array<entity> actors = GetNPCArray()
+	array<entity> proxies
+	array<int> originalContexts
+	foreach (entity actor in actors)
+	{
+		originalContexts.append(actor.Highlight_GetCurrentContext())
+		entity proxy = CreateClientSidePropDynamic(actor.GetOrigin(), actor.GetAngles(), actor.GetModelName())
+		proxy.SetParent(actor, "", false)
+		proxy.Anim_Play(actor.GetCurrentSequenceName())
+		proxy.SetCycle(actor.GetCycle())
+		proxy.Hide()
+		proxies.append(proxy)
+	}
+	OnThreadEnd(void function() : (actors, proxies, originalContexts)
+	{
+		foreach (entity proxy in proxies)
+			if (IsValid(proxy)) proxy.Destroy()
+		foreach (int i, entity actor in actors)
+		{
+			if (!IsValid(actor)) continue
+			actor.Highlight_SetCurrentContext(originalContexts[i])
+			actor.Highlight_OverrideParam(0, <1,0,0>)
+			actor.Highlight_ShowOutline(0.0)
+			actor.Highlight_ShowInside(0.0)
+		}
+		TrainingHighlight_Restore()
+	})
+	for (int frame = 0; frame < 6000; frame++)
+	{
+		foreach (int i, entity actor in actors)
+		{
+			if (!IsValid(actor) || !IsValid(proxies[i])) continue
+			entity proxy = proxies[i]
+			proxy.SetCycle(actor.GetCycle())
+			actor.Highlight_SetCurrentContext(red)
+			actor.Highlight_OverrideParam(0, <1,0,0>)
+			actor.Highlight_SetVisibilityType(HIGHLIGHT_VIS_ALWAYS)
+			actor.Highlight_ShowInside(0.0)
+			actor.Highlight_HideOutline(0.0)
+			proxy.Highlight_SetCurrentContext(HighlightContext_GetId("decoy_prop"))
+			proxy.Highlight_OverrideParam(0, <0,1,0>)
+			proxy.Highlight_SetVisibilityType(HIGHLIGHT_VIS_ALWAYS)
+			proxy.Highlight_Enable()
+			proxy.Highlight_StartOn()
+			proxy.Highlight_ShowOutline(0.0)
+			proxy.Highlight_HideInside(0.0)
+		}
+		WaitFrame()
+	}
+})()
+AgentLink_Reply("bounded two-model highlight experiment started")

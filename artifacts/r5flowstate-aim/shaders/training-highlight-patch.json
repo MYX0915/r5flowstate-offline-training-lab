@@ -1,0 +1,32 @@
+{
+  "source": "artifacts\\r5flowstate-aim\\runtime-shaders\\shader-ED033AC7516CF0D4.dxbc",
+  "source_sha256": "797730424b0902d286f6bdf932e3b553ad5c7f01530ce955999885bb35c60850",
+  "shex_fnv64": "0xdfb9c603c5a78583",
+  "shex_size": 76896,
+  "shex_sha256": "72cec4f9be57dae16b9dbd0be14ae6cd1f0af19817d3241f403d3e926cf4a2fa",
+  "shex_offset": 7716,
+  "edits": [
+    {
+      "word": 837,
+      "old": "0x41200000",
+      "new": "0x3d4ccccd"
+    },
+    {
+      "word": 844,
+      "old": "0x3dcccccd",
+      "new": "0x3f800000"
+    },
+    {
+      "word": 850,
+      "old": "0x100246",
+      "new": "0x109246"
+    },
+    {
+      "word": 851,
+      "old": "0x3",
+      "new": "0x0"
+    }
+  ],
+  "patched_sha256": "ece101415d0f1b2ced735ecffb0038a417b45a5bb3980ba44625b5f327b2e675",
+  "system_validation": "D3DStripShader succeeded"
+}

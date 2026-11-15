@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Users\MYX\Desktop\apex\artifacts\r5flowstate-aim\shader-tools\CMakeFiles\84b2ba9c3add440b4885fa9f3519ba6b\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{91A11862-DD21-3813-8594-13D70FF670F0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

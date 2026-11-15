@@ -1,0 +1,82 @@
+[
+  {
+    "part": 0,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=0 target=532443 bone=12 errorPx=29.47 writes=582 considered=7 missing=0 blocked=0 point=(-6403.98 -1145.24 -28.83)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 1,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=1 target=532443 bone=9 errorPx=10.05 writes=582 considered=14 missing=0 blocked=0 point=(-6401.92 -1149.47 -35.17)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 2,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=2 target=532443 bone=7 errorPx=40.59 writes=582 considered=14 missing=0 blocked=0 point=(-6399.16 -1153.30 -42.37)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 3,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=3 target=532443 bone=41 errorPx=51.70 writes=582 considered=14 missing=0 blocked=0 point=(-6402.51 -1140.58 -40.77)"
+        }
+      ],
+      "logDropped": 0
+    }
+  },
+  {
+    "part": 4,
+    "response": {
+      "ran": true,
+      "error": false,
+      "reply": null,
+      "log": [
+        {
+          "level": "info",
+          "source": "client",
+          "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=4 target=532443 bone=61 errorPx=131.06 writes=582 considered=14 missing=0 blocked=0 point=(-6409.53 -1154.23 -68.45)"
+        }
+      ],
+      "logDropped": 0
+    }
+  }
+]

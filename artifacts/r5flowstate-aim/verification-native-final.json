@@ -1,0 +1,106 @@
+{
+  "capturedUtc": "2026-11-15T08:07:25.021919+00:00",
+  "deployment": {
+    "timestampUtc": "2026-11-15T07:55:14.9260663+00:00",
+    "pid": 27392,
+    "executable": "D:\\R5Flowstate\\Game\\r5apex.exe",
+    "executableSha256": "3F44BF9AEC8A18E7FA578B8A4927D8D27BBA5AB8980119BE9935137ADCD04CB5",
+    "sourceDll": "E:\\Users\\MYX\\Desktop\\apex\\sources\\r5flowstate-sdk\\s21-r5sdk-s21-unify\\game\\client.dll",
+    "installedDll": "D:\\R5Flowstate\\Game\\client.dll",
+    "dllSha256": "AF75BA8C0F825E5BBC0466988A0CF6A15248DBF1E7716D2FD563AC56F5EEA638",
+    "symbols": "E:\\Users\\MYX\\Desktop\\apex\\sources\\r5flowstate-sdk\\s21-r5sdk-s21-unify\\game\\client.pdb",
+    "arguments": [
+      "-nodiscord",
+      "-allowmultiple",
+      "-devsdk",
+      "-dev",
+      "-offline",
+      "-fnf",
+      "-logfiles",
+      "-windowed",
+      "-language",
+      "schinese",
+      "-width",
+      "1920",
+      "-height",
+      "1080",
+      "+miles_language",
+      "english",
+      "+stream_memory",
+      "0",
+      "+net_usesocketsforloopback",
+      "1",
+      "+cl_onlineAuthEnable",
+      "0",
+      "+timeout_during_load",
+      "600",
+      "+local_ammo_probe",
+      "1",
+      "+local_entity_probe",
+      "1",
+      "+local_aim_enable",
+      "0",
+      "+local_model_highlight",
+      "0",
+      "+local_aim_circle",
+      "1"
+    ],
+    "connection": "Wait for the main menu, then use the SDK command: connect 127.0.0.1:37015"
+  },
+  "status": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [
+      {
+        "level": "info",
+        "source": "client",
+        "text": "[TRAINING-SHADER] ready=1 created=7073 matched=1 dumped=0"
+      },
+      {
+        "level": "info",
+        "source": "client",
+        "text": "[TRAINING-AIM] state=按住鼠标右键瞄准 held=0 part=0 target=991175 bone=12 errorPx=64.17 writes=0 considered=7 missing=0 blocked=0 point=(-6230.45 832.13 132.97)"
+      }
+    ],
+    "logDropped": 0
+  },
+  "entities": {
+    "ran": true,
+    "error": false,
+    "reply": "8117 context=47;8119 context=47;8121 context=47;8135 context=47;8137 context=47;8139 context=47;8141 context=47;",
+    "log": [],
+    "logDropped": 0
+  },
+  "evidence": [
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\highlight-native-visible.png",
+      "sha256": "53cdeacb746638dc5bc3c60ebedbb45d52808ba956b43fe508ab227d4bcc04d3"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\highlight-native-partial.png",
+      "sha256": "4cece9f72812870f697f8ad6b7f0cafd22bf2fa5cbbfa12ecb5d2fcbad443be2"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\highlight-native-full.png",
+      "sha256": "84f14a1c5a8c475356f45e81ff6a97e9d5adfa3f7d582c6f3d1b07175fc3d632"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\highlight-native-disabled.png",
+      "sha256": "183d4f1041843b19445566ad251526d47af6082414dce34a53bc2ee1db6db19e"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\menu-native-final.png",
+      "sha256": "09752dbb6e8f18b6c9e5bd7f89dd144e874b4c9bd2fcac6ce554226971dd4747"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\client-native-shader.dll",
+      "sha256": "af75ba8c0f825e5bbc0466988a0cf6a15248dbf1e7716d2fd563ac56f5eea638"
+    },
+    {
+      "path": "E:\\Users\\MYX\\Desktop\\apex\\artifacts\\r5flowstate-aim\\client-native-shader.pdb",
+      "sha256": "1ec66981d860d626dce9295948a92eabc37c090be502cbf873a795adb2b6d363"
+    }
+  ],
+  "scope": "Independent offline R5Flowstate; static scene screenshots do not establish live multiplayer or moving-target accuracy."
+}

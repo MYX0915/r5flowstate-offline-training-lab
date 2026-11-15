@@ -1,0 +1,40 @@
+s21-r5sdk NOTICE
+================
+
+This repository mixes material under different terms. Read this file
+before redistributing any part of it.
+
+
+1. VALVE SOURCE SDK TERMS
+-------------------------
+
+The Valve Source 1 SDK licence in license/LICENSE applies to the Valve
+material this tree is built from. Valve requires that any distribution of
+the SDK include that file and license/thirdpartylegalnotices.txt. Those
+terms are unchanged.
+
+
+2. RESPAWN AND EA MATERIAL, NOT OURS TO LICENSE
+----------------------------------------------
+
+Names, structures, protocols and assets that originate in Apex Legends are
+the property of Respawn Entertainment and Electronic Arts. None of it is
+licensed to you by us.
+
+This project is unaffiliated with, and not endorsed by, Respawn
+Entertainment or Electronic Arts.
+
+
+3. THIRD-PARTY
+--------------
+
+Vendored source this tree compiles is listed in
+license/thirdpartylegalnotices.txt. Valve requires that file in any SDK
+distribution.
+
+This product does not use FMOD (audio is Miles), Discord Game SDK, or
+NVIDIA NvAPI. None of them are linked.
+
+AMD FidelityFX Frame Generation is loaded at runtime from
+amd_fidelityfx_dx12.dll next to the game executable. That DLL is not in
+this tree; fetch it from AMD. Headers are under src/thirdparty/fidelityfx/.

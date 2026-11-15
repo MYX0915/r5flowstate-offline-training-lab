@@ -1,0 +1,48 @@
+
+vector function TrainingWeapon_CorrectDirection(entity weapon,vector origin,vector direction)
+{
+	entity owner=weapon.GetOwner()
+	if(!IsValid(owner)||!owner.IsPlayer())return direction
+	#if CLIENT
+		if(!GetConVarBool("local_bullet_assist"))return direction
+		float cone=GetConVarFloat("local_bullet_angle")
+	#else
+		owner.SetOfflineTrainingShotTarget(origin,false)
+		if((owner.GetOfflineTrainingFlags()&2)==0)return direction
+		float cone=owner.GetOfflineTrainingCone()
+	#endif
+	if(cone<=0||DotProduct(direction,direction)<0.001)return direction
+	bool omnidirectional=cone>=179.99
+	vector visibilityOrigin=omnidirectional ? owner.EyePosition() : origin
+	vector forward=Normalize(direction)
+	float best=cos(min(cone,180.0)*0.0174532925199)
+	float nearest=999999999999.0
+	vector chosen=direction
+	vector selectedPoint=origin
+	bool found=false
+	array<entity> candidates=GetNPCArray()
+	candidates.extend(GetPlayerArray())
+	foreach(entity target in candidates)
+	{
+		if(!IsValid(target)||target==owner||target.GetHealth()<=0)continue
+		string name=target.GetScriptName()
+		if(name=="controllable_decoy"||name=="controlled_decoy")continue
+		vector point=target.EyePosition()
+		float distance=DistanceSqr(visibilityOrigin,point)
+		if(distance<1)continue
+		vector aim=Normalize(point-visibilityOrigin)
+		float score=DotProduct(forward,aim)
+		if(omnidirectional ? distance>=nearest : score<=best)continue
+		TraceResults trace=TraceLine(visibilityOrigin,point,owner,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+		if(trace.startSolid||!(trace.hitEnt==target||trace.fraction>0.99))continue
+		best=score
+		nearest=distance
+		chosen=aim
+		selectedPoint=point
+		found=true
+	}
+	#if SERVER
+		if(omnidirectional&&found)owner.SetOfflineTrainingShotTarget(selectedPoint,true)
+	#endif
+	return chosen
+}

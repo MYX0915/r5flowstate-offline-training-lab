@@ -1,0 +1,6 @@
+{
+  "backend": "D3D11 WARP",
+  "feature_level": "0xb000",
+  "create_pixel_shader_hresult": "0x0",
+  "shader_created": true
+}

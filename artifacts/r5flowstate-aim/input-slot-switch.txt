@@ -1,0 +1,10 @@
+FUNCTION 0x1407341e0..0x140734209
+ 0x1407341e0: mov qword ptr [rsp + 0x18], rbp
+ 0x1407341e5: push rsi
+ 0x1407341e6: sub rsp, 0x30
+ 0x1407341ea: mov rsi, r8
+ 0x1407341ed: movzx ebp, dl
+ 0x1407341f0: call qword ptr [rip + 0xb8e83a]
+ 0x1407341f6: cmp eax, dword ptr [rip + 0xa06e83c]
+ 0x1407341fc: jne 0x140734378
+ 0x140734202: movups xmm0, xmmword ptr [rip + 0xa3cc657]

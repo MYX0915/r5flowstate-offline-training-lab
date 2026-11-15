@@ -1,0 +1,534 @@
+{
+  "capturedUtc": "2026-11-15T09:06:53.641481+00:00",
+  "logSession": "D:\\R5Flowstate\\Game\\platform\\logs\\client\\17a8e435-bd5b-4301-b358-45a5b1bfd9ae",
+  "installedDllSha256": "1c6ed9246acac56a293af75f128eb6487c04aa688c756da452bf8f3707f35d94",
+  "aimSampleCount": 1806,
+  "heldSteeringSamples": 15,
+  "heldSegments": [
+    {
+      "samples": 3,
+      "durationSeconds": 0.6089999999999947,
+      "first": {
+        "time": 119.298,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 54.673,
+        "writes": 2,
+        "viewValid": true,
+        "view": [
+          1.9237,
+          179.1233,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 119.907,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 1.331,
+        "writes": 67,
+        "viewValid": true,
+        "view": [
+          5.975,
+          178.1301,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 1.106
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 120.515,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 0.649,
+        "writes": 103,
+        "viewValid": true,
+        "view": [
+          5.8924,
+          178.0889,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 120.515,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 0.649,
+        "writes": 103,
+        "viewValid": true,
+        "view": [
+          5.8924,
+          178.0889,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 0.649
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 121.126,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 40.305,
+        "writes": 143,
+        "viewValid": true,
+        "view": [
+          5.1321,
+          174.9329,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 121.126,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 40.305,
+        "writes": 143,
+        "viewValid": true,
+        "view": [
+          5.1321,
+          174.9329,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 40.305
+    },
+    {
+      "samples": 2,
+      "durationSeconds": 0.40500000000000114,
+      "first": {
+        "time": 121.738,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 8.365,
+        "writes": 198,
+        "viewValid": true,
+        "view": [
+          5.609,
+          178.9091,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 122.143,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 11.566,
+        "writes": 233,
+        "viewValid": true,
+        "view": [
+          5.2482,
+          177.7603,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 8.365
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 122.751,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 2.411,
+        "writes": 300,
+        "viewValid": true,
+        "view": [
+          5.8183,
+          178.4452,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 122.751,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 2.411,
+        "writes": 300,
+        "viewValid": true,
+        "view": [
+          5.8183,
+          178.4452,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 2.411
+    },
+    {
+      "samples": 2,
+      "durationSeconds": 0.20199999999999818,
+      "first": {
+        "time": 125.989,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 27.284,
+        "writes": 320,
+        "viewValid": true,
+        "view": [
+          4.2738,
+          176.5179,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 126.191,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 1.92,
+        "writes": 358,
+        "viewValid": true,
+        "view": [
+          5.9287,
+          178.0999,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 1.92
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 127.402,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 7.125,
+        "writes": 392,
+        "viewValid": true,
+        "view": [
+          -18.0647,
+          -173.0063,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 127.402,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 7.125,
+        "writes": 392,
+        "viewValid": true,
+        "view": [
+          -18.0647,
+          -173.0063,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 7.125
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 128.413,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 37.567,
+        "writes": 413,
+        "viewValid": true,
+        "view": [
+          -16.5671,
+          -170.8476,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 128.413,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 37.567,
+        "writes": 413,
+        "viewValid": true,
+        "view": [
+          -16.5671,
+          -170.8476,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 37.567
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 130.031,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 12.141,
+        "writes": 448,
+        "viewValid": true,
+        "view": [
+          -17.7012,
+          -172.6915,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 130.031,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 401379,
+        "bone": 12,
+        "errorPx": 12.141,
+        "writes": 448,
+        "viewValid": true,
+        "view": [
+          -17.7012,
+          -172.6915,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 12.141
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 263.726,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 28.074,
+        "writes": 516,
+        "viewValid": true,
+        "view": [
+          5.1346,
+          176.1645,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 263.726,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 28.074,
+        "writes": 516,
+        "viewValid": true,
+        "view": [
+          5.1346,
+          176.1645,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 28.074
+    },
+    {
+      "samples": 1,
+      "durationSeconds": 0.0,
+      "first": {
+        "time": 264.535,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 3.214,
+        "writes": 576,
+        "viewValid": true,
+        "view": [
+          5.8874,
+          178.2476,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 264.535,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 532443,
+        "bone": 12,
+        "errorPx": 3.214,
+        "writes": 576,
+        "viewValid": true,
+        "view": [
+          5.8874,
+          178.2476,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 3.214
+    }
+  ],
+  "releasedStableSegments": [
+    {
+      "samples": 11,
+      "durationSeconds": 2.028000000000006,
+      "writes": 307,
+      "firstTime": 122.951,
+      "lastTime": 124.979
+    },
+    {
+      "samples": 4,
+      "durationSeconds": 0.8109999999999928,
+      "writes": 374,
+      "firstTime": 126.391,
+      "lastTime": 127.202
+    },
+    {
+      "samples": 4,
+      "durationSeconds": 0.6070000000000135,
+      "writes": 409,
+      "firstTime": 127.604,
+      "lastTime": 128.211
+    },
+    {
+      "samples": 6,
+      "durationSeconds": 1.2130000000000223,
+      "writes": 442,
+      "firstTime": 128.617,
+      "lastTime": 129.83
+    },
+    {
+      "samples": 3,
+      "durationSeconds": 0.4019999999999868,
+      "writes": 474,
+      "firstTime": 130.234,
+      "lastTime": 130.636
+    },
+    {
+      "samples": 655,
+      "durationSeconds": 132.68600000000004,
+      "writes": 506,
+      "firstTime": 130.837,
+      "lastTime": 263.523
+    },
+    {
+      "samples": 3,
+      "durationSeconds": 0.4079999999999586,
+      "writes": 541,
+      "firstTime": 263.927,
+      "lastTime": 264.335
+    },
+    {
+      "samples": 340,
+      "durationSeconds": 68.733,
+      "writes": 582,
+      "firstTime": 361.653,
+      "lastTime": 430.386
+    }
+  ],
+  "navigationEvents": [
+    "[2026-11-15 17:01:33.200] [112.459] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:33.290] [112.549] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=1",
+    "[2026-11-15 17:01:39.270] [118.529] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=1",
+    "[2026-11-15 17:01:39.332] [118.591] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=0",
+    "[2026-11-15 17:01:40.028] [119.288] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:40.294] [119.554] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:40.529] [119.789] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:40.651] [119.910] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:41.067] [120.326] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:41.406] [120.665] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:41.807] [121.067] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:42.052] [121.311] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:42.365] [121.624] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:42.613] [121.872] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:42.844] [122.103] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:43.082] [122.341] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:43.354] [122.613] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:43.527] [122.786] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:45.721] [124.980] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:46.202] [125.462] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:46.662] [125.922] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:47.036] [126.296] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:47.398] [126.657] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:47.541] [126.800] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:48.037] [127.296] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:48.233] [127.493] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:49.134] [128.393] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:49.308] [128.568] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:50.079] [129.338] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:50.255] [129.515] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:50.733] [129.992] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:50.916] [130.176] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:51.392] [130.651] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:01:51.567] [130.826] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:03.972] [263.232] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:04.161] [263.421] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:04.411] [263.670] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:04.595] [263.855] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:05.098] [264.357] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 17:04:05.307] [264.566] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0"
+  ],
+  "exitScriptEvents": [],
+  "lastAimSample": {
+    "time": 430.386,
+    "state": 7,
+    "held": false,
+    "part": 0,
+    "target": 532443,
+    "bone": 12,
+    "errorPx": 30.535,
+    "writes": 582,
+    "viewValid": true,
+    "view": [
+      7.3224,
+      -179.7913,
+      0.0
+    ]
+  },
+  "limits": "Trace counters and sampled angles do not establish who generated historical input. Zero held samples means manual hold was not observed, not a passing hold test."
+}

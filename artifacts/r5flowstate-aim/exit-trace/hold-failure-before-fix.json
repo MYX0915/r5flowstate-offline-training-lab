@@ -1,0 +1,184 @@
+{
+  "capturedUtc": "2026-11-15T08:32:30.387438+00:00",
+  "logSession": "D:\\R5Flowstate\\Game\\platform\\logs\\client\\fe9e8f6a-c758-4714-be3d-4e88616eca43",
+  "installedDllSha256": "d333276061ef95d53dc92b6b2412728df9373ef9d4bf529cebf388635a8ba4e1",
+  "aimSampleCount": 3567,
+  "heldSteeringSamples": 18,
+  "heldSegments": [
+    {
+      "samples": 5,
+      "durationSeconds": 1.016999999999939,
+      "first": {
+        "time": 857.82,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 94.862,
+        "writes": 2,
+        "viewValid": true,
+        "view": [
+          7.8067,
+          172.4791,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 858.837,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 71.672,
+        "writes": 75,
+        "viewValid": true,
+        "view": [
+          6.3986,
+          173.816,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 71.672
+    },
+    {
+      "samples": 4,
+      "durationSeconds": 0.6079999999999472,
+      "first": {
+        "time": 864.096,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 86.597,
+        "writes": 182,
+        "viewValid": true,
+        "view": [
+          4.9752,
+          172.3078,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 864.704,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 25.051,
+        "writes": 246,
+        "viewValid": true,
+        "view": [
+          6.4354,
+          176.8653,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 20.693
+    },
+    {
+      "samples": 9,
+      "durationSeconds": 1.620999999999981,
+      "first": {
+        "time": 881.214,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 46.612,
+        "writes": 270,
+        "viewValid": true,
+        "view": [
+          4.7546,
+          175.143,
+          0.0
+        ]
+      },
+      "last": {
+        "time": 882.835,
+        "state": 8,
+        "held": true,
+        "part": 0,
+        "target": 2236363,
+        "bone": 12,
+        "errorPx": 21.246,
+        "writes": 568,
+        "viewValid": true,
+        "view": [
+          5.2414,
+          179.6491,
+          0.0
+        ]
+      },
+      "minimumErrorPx": 13.441
+    }
+  ],
+  "navigationEvents": [
+    "[2026-11-15 16:19:12.299] [95.189] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:19:12.302] [95.192] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=1",
+    "[2026-11-15 16:19:20.873] [103.764] Native(C):[TRAINING-INPUT] msg=0x100 key=0x1B repeat=0 focused=1 modal=1",
+    "[2026-11-15 16:19:20.877] [103.767] Native(C):[TRAINING-INPUT] msg=0x101 key=0x1B repeat=1 focused=1 modal=1",
+    "[2026-11-15 16:19:30.022] [112.912] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=1",
+    "[2026-11-15 16:19:30.024] [112.914] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=0",
+    "[2026-11-15 16:19:39.502] [122.393] Native(C):[TRAINING-INPUT] msg=0x100 key=0x1B repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:19:39.508] [122.395] Native(C):[TRAINING-INPUT] msg=0x101 key=0x1B repeat=1 focused=1 modal=0",
+    "[2026-11-15 16:19:53.801] [136.691] Native(C):[TRAINING-INPUT] msg=0x100 key=0x1B repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:19:53.802] [136.693] Native(C):[TRAINING-INPUT] msg=0x101 key=0x1B repeat=1 focused=1 modal=0",
+    "[2026-11-15 16:31:54.919] [857.810] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.241] [858.131] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.499] [858.389] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.614] [858.504] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.719] [858.610] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.810] [858.701] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:55.965] [858.855] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.041] [858.931] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.136] [859.027] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.310] [859.201] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.388] [859.278] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.496] [859.386] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:56.751] [859.642] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:57.321] [860.212] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:31:57.409] [860.300] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=1",
+    "[2026-11-15 16:32:00.415] [863.305] Native(C):[TRAINING-INPUT] msg=0x100 key=0x2D repeat=0 focused=1 modal=1",
+    "[2026-11-15 16:32:00.497] [863.388] Native(C):[TRAINING-INPUT] msg=0x101 key=0x2D repeat=1 focused=1 modal=0",
+    "[2026-11-15 16:32:01.050] [863.940] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.223] [864.113] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.339] [864.230] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.475] [864.366] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.559] [864.449] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.656] [864.547] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:01.856] [864.747] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:18.232] [881.123] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:19.598] [882.489] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:19.694] [882.585] Native(C):[TRAINING-INPUT] msg=0x204 key=0x2 repeat=0 focused=1 modal=0",
+    "[2026-11-15 16:32:20.068] [882.959] Native(C):[TRAINING-INPUT] msg=0x205 key=0x0 repeat=0 focused=1 modal=0"
+  ],
+  "exitScriptEvents": [
+    "[2026-11-15 16:18:32.078] [54.967] Script(U):[EXIT-DIAG] idle baseline escape= false padB= false controller= false",
+    "[2026-11-15 16:19:39.507] [122.394] Script(U):[EXIT-DIAG] source=MainMenu MENU_NAVIGATE_BACK",
+    "[2026-11-15 16:19:39.515] [122.398] Script(U):[EXIT-DIAG] OpenConfirmExitToDesktopDialog",
+    "[2026-11-15 16:19:39.516] [122.406] Script(U):OpenMenuWrapper menu_ConfirmExitToDesktopDialog",
+    "[2026-11-15 16:19:53.810] [136.695] Script(U):CloseMenuWrapper menu_ConfirmExitToDesktopDialog"
+  ],
+  "lastAimSample": {
+    "time": 890.315,
+    "state": 7,
+    "held": false,
+    "part": 0,
+    "target": 2236363,
+    "bone": 12,
+    "errorPx": 59.318,
+    "writes": 592,
+    "viewValid": true,
+    "view": [
+      5.17,
+      -177.2499,
+      0.0
+    ]
+  },
+  "limits": "Trace counters and sampled angles do not establish who generated historical input. Zero held samples means manual hold was not observed, not a passing hold test."
+}

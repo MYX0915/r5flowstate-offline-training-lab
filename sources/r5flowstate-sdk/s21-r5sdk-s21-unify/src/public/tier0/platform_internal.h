@@ -1,0 +1,61 @@
+#ifndef PLATFORM_INTERNAL_H
+#define PLATFORM_INTERNAL_H
+
+inline void(*v_InitTime)(void);
+inline double(*v_Plat_FloatTime)(void);
+inline uint64_t(*v_Plat_MSTime)(void);
+#if defined(CLIENT_DLL)
+inline void(*v_Plat_LaunchExternalWebBrowser)(const char* urlText, unsigned int flags);
+#endif // CLIENT_DLL
+
+inline bool* s_pbTimeInitted = nullptr;
+inline double* g_pPerformanceCounterToMS = nullptr;
+inline LARGE_INTEGER* g_pPerformanceFrequency = nullptr;
+inline LARGE_INTEGER* g_pClockStart = nullptr;
+
+inline double* g_flErrorTimeStamp = nullptr;
+///////////////////////////////////////////////////////////////////////////////
+class VPlatform : public IDetour
+{
+	virtual void GetAdr(void) const
+	{
+		LogFunAdr("InitTime", v_InitTime);
+		LogFunAdr("Plat_FloatTime", v_Plat_FloatTime);
+		LogFunAdr("Plat_MSTime", v_Plat_MSTime);
+#if defined(CLIENT_DLL)
+		LogFunAdr("Plat_LaunchExternalWebBrowser", v_Plat_LaunchExternalWebBrowser);
+#endif // CLIENT_DLL
+		LogVarAdr("s_bTimeInitted", s_pbTimeInitted);
+		LogVarAdr("g_PerformanceCounterToMS", g_pPerformanceCounterToMS);
+		LogVarAdr("g_PerformanceFrequency", g_pPerformanceFrequency);
+		LogVarAdr("g_ClockStart", g_pClockStart);
+		LogVarAdr("g_flErrorTimeStamp", g_flErrorTimeStamp);
+	}
+	virtual void GetFun(void) const
+	{
+		Module_FindPattern(g_GameDll, "48 83 EC 28 80 3D ?? ?? ?? ?? ?? 75 4C").GetPtr(v_InitTime);
+		Module_FindPattern(g_GameDll, "48 83 EC 28 80 3D ?? ?? ?? ?? ?? 75 05 E8 ?? ?? ?? ?? 80 3D ?? ?? ?? ?? ?? 74 1D").GetPtr(v_Plat_FloatTime);
+		Module_FindPattern(g_GameDll, "48 83 EC 28 80 3D ?? ?? ?? ?? ?? 75 05 E8 ?? ?? ?? ?? 80 3D ?? ?? ?? ?? ?? 74 2A").GetPtr(v_Plat_MSTime);
+#if defined(CLIENT_DLL)
+		// S21: Origin/Steam platform dword, not the overlay-flag prologue.
+		Module_FindPattern(g_GameDll,
+			"48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 30 "
+			"8B 05 ?? ?? ?? ?? 8B FA 48 8B F1 83 F8 01")
+			.GetPtr(v_Plat_LaunchExternalWebBrowser);
+#endif // CLIENT_DLL
+	}
+	virtual void GetVar(void) const
+	{
+		s_pbTimeInitted = CMemory(v_InitTime).FindPattern("80 3D").ResolveRelativeAddressSelf(0x2, 0x7).RCast<bool*>();
+		g_pPerformanceCounterToMS = CMemory(v_InitTime).FindPattern("48 89").ResolveRelativeAddressSelf(0x3, 0x7).RCast<double*>();
+		g_pPerformanceFrequency = CMemory(v_InitTime).FindPattern("48 F7").ResolveRelativeAddressSelf(0x3, 0x7).RCast<LARGE_INTEGER*>();
+		g_pClockStart = CMemory(v_InitTime).FindPattern("48 8D", CMemory::Direction::DOWN, 512, 2).ResolveRelativeAddressSelf(0x3, 0x7).RCast<LARGE_INTEGER*>();
+
+		g_flErrorTimeStamp = Module_FindPattern(g_GameDll, "0F 57 C0 F2 0F 11 05 ?? ?? ?? ?? C3").FindPatternSelf("F2 0F").ResolveRelativeAddressSelf(0x4, 0x8).RCast<double*>();
+	}
+	virtual void GetCon(void) const { }
+	virtual void Detour(const bool bAttach) const;
+};
+///////////////////////////////////////////////////////////////////////////////
+
+#endif /* PLATFORM_INTERNAL_H */

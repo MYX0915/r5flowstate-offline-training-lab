@@ -1,0 +1,74 @@
+0x1408d4cd0 mov r9, rcx
+0x1408d4cd3 cmp edx, -1
+0x1408d4cd6 je 0x1408d4ce5
+0x1408d4cd8 movsxd rax, edx
+0x1408d4cdb imul rcx, rax, 0xe50
+0x1408d4ce2 add r9, rcx
+0x1408d4ce5 mov eax, 0x57619f1
+0x1408d4cea mov ecx, r8d
+0x1408d4ced imul r8d
+0x1408d4cf0 sar edx, 4
+0x1408d4cf3 mov eax, edx
+0x1408d4cf5 shr eax, 0x1f
+0x1408d4cf8 add edx, eax
+0x1408d4cfa imul eax, edx, 0x2ee
+0x1408d4d00 sub ecx, eax
+0x1408d4d02 movsxd rax, ecx
+0x1408d4d05 xor ecx, ecx
+0x1408d4d07 imul rax, rax, 0x228
+0x1408d4d0e add rax, qword ptr [r9 + 0xf8]
+0x1408d4d15 cmp dword ptr [rax], r8d
+0x1408d4d18 cmovne rax, rcx
+0x1408d4d1c ret 
+0x1408d4d1d int3 
+0x1408d4d1e int3 
+0x1408d4d1f int3 
+0x1408d4d20 push rbx
+0x1408d4d22 push r15
+0x1408d4d24 sub rsp, 0x38
+0x1408d4d28 mov qword ptr [rsp + 0x58], rsi
+0x1408d4d2d xor ebx, ebx
+0x1408d4d2f movzx esi, dl
+0x1408d4d32 mov qword ptr [rsp + 0x60], rdi
+0x1408d4d37 mov edx, dword ptr [rip + 0x6c6dedb]
+0x1408d4d3d mov r15, rcx
+0x1408d4d40 mov edi, dword ptr [rcx + 0xf0]
+0x1408d4d46 test dl, 3
+0x1408d4d49 jne 0x1408d4d53
+0x1408d4d4b cmp byte ptr [rip + 0x6c6decb], bl
+0x1408d4d51 je 0x1408d4d58
+0x1408d4d53 mov ebx, 0x8000
+0x1408d4d58 mov eax, edi
+0x1408d4d5a and eax, 0x8000
+0x1408d4d5f test sil, sil
+0x1408d4d62 je 0x1408d4d73
+0x1408d4d64 neg eax
+0x1408d4d66 sbb eax, eax
+0x1408d4d68 add eax, -3
+0x1408d4d6b and eax, edx
+0x1408d4d6d mov dword ptr [rip + 0x6c6dea5], eax
+0x1408d4d73 mov ecx, dword ptr [rip + 0x6c6df37]
+0x1408d4d79 mov byte ptr [rip + 0x6c6de9c], 0
+0x1408d4d80 test cl, 3
+0x1408d4d83 jne 0x1408d4d8e
+0x1408d4d85 cmp byte ptr [rip + 0x6c6df28], 0
+0x1408d4d8c je 0x1408d4d91
+0x1408d4d8e or ebx, 1
+0x1408d4d91 mov eax, edi
+0x1408d4d93 and eax, 1
+0x1408d4d96 test sil, sil
+0x1408d4d99 je 0x1408d4da9
+0x1408d4d9b xor eax, 1
+0x1408d4d9e sub eax, 4
+0x1408d4da1 and eax, ecx
+0x1408d4da3 mov dword ptr [rip + 0x6c6df07], eax
+0x1408d4da9 mov ecx, dword ptr [rip + 0x6c6e001]
+0x1408d4daf mov byte ptr [rip + 0x6c6defe], 0
+0x1408d4db6 test cl, 3
+0x1408d4db9 jne 0x1408d4dc4
+0x1408d4dbb cmp byte ptr [rip + 0x6c6dff2], 0
+0x1408d4dc2 je 0x1408d4dc7
+0x1408d4dc4 or ebx, 2
+0x1408d4dc7 mov eax, edi
+0x1408d4dc9 and eax, 2
+0x1408d4dcc test sil, sil

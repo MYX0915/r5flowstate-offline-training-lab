@@ -1,0 +1,140 @@
+[
+  {
+    "name": "mp_weapon_3030.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "09b49dacec76d99afdfd7353ce9602ad62bf56dfe6a4bdd9cd3af2de2e95df20",
+    "installedSha256": "8555eb4b9a43b5d2327894bb550fc249cb3a83a272da884d5daa64cf48089650"
+  },
+  {
+    "name": "mp_weapon_alternator_smg.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "5ad17a4609041d841d6d495f14cb20f6e54c087df2504b05a53522ea3abcc4e6",
+    "installedSha256": "cf872a390e981657df28c22e3af479fdabba4f0dd3d3faee216649a68c498575"
+  },
+  {
+    "name": "mp_weapon_auto_hemlok.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "73f94d3865b99cd961b134f1abe2399dfd3fe434d876f4886afd2a6d63b708fe",
+    "installedSha256": "da9f7315536a81e64235808701615c277dc296c96554819cf39e1c75fdb9fe3d"
+  },
+  {
+    "name": "mp_weapon_bow.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "975514ac2ab78fc79282998fc841f2f1a95b1622efd23bc548bba99befa5621c",
+    "installedSha256": "9bf088e89986a9d4e553b137394c7a98e3e5950bac42ef016207bdb7c9cf02ee"
+  },
+  {
+    "name": "mp_weapon_car.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "a2704a176160f413c2cd432f2eb139d617149cc4102ade21db2ca4f2e86f5b88",
+    "installedSha256": "f202e228a165aa08fa7a3a34e7a00ea19e736b103cf82cdec6d740e109b3cb13"
+  },
+  {
+    "name": "mp_weapon_clickweapon.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "006ce41c09781953eb0b34f2e81adc27cdb6758d8ae29e65ea1275f20464a7d1",
+    "installedSha256": "648e258acfe78cf2af25b6f8bf630dcde1d3885ad04565892fff26c326b18866"
+  },
+  {
+    "name": "mp_weapon_defender.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "82086e1e29e22bb023d636314e992b3846119a389b18628d3cbd4dfbbcd81f3c",
+    "installedSha256": "ea1d7caeafba8daad561f557d328300e23bdf9a96ba6466f19844b5de60a4fda"
+  },
+  {
+    "name": "mp_weapon_dmr.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "5629beae42807647c2af13e0a4445cf78eb4adba43b4cd4d7e93b6009194e068",
+    "installedSha256": "09d7bdae5507cb860cb6352c0089a0ce01074d07659c806d513393a11cbc3f76"
+  },
+  {
+    "name": "mp_weapon_dragon_lmg.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "0fa1504007308cdea32ff769bc8550bce6ca3ea36218e53701e9355b8fdcdbc7",
+    "installedSha256": "06bc3d83d375b1db8bf8cc781f036c6bb7bd6fc07c5040fb03a4358788ef79d5"
+  },
+  {
+    "name": "mp_weapon_energy_ar.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "7e1ca3e3ee4ccc537ec28f3cb825a5e52045c13d0b0667f43c5d5aae622c8485",
+    "installedSha256": "ab67453e04efdeb4507c72f6a1b6a5510ac4af37eb73b0e04a436c614031a788"
+  },
+  {
+    "name": "mp_weapon_g2.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "ea5c401fe18410573d4184d524af4cfbc539b876ab2c9052f5bbef86e2c9ce6b",
+    "installedSha256": "1d0e28661eee9b244e185fca0899d3ee7f9c9d787ff4090c81bfe8267cc6722b"
+  },
+  {
+    "name": "mp_weapon_lmg.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "c4545a66a5d61847dee5488763433393780a1a9f161d80e1d941055ab0ad9ed3",
+    "installedSha256": "7e4a47eb6505c9c431a8718847b1284e802ccd0422dc758923680e408d033cad"
+  },
+  {
+    "name": "mp_weapon_lstar.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "c4cc22d3a8155cfb886db6d930b72aa7f70a6812325d07cffb57ccc7740b7c61",
+    "installedSha256": "10f938a1c0da368f03e156c11e3ed91a74339150499c04c0b5abc85c5998509a"
+  },
+  {
+    "name": "mp_weapon_mastiff.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "e83d46dcdb0e3bbaa35212f48065eb9dd40504cff7f34b817784d3d69f10807d",
+    "installedSha256": "18b090585ba4ba0c66eb8dfbeaf8b5a6852ee1627f2ca95e442103904ad746e4"
+  },
+  {
+    "name": "mp_weapon_r97.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "04ec06d92ab27402045907bafb3aa1a56e1246431ffb502c8e99b03c8c03738d",
+    "installedSha256": "61465b83b44f773c7531f4d932b057be1c1f66f26d3ac7cd8a5368130bd161c8"
+  },
+  {
+    "name": "mp_weapon_rspn101.nut",
+    "wrappedCalls": 2,
+    "originalSha256": "77118ffbaa4686e9473643b8b119cd7eba829e1cb68e164beeab11df5ba7c468",
+    "installedSha256": "ef50cb6edea6dbd9ae635c5b8d200329e12d1308d21191e11c3de1c658ad4fe5"
+  },
+  {
+    "name": "mp_weapon_semipistol.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "022d1256a5e7ab5972279bf4210349f605834e17878b6635e974d51f1c28a34c",
+    "installedSha256": "12a6d9afdeb7a3170d4311711c9ea7e5987063b1d3ec38603cd2b2a7d1401062"
+  },
+  {
+    "name": "mp_weapon_sentinel.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "a50d70e2e723a537d1c548952fd30027b76db395d51afad2b7f49ba2cf15326b",
+    "installedSha256": "aa1934d680af8a25f7481b74f5d23ffa18a6e51a0c5cc3cc102df7e390abb0b0"
+  },
+  {
+    "name": "mp_weapon_shotgun.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "9e22e01b5f59251fdff8c6454dec7c6ad61446df02c4c6cbcadf27ab5a3e489c",
+    "installedSha256": "f10e80e77516896ed79fce422ea8f897b34093205af85806495cde44553e5a3e"
+  },
+  {
+    "name": "mp_weapon_shotgun_pistol.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "28232274e58f9a1e8ce55483cf1e2d3decdfbb716b6a5da06f3a2636dfe83cf1",
+    "installedSha256": "11dfad6e84f527d38e4c8c6b4ee703607ac86b8097abc61644e266e35d0eeb5e"
+  },
+  {
+    "name": "mp_weapon_vinson.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "c8056c8e97322c30d84e18b7067474929e90eafbd49ccd4fb6b25b67ebe50c0a",
+    "installedSha256": "53de141ee6229601d9c7a6903eac0e217800bd61204f4ddeabd9a8e98fe36cdd"
+  },
+  {
+    "name": "npc_weapon_spider_jungle.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "1cc6c111361d79079703564871f7897b0620667e9a4ee193412b35ade6f0d32d",
+    "installedSha256": "60a94e599ccefb1e1e5b9c3afe074666832787b96df0d3cdd4b334fd2c7c8aaa"
+  },
+  {
+    "name": "_weapon_utility.nut",
+    "wrappedCalls": 1,
+    "originalSha256": "3b92db4f975bf37a47b7476dbb198a677526c6af5057be5953b4317d8ef03ab1",
+    "installedSha256": "0c6d72a877b09bd38762d476223eb429a29ec1eda775652c4cd4adf8776ab708"
+  }
+]

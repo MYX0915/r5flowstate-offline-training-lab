@@ -1,0 +1,356 @@
+[
+  {
+    "file": "45da11e090a033dfb7b8.dxbc",
+    "size": 880,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "5ade11d2fe365c19753a.dxbc",
+    "size": 880,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "3f51376021351b5d8ec6.dxbc",
+    "size": 55456,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "5bccd27c91ba885ad9b2.dxbc",
+    "size": 53824,
+    "keywords": [
+      "highlight"
+    ],
+    "highlight_lines": [
+      "//       float worldUnitSizeInDepthStatic;// Offset:  508",
+      "//   float c_sunHighlightSize;          // Offset:  656 Size:     4 [unused]",
+      "//   float c_shadowDepthScale;          // Offset:  768 Size:     4 [unused]",
+      "//   float c_shadowDepthBias;           // Offset:  772 Size:     4 [unused]",
+      "//   float c_shadowSlopeScaleDepthBias; // Offset:  776 Size:     4 [unused]"
+    ]
+  },
+  {
+    "file": "0cb1cc71a7164f37edc3.dxbc",
+    "size": 1640,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "4a09726bc966c91768c9.dxbc",
+    "size": 488,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "a1239df5682e4327a7dc.dxbc",
+    "size": 1052,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "0fed8fb37d7657a83c24.dxbc",
+    "size": 1468,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "1cf235ad8e3b53eac329.dxbc",
+    "size": 19312,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_clippingDepth;             // Offset:  120 Size:     4"
+    ]
+  },
+  {
+    "file": "39a67466c3eb382d913a.dxbc",
+    "size": 8188,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4 [unused]",
+      "// depthTex                          texture   float          2d             t0      1 "
+    ]
+  },
+  {
+    "file": "ae47c500d3bea79834da.dxbc",
+    "size": 5820,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4",
+      "// depthTex                          texture   float          2d             t0      1 "
+    ]
+  },
+  {
+    "file": "fab3197c753620b6491b.dxbc",
+    "size": 4812,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4",
+      "// depthTex                          texture   float     2darray             t0      1 "
+    ]
+  },
+  {
+    "file": "a916de558b69bcfdb9db.dxbc",
+    "size": 8244,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4",
+      "// depthTex                          texture   float          2d             t0      1 "
+    ]
+  },
+  {
+    "file": "e1ceb03809c57ccb7c4b.dxbc",
+    "size": 7112,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4",
+      "// depthTex                          texture   float     2darray             t0      1 "
+    ]
+  },
+  {
+    "file": "7a95a22100378c8fdcf1.dxbc",
+    "size": 8004,
+    "keywords": [],
+    "highlight_lines": [
+      "//   float c_depthMaxInv;               // Offset:   72 Size:     4",
+      "// depthTex                          texture  float2     2darray             t0      1 "
+    ]
+  },
+  {
+    "file": "568c074939eda1b50ac9.dxbc",
+    "size": 1048,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8cfa1a3c28b6ae05d9cb.dxbc",
+    "size": 1048,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "d143578bf9b0c93233c9.dxbc",
+    "size": 1044,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "7754664e1f805506ca7a.dxbc",
+    "size": 1044,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "53637e8372a9bf58fe6d.dxbc",
+    "size": 2340,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "27f48a8b927f545c31fc.dxbc",
+    "size": 2360,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "b7ba367e5e41348e5b98.dxbc",
+    "size": 2340,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "9d39dffe5e68dd3020f2.dxbc",
+    "size": 3200,
+    "keywords": [],
+    "highlight_lines": [
+      "// linearDepthTex                    texture   float          2d             t1      1 "
+    ]
+  },
+  {
+    "file": "4c3fe9d8c5d7c67fd9b5.dxbc",
+    "size": 3252,
+    "keywords": [],
+    "highlight_lines": [
+      "// linearDepthTex                    texture   float          2d             t1      1 "
+    ]
+  },
+  {
+    "file": "7638a3b2a0693edc7aff.dxbc",
+    "size": 3232,
+    "keywords": [],
+    "highlight_lines": [
+      "// linearDepthTex                    texture   float          2d             t1      1 "
+    ]
+  },
+  {
+    "file": "97cf1b5d54c93ecb8b75.dxbc",
+    "size": 2212,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8e5940250574b819d170.dxbc",
+    "size": 1016,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "6b0d407bba401423ef62.dxbc",
+    "size": 3612,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "197b82d58de231c35679.dxbc",
+    "size": 3428,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "86fd3dec06e13e2f251d.dxbc",
+    "size": 3440,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "3ca2d6c801477f628ceb.dxbc",
+    "size": 4276,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "f620de43f0f63a960027.dxbc",
+    "size": 5140,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "10637d07171c9841a53b.dxbc",
+    "size": 4836,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "87e800e9648a11c38d80.dxbc",
+    "size": 1240,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "abdd18eff6d912e568c7.dxbc",
+    "size": 1288,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8f88fc8bfefb32f6fda7.dxbc",
+    "size": 2880,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "ec784daeb3cda0f1a571.dxbc",
+    "size": 5088,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "3ff361bf9fc8ea42fdbb.dxbc",
+    "size": 1860,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8ebde20904081924fd0b.dxbc",
+    "size": 1368,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "04f598eeb1d2dc96fa87.dxbc",
+    "size": 1396,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "2857bd3eccea183a553a.dxbc",
+    "size": 3072,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "7edd12dcf31540079a41.dxbc",
+    "size": 5344,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "554c5d91f68ca0323a6c.dxbc",
+    "size": 1988,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "a497511b5899fcb7b558.dxbc",
+    "size": 708,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "2e16656f43a393fc2850.dxbc",
+    "size": 1840,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8e4e696ef176b1515bde.dxbc",
+    "size": 1840,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "79490db5bd4b7fe14310.dxbc",
+    "size": 1840,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "8deee144793a9e4750b5.dxbc",
+    "size": 1840,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "82af0c2a90b2c6915273.dxbc",
+    "size": 2160,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "068b7fad569119f0e11d.dxbc",
+    "size": 1400,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "011c6f2461c73b326e13.dxbc",
+    "size": 3704,
+    "keywords": [],
+    "highlight_lines": []
+  },
+  {
+    "file": "4776998ef226e1a13483.dxbc",
+    "size": 1744,
+    "keywords": [],
+    "highlight_lines": []
+  }
+]

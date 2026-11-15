@@ -1,0 +1,32 @@
+{
+  "native_display": true,
+  "wip": true,
+  "sdk_commit": "10077bbf020292fa0bab69d9a9a05fef125d6ba5",
+  "build_exit_code": 0,
+  "dll_sha256": "60002FC81D057AEA0BE93D32B3CB5D248F6CB79BAB87C1D923E9BBF5398485B8",
+  "before": {
+    "frame_ms": 7.6,
+    "hud_ammo": 19,
+    "weapon_counter": 19,
+    "shots": 0,
+    "native_ammo": 19,
+    "samples": 13310
+  },
+  "observed_at": "2026-11-15T01:19:16.3264315+08:00",
+  "auto_initialization": true,
+  "api_manual_classvar_init_after_restart": false,
+  "source_overlay_sha256": "120294C026C8737DA959EB2ACDF00166D7A6BE385FDD90512CF78D59957A192F",
+  "setup": "Server SDK GiveWeapon, SetActiveWeaponBySlot, then normal script SetWeaponPrimaryClipCount(GetWeaponPrimaryClipCountMax())",
+  "snapshots": [
+    "autoinit-before-shot.png",
+    "autoinit-after-shot.png"
+  ],
+  "after": {
+    "frame_ms": 5.67,
+    "hud_ammo": 18,
+    "weapon_counter": 18,
+    "shots": 1,
+    "native_ammo": 18,
+    "samples": 14371
+  }
+}

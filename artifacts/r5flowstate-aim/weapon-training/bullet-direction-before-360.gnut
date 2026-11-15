@@ -1,0 +1,35 @@
+
+vector function TrainingWeapon_CorrectDirection(entity weapon,vector origin,vector direction)
+{
+	entity owner=weapon.GetOwner()
+	if(!IsValid(owner)||!owner.IsPlayer())return direction
+	#if CLIENT
+		if(!GetConVarBool("local_bullet_assist"))return direction
+		float cone=GetConVarFloat("local_bullet_angle")
+	#else
+		if((owner.GetOfflineTrainingFlags()&2)==0)return direction
+		float cone=owner.GetOfflineTrainingCone()
+	#endif
+	if(cone<=0||DotProduct(direction,direction)<0.001)return direction
+	vector forward=Normalize(direction)
+	float best=cos(min(cone,30.0)*0.0174532925199)
+	vector chosen=direction
+	array<entity> candidates=GetNPCArray()
+	candidates.extend(GetPlayerArray())
+	foreach(entity target in candidates)
+	{
+		if(!IsValid(target)||target==owner||target.GetHealth()<=0)continue
+		string name=target.GetScriptName()
+		if(name=="controllable_decoy"||name=="controlled_decoy")continue
+		vector point=target.EyePosition()
+		if(DistanceSqr(origin,point)<1)continue
+		vector aim=Normalize(point-origin)
+		float score=DotProduct(forward,aim)
+		if(score<=best)continue
+		TraceResults trace=TraceLine(origin,point,owner,TRACE_MASK_SHOT,TRACE_COLLISION_GROUP_NONE)
+		if(trace.startSolid||!(trace.hitEnt==target||trace.fraction>0.99))continue
+		best=score
+		chosen=aim
+	}
+	return chosen
+}

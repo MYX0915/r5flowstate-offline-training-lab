@@ -1,0 +1,83 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.031 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 29
+
+Microsoft (R) Windows Debugger Version 10.0.26100.6584 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [D:\R5Flowstate\Game\platform\logs\server\7f0cd6a5-7857-4aea-afea-878784017dd6\minidump.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Symbol search path is: E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Executable search path is: 
+Windows 10 Version 26200 MP (8 procs) Free x64
+Product: WinNt, suite: SingleUserTS Personal
+Edition build lab: 26100.1.amd64fre.ge_release.240331-1435
+Debug session time: Sun Nov 15 20:04:34.000 2026 (UTC + 8:00)
+System Uptime: 0 days 21:32:58.019
+Process Uptime: 0 days 0:02:12.000
+.....................................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(6dc8.743c): Access violation - code c0000005 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtGetContextThread+0x14:
+00007ffd`9ee98334 c3              ret
+0:000> cdb: Reading initial command '.ecxr;ln @rip;k 8;q'
+*** WARNING: Unable to verify checksum for server.dll
+rax=00000000c572b1e6 rbx=00007ff6993d1d90 rcx=000000a9b85ac560
+rdx=000000a9b85ac560 rsi=000000a9b85ac570 rdi=000002593be17300
+rip=00007ffc81983602 rsp=000000a9b85ac480 rbp=000000a9b85ac5d0
+ r8=0000000000000000  r9=0000000000000001 r10=00000258727423f0
+r11=000000a9b85ac2f0 r12=0000000000000001 r13=0000000000000000
+r14=000002593a680960 r15=0000000000000000
+iopl=0         nv up ei ng nz na pe cy
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010283
+server!Vector3D::operator= [inlined in server!Hook_CWeaponX_FireWeaponBolt+0x4b2]:
+00007ffc`81983602 f30f1000        movss   xmm0,dword ptr [rax] ds:00000000`c572b1e6=????????
+(00007ffc`81983150)   server!Hook_CWeaponX_FireWeaponBolt+0x4b2   |  (00007ffc`81983ca0)   server!Hook_CWeaponX_UpdateWeaponSpread
+Child-SP          RetAddr               Call Site
+(Inline Function) --------`--------     server!Vector3D::operator=
+(Inline Function) --------`--------     server!BoltVel_GetAbsVelocity+0x5e
+000000a9`b85ac480 00007ff6`996e534c     server!Hook_CWeaponX_FireWeaponBolt+0x4b2
+000000a9`b85ac660 00007ff6`996daeb7     r5apex_ds!CreateGlobalMemAlloc+0xbb2a1c
+000000a9`b85ac780 00007ff6`996d9d09     r5apex_ds!CreateGlobalMemAlloc+0xba8587
+000000a9`b85ac8d0 00007ffc`8186732b     r5apex_ds!CreateGlobalMemAlloc+0xba73d9
+000000a9`b85ac9d0 00007ffc`819921fb     server!Hook_CWeaponX_PrimaryAttack+0x10b
+000000a9`b85aca40 00007ff6`996d5f9b     server!Hook_ChargeAndPrimaryAttack+0x26b
+quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

@@ -1,0 +1,76 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.015 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 29
+
+Microsoft (R) Windows Debugger Version 10.0.26100.6584 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+*** wait with pending attach
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Symbol search path is: E:\Users\MYX\Desktop\apex\sources\r5flowstate-sdk\s21-r5sdk-s21-unify\game
+Executable search path is: 
+WARNING: Process 30932 is not attached as a debuggee
+         The process can be examined but debug events will not be received
+................................................................
+................................................................
+.........
+Loading unloaded module list
+.....
+(78d4.7ddc): Wake debugger - code 80000007 (first chance)
+ntdll!ZwWaitForAlertByThreadId+0x14:
+00007ffd`9ee9a054 c3              ret
+0:000> cdb: Reading initial command '~8s;kn 50;qd'
+*** WARNING: Unable to verify checksum for D:\R5Flowstate\Game\r5apex.exe
+r5apex+0x52b003:
+00007ff7`5412b003 48d3e8          shr     rax,cl
+ # Child-SP          RetAddr               Call Site
+00 00000023`eedef0d0 00007ff7`548174d9     r5apex+0x52b003
+01 00000023`eedef140 00007ff7`54129d3e     r5apex+0xc174d9
+02 00000023`eedef190 00007ff7`541295c2     r5apex+0x529d3e
+03 00000023`eedef1d0 00007ff7`54129ab0     r5apex+0x5295c2
+04 00000023`eedef200 00007ff7`54129bdf     r5apex+0x529ab0
+05 00000023`eedef2d0 00007ff7`54113ac0     r5apex+0x529bdf
+06 00000023`eedef310 00007ff7`54113d3c     r5apex+0x513ac0
+07 00000023`eedef380 00007ff7`541146d5     r5apex+0x513d3c
+08 00000023`eedef3d0 00007ff7`54788b12     r5apex+0x5146d5
+09 00000023`eedef430 00007ff7`541295c2     r5apex+0xb88b12
+0a 00000023`eedef4c0 00007ff7`54129ab0     r5apex+0x5295c2
+0b 00000023`eedef4f0 00007ff7`54127949     r5apex+0x529ab0
+0c 00000023`eedef5c0 00007ff7`5412a46f     r5apex+0x527949
+0d 00000023`eedef920 00007ffd`9cf2dda7     r5apex+0x52a46f
+0e 00000023`eedef9a0 00007ffd`9edf9c5c     KERNEL32!BaseThreadInitThunk+0x17
+0f 00000023`eedef9d0 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

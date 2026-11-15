@@ -1,0 +1,78 @@
+//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//
+// Purpose
+//
+// $Workfile: $
+// $Date: $
+// $NoKeywords: $
+//===========================================================================//
+#if !defined( CLIENTENTITYLIST_H )
+#define CLIENTENTITYLIST_H
+#include "tier1/utlvector.h"
+#include "tier1/utllinkedlist.h"
+
+#include "game/client/icliententitylist.h"
+
+#include "icliententityinternal.h"
+#include "entitylist_clientbase.h"
+
+class C_BaseEntity;
+
+// Implement this class and register with entlist to receive entity create/delete notification
+class IClientEntityListener
+{
+public:
+	virtual void OnEntityCreated(C_BaseEntity* pEntity) {};
+	virtual void OnEntityDeleted(C_BaseEntity* pEntity) {};
+};
+
+//-----------------------------------------------------------------------------
+// Purpose: a global list of all the entities in the game. All iteration through
+// entities is done through this object.
+//-----------------------------------------------------------------------------
+class CClientEntityList : public C_BaseEntityList, public IClientEntityList
+{
+protected:
+	// Cached info for networked entities.
+	struct EntityCacheInfo_t
+	{
+		// Cached off because GetClientNetworkable is called a *lot*
+		IClientNetworkable* m_pNetworkable;
+		unsigned short m_BaseEntitiesIndex; // Index into m_BaseEntities (or m_BaseEntities.InvalidIndex if none).
+		unsigned short m_bDormant;          // cached dormant state - this is only a bit
+	};
+
+	virtual EntityCacheInfo_t	*GetClientNetworkableArray() = 0;
+
+private:
+	CUtlVector<IClientEntityListener*>	m_entityListeners;
+
+	int					m_iNumServerEnts;           // Current count
+	int					m_iMaxServerEnts;           // Max allowed
+	int					m_iNumClientNonNetworkable; // Non networkable count
+	int					m_iMaxUsedServerIndex;      // Current last used slot
+
+	// This holds fast lookups for special edicts.
+	EntityCacheInfo_t	m_EntityCacheInfo[NUM_ENT_ENTRIES];
+
+	// For fast iteration.
+	CUtlLinkedList<C_BaseEntity*, unsigned short> m_BaseEntities;
+};
+COMPILE_TIME_ASSERT(sizeof(CClientEntityList) == 0x3800C0);
+
+inline IClientNetworkable* (*v_ClientEntityList_GetClientNetworkable)(IClientEntityList* const entList, const int entNum);
+inline IClientEntity* (*v_ClientEntityList_GetClientEntity)(IClientEntityList* const entList, const int entNum);
+
+inline IClientEntityList* g_pClientEntityList = nullptr;
+extern CClientEntityList* g_clientEntityList;
+
+// Entity base at entNum (serial < 0 = any serial) from the S21 client's
+// entity info array; nullptr when free or the serial does not match.
+// Does not depend on g_pClientEntityList, which the S21 client never sets.
+void* ClientEntityList_EntityAt(int entNum, int serial);
+
+///////////////////////////////////////////////////////////////////////////////
+int HSys_Error_Internal(char* fmt, va_list args);
+
+
+#endif // CLIENTENTITYLIST_H

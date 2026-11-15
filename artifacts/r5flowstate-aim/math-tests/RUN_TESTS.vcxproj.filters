@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Users\MYX\Desktop\apex\artifacts\r5flowstate-aim\math-tests\CMakeFiles\df583515af9d9d9d2f15e614feb61cad\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C2CA29B1-9E22-38A0-8986-16BD29C0D74E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

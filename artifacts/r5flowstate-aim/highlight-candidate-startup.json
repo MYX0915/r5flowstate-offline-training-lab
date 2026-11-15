@@ -1,0 +1,3060 @@
+{
+  "lines": [
+    {
+      "seq": 1,
+      "level": "warn",
+      "source": "engine",
+      "text": "[AGENT-LINK] DEV ONLY -- full client control on 127.0.0.1:37020 (token in platform/agentlink_client.token)"
+    },
+    {
+      "seq": 2,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] keepalive thread armed (gap 250 ms)"
+    },
+    {
+      "seq": 3,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] challenge 0x04 map='mp_rr_canyonlands_staging_mu1'"
+    },
+    {
+      "seq": 4,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'subtitles_english.rpak'"
+    },
+    {
+      "seq": 5,
+      "level": "warn",
+      "source": "engine",
+      "text": "[C2S-PACE] ACTIVE -- flushing C2S per SendDatagram relay (native cadence), self-clock demoted to idle keepalive"
+    },
+    {
+      "seq": 6,
+      "level": "warn",
+      "source": "engine",
+      "text": "[SEC] bridge path forcing plaintext packets (bridge_force_encryption_off=1; MITM risk on shared nets)"
+    },
+    {
+      "seq": 7,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'ui_main_menu.rpak' (wait=1)"
+    },
+    {
+      "seq": 8,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'common.rpak'"
+    },
+    {
+      "seq": 9,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] keepalive: main thread stalled 250 ms, sent C2S off-thread (x1 total)"
+    },
+    {
+      "seq": 10,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(2) spawn=-1 x1 unanswered (parked 515 ms)"
+    },
+    {
+      "seq": 11,
+      "level": "info",
+      "source": "engine",
+      "text": "[RIG-EXTEND] platform/rig_extend.txt: 458 entries over 8 rigs"
+    },
+    {
+      "seq": 12,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 13,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 14,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 15,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 16,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 17,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 18,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 19,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE] S2C queue full, drop 1043 bytes"
+    },
+    {
+      "seq": 20,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] keepalive: main thread stalled 250 ms, sent C2S off-thread (x21 total)"
+    },
+    {
+      "seq": 21,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(2) spawn=-1 x21 unanswered (parked 5594 ms)"
+    },
+    {
+      "seq": 22,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'common_mp.rpak'"
+    },
+    {
+      "seq": 23,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_lobby.rpak'"
+    },
+    {
+      "seq": 24,
+      "level": "warn",
+      "source": "engine",
+      "text": "[FS-PAK] lobby GuidLive still 0/1 after 500 ms"
+    },
+    {
+      "seq": 25,
+      "level": "warn",
+      "source": "engine",
+      "text": "[FS-PAK] GuidLive canary miss mp=8/8 lobby=0/1 -- defer enqueue (try 1)"
+    },
+    {
+      "seq": 26,
+      "level": "info",
+      "source": "engine",
+      "text": "[FS-PAK] GuidLive canary ok mp=8/8 lobby=1/1 after 1 defer(s) -- enqueue"
+    },
+    {
+      "seq": 27,
+      "level": "info",
+      "source": "engine",
+      "text": "[FS-PAK] loading 'common_flowstate.rpak' (handle 0xD)"
+    },
+    {
+      "seq": 28,
+      "level": "info",
+      "source": "engine",
+      "text": "[FS-PAK] loading 'sdk_s30.rpak' (handle 0xE)"
+    },
+    {
+      "seq": 29,
+      "level": "info",
+      "source": "engine",
+      "text": "[FS-PAK] 'sdk_titans.rpak' not on disk (paks\\Win64\\sdk_titans.rpak) -- skipping"
+    },
+    {
+      "seq": 30,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'common_flowstate.rpak'"
+    },
+    {
+      "seq": 31,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'sdk_s30.rpak'"
+    },
+    {
+      "seq": 32,
+      "level": "info",
+      "source": "engine",
+      "text": "[PAK-OVERRIDE] 'sdk_s30.rpak' slot 14 priority 3 -- same-guid assets replace the retail copy"
+    },
+    {
+      "seq": 33,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] keepalive: main thread stalled 250 ms, sent C2S off-thread (x41 total)"
+    },
+    {
+      "seq": 34,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(2) spawn=-1 x41 unanswered (parked 10656 ms)"
+    },
+    {
+      "seq": 35,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_lobby_client_temp.rpak'"
+    },
+    {
+      "seq": 36,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_lobby_client_perm.rpak'"
+    },
+    {
+      "seq": 37,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_rr_canyonlands_staging_mu1_loadscreen.rpak'"
+    },
+    {
+      "seq": 38,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 39,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_UpdateLoadingLevelName: mp_rr_canyonlands_staging_mu1"
+    },
+    {
+      "seq": 40,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 41,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] defer dest world paks map='mp_rr_canyonlands_staging_mu1'"
+    },
+    {
+      "seq": 42,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] CONNACCEPT map='mp_rr_canyonlands_staging_mu1' -- queuing CONNECTED"
+    },
+    {
+      "seq": 43,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] CONNECTED c2s len=26 sent=26 seq=44 sock=1"
+    },
+    {
+      "seq": 44,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] USERINFO c2s len=978 sent=978 seq=45"
+    },
+    {
+      "seq": 45,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 341 bytes oob=0"
+    },
+    {
+      "seq": 46,
+      "level": "info",
+      "source": "engine",
+      "text": "[DEMO] recording to 'platform\\demos\\2026-11-15\\demo_2026-11-15_12-22-02_mp_rr_canyonlands_staging_mu1.r5dem'"
+    },
+    {
+      "seq": 47,
+      "level": "warn",
+      "source": "client",
+      "text": "[PORTAL-CL] linked CProp_Portal (donor size=5600 grown=5616 donorN=5 create=0x00007FF75445D8E0)"
+    },
+    {
+      "seq": 48,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 341 bytes oob=0"
+    },
+    {
+      "seq": 49,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=0 size=311 ack=1 (#1)"
+    },
+    {
+      "seq": 50,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] kick dest world paks map='mp_rr_canyonlands_staging_mu1'"
+    },
+    {
+      "seq": 51,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] skip lobby restamp (dest world already released)"
+    },
+    {
+      "seq": 52,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 53,
+      "level": "info",
+      "source": "engine",
+      "text": "[HOSTS] purged 25 upstream endpoint ConVar(s)"
+    },
+    {
+      "seq": 54,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 55,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_UpdateLoadingLevelName: mp_rr_canyonlands_staging_mu1"
+    },
+    {
+      "seq": 56,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] skip lobby restamp (dest world already released)"
+    },
+    {
+      "seq": 57,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 58,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_rr_canyonlands_staging_mu1.rpak'"
+    },
+    {
+      "seq": 59,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(2) spawn=0 x1 unanswered (parked 266 ms)"
+    },
+    {
+      "seq": 60,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_rr_canyonlands_staging_mu1_client_perm.rpak'"
+    },
+    {
+      "seq": 61,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'mp_rr_canyonlands_staging_mu1_client_temp.rpak'"
+    },
+    {
+      "seq": 62,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] skip lobby restamp (dest world already released)"
+    },
+    {
+      "seq": 63,
+      "level": "info",
+      "source": "engine",
+      "text": "[LOBBY-PAK] lobby slot(s) map=-1 perm=-1 temp=-1 (1=stripped, -1=kept, pak resident)"
+    },
+    {
+      "seq": 64,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-SETCVAR] dropped 'host_sessionId'"
+    },
+    {
+      "seq": 65,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-SETCVAR] dropped 'net_encryptionEnable'"
+    },
+    {
+      "seq": 66,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-SETCVAR] dropped 'sv_forceChatToTeamOnly'"
+    },
+    {
+      "seq": 67,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #1 name='ExtraParticleFilesTable' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 68,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #2 name='ParticleEffectNames' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 69,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #3 name='ImpactEffectTableNames' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 70,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #4 name='EffectDispatch' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 71,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #5 name='VguiScreen' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 72,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #6 name='Materials' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 73,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #7 name='InfoPanel' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 74,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #8 name='Scenes' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 75,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #9 name='Movies' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 76,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #10 name='WeaponNames' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 77,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #11 name='ScriptNames' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 78,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #12 name='SettingsAssets' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 79,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #13 name='SoundIDs' slot before=00007FFC6A48BF20 after=00007FFC6A48BF20 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 80,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #14 name='SkinNames' slot before=00007FFC6A48BF20 after=000001959D32FC00 stub=00007FFC6A48BF20 <-- SKINNAMES"
+    },
+    {
+      "seq": 81,
+      "level": "info",
+      "source": "client",
+      "text": "[CLASSVAR] resolved (find=00007FF754262530 write=00007FF7542629E0 apply=00007FF7546C15D0)"
+    },
+    {
+      "seq": 82,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 16 bytes oob=0"
+    },
+    {
+      "seq": 83,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 84,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 85,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#2)"
+    },
+    {
+      "seq": 86,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 87,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#3)"
+    },
+    {
+      "seq": 88,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 89,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#4)"
+    },
+    {
+      "seq": 90,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 91,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#5)"
+    },
+    {
+      "seq": 92,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 93,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#6)"
+    },
+    {
+      "seq": 94,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 100 bytes oob=0"
+    },
+    {
+      "seq": 95,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=1 size=74 ack=2 (#7)"
+    },
+    {
+      "seq": 96,
+      "level": "warn",
+      "source": "client",
+      "text": "[EARLY-PIPE] CONNECTED queued before any decode -- installing apply pipe"
+    },
+    {
+      "seq": 97,
+      "level": "warn",
+      "source": "engine",
+      "text": "[ACK-RESET] prediction-finalizer hook installed @ 00007FF7149F5BE0 (ack-fix default ON)"
+    },
+    {
+      "seq": 98,
+      "level": "warn",
+      "source": "engine",
+      "text": "[SLOT-KEEPALIVE] deactivate hook installed @ 0x00007FF7149F5CA0"
+    },
+    {
+      "seq": 99,
+      "level": "warn",
+      "source": "engine",
+      "text": "[EVT-BATCH] wire event decode hook installed @ 0x00007FF7149F5D00"
+    },
+    {
+      "seq": 100,
+      "level": "warn",
+      "source": "client",
+      "text": "[PFX-GATE] installed: CreateFromDefWithOffset @ 0x00007FF7149F5DC0, effect factory @ 0x00007FF7149F5E20, IsSpawnCulled @ 0x00007FF754806B10, mgrSlot @ 0x00007FF75B1E8960, viewPlayerHandle @ 0x00007FF755319EDC, entInfo @ 0x00007FF755AF7C38 (bridge_pfx_gate_trace gates all output)"
+    },
+    {
+      "seq": 101,
+      "level": "warn",
+      "source": "engine",
+      "text": "[APPLY-PIPE] hooks installed:\n  ClProcessFrame       @ 0x00007FF7149F5160\n  TransitionEntity     @ 0x00007FF7149F51C0\n  PropApplyLoop        @ 0x00007FF7149F5220\n  ClProcessSnapshotWT  @ 0x00007FF7149F5280  (chain-miss diag)\n  CL_WriteMoveCmds     @ 0x00007FF7149F52E0  (vtable[30] writer-RVA probe)\n  CL_ParseDeltaHeader  @ 0x00007FF7149F5340  (inert passthrough)\n  ClSendTick           @ 0x00007FF7149F53A0  (per-frame C2S send gate probe -- [SENDTICK])\nEngineFrame @ 0x00007FF7149F5400 ( write-watchpoint -- [FTW]/[FTPOLL])\n  HostStateFrame       @ 0x00007FF753E4D5B0  (frametime-input trace -- [FTIN-HS])\n  HostFrame            @ 0x00007FF7149F5460  (frametime-input trace -- [FTIN-HF])\nClockDrift @ 0x00007FF7149F5520 ( dedupe -- fixes [0x13C]=0.1 sim slowdown)\nSetupSky @ 0x00007FF7149F55E0 ( -- [SKY-SETUP] entry-trace;\n                                writes m_has3DSky at viewRender+0x11A375)\nRenderOrchestrator @ 0x00007FF7149F5640 ( -- [SKY-ORCH] entry-trace;\n                                m_has3DSky gate confirmed open both modes.\nInner-sub divergence is in /\n/ -- see audit.)\nMovePostThink @ 0x00007FF7149F58E0 ( -- [MPT-PROBE] client-anim\nSTEP-1 verified; gate + m_PlayerAnimState per player)"
+    },
+    {
+      "seq": 102,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] installed -- obj=00007FF755A88C60 vtable+0x4E0 orig=00007FF7543F2530"
+    },
+    {
+      "seq": 103,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #1 GetGameTimescale=1"
+    },
+    {
+      "seq": 104,
+      "level": "info",
+      "source": "engine",
+      "text": "[MAT-XHAIR-PATCH] mat_crosshair found and patched"
+    },
+    {
+      "seq": 105,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] native signon already 2 -- skip drive"
+    },
+    {
+      "seq": 106,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #2 GetGameTimescale=1"
+    },
+    {
+      "seq": 107,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #3 GetGameTimescale=1"
+    },
+    {
+      "seq": 108,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #4 GetGameTimescale=1"
+    },
+    {
+      "seq": 109,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #5 GetGameTimescale=1"
+    },
+    {
+      "seq": 110,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #6 GetGameTimescale=1"
+    },
+    {
+      "seq": 111,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #7 GetGameTimescale=1"
+    },
+    {
+      "seq": 112,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #8 GetGameTimescale=1"
+    },
+    {
+      "seq": 113,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #9 GetGameTimescale=1"
+    },
+    {
+      "seq": 114,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #10 GetGameTimescale=1"
+    },
+    {
+      "seq": 115,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(3) spawn=1 x1 unanswered (parked 250 ms)"
+    },
+    {
+      "seq": 116,
+      "level": "warn",
+      "source": "engine",
+      "text": "[C2S-SCV] resend ring full, dropping oldest (#1)"
+    },
+    {
+      "seq": 117,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myDatacenter' 'east us' -> 'west us'"
+    },
+    {
+      "seq": 118,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myBestDatacenter' 'east us' -> 'west us'"
+    },
+    {
+      "seq": 119,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myRankedDatacenter' 'east us' -> 'west us'"
+    },
+    {
+      "seq": 120,
+      "level": "warn",
+      "source": "client",
+      "text": "[CMD-RATE] LOW usercmd supply: fps=285 but cmd/s=0 (focused; world will sim below real time) #1"
+    },
+    {
+      "seq": 121,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLK-DRIFT] hostFt=0.00706 clFt=0.00706 unb=0.00706 rawClamp=0.00706 svState=0 svTs=-1.0000 hostFr=0.0000 hostTs=1.0000 cheats=1 tsAvg=1.0000 ahead=0.0000 within=0.0000 svTick=50802 clTick=50811 lastSvTime=2540.100 clTime=2540.582 interval=0.05000 off=0.0000/0.0000/0.0000/0.0000 | host_sleep=0 not_focus_sleep=50 fps_max=0 fps_max_vsync=0 fps_max_use_refresh=0 sleep_when_meeting_framerate=1 fps_max_rt=0"
+    },
+    {
+      "seq": 122,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLK-DRIFT] scales idx=1: 0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 "
+    },
+    {
+      "seq": 123,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 124,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myBestDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 125,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myRankedDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 126,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-ST:DB] KNOWN-MALFORMED msg=6 bit=1850856/1852176 claimed=970047909 messages=676 sendTables=674 skippedNonST=1 -- fail-open break"
+    },
+    {
+      "seq": 127,
+      "level": "warn",
+      "source": "engine",
+      "text": "[SNDC-LINK] synthesized ClientClass for CScriptNetData_SNDC_GLOBAL_NON_REWIND (RecvTable=0x00007FF755EE9530)"
+    },
+    {
+      "seq": 128,
+      "level": "info",
+      "source": "client",
+      "text": "[MAPEDIT-PAK] client natives registered"
+    },
+    {
+      "seq": 129,
+      "level": "info",
+      "source": "client",
+      "text": "[PORTAL-CL] client natives registered"
+    },
+    {
+      "seq": 130,
+      "level": "info",
+      "source": "engine",
+      "text": "[MOD-SCRIPT] spliced 'Cafe.HelloMod' (193 bytes)"
+    },
+    {
+      "seq": 131,
+      "level": "info",
+      "source": "client",
+      "text": "[MAPEDIT-PAK] client natives registered"
+    },
+    {
+      "seq": 132,
+      "level": "info",
+      "source": "client",
+      "text": "[PORTAL-CL] client natives registered"
+    },
+    {
+      "seq": 133,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] keepalive: main thread stalled 250 ms, sent C2S off-thread (x54 total)"
+    },
+    {
+      "seq": 134,
+      "level": "info",
+      "source": "engine",
+      "text": "[CUBEMAP] lookup path='texture/maps/mp_rr_canyonlands_staging_mu1/cubemaps_hdr.rpak' guid=064AE8C9DF9A78EA found=00000195C1690A50 arr=96 misc=0x6"
+    },
+    {
+      "seq": 135,
+      "level": "info",
+      "source": "engine",
+      "text": "[CUBEMAP] load='maps/mp_rr_canyonlands_staging_mu1' samples=16 stored=16 tex=00000195C1690A50 kind=MAP-CUBE arr=96 misc=0x6 type=18 rhi=000001964A8A0CE0"
+    },
+    {
+      "seq": 136,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #15 name='ExtraParticleFilesTable' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 137,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #16 name='ParticleEffectNames' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 138,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #17 name='ImpactEffectTableNames' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 139,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #18 name='EffectDispatch' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 140,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #19 name='VguiScreen' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 141,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #20 name='Materials' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 142,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #21 name='InfoPanel' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 143,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #22 name='Scenes' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 144,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #23 name='Movies' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 145,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #24 name='WeaponNames' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 146,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #25 name='ScriptNames' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 147,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #26 name='SettingsAssets' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 148,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #27 name='SoundIDs' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20"
+    },
+    {
+      "seq": 149,
+      "level": "info",
+      "source": "engine",
+      "text": "[s21-skinnames] dispatcher #28 name='SkinNames' slot before=000001959D32FC00 after=000001959D32FC00 stub=00007FFC6A48BF20 <-- SKINNAMES"
+    },
+    {
+      "seq": 150,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 16 bytes oob=0"
+    },
+    {
+      "seq": 151,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 152,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myBestDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 153,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myRankedDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 154,
+      "level": "info",
+      "source": "script_client",
+      "text": "PrintDebugTimeDetails"
+    },
+    {
+      "seq": 155,
+      "level": "info",
+      "source": "script_client",
+      "text": "DebugTime = Saturday, 2026-11-14 20:22:08 PST"
+    },
+    {
+      "seq": 156,
+      "level": "info",
+      "source": "script_client",
+      "text": "[GAMEMODE] RegisterGamemode fs_1v1 id=1000"
+    },
+    {
+      "seq": 157,
+      "level": "info",
+      "source": "script_client",
+      "text": "[FS-1V1] RegisterMode id=1000 inits wired"
+    },
+    {
+      "seq": 158,
+      "level": "info",
+      "source": "script_client",
+      "text": "[GAMEMODE] RegisterGamemode fs_instagib id=1001"
+    },
+    {
+      "seq": 159,
+      "level": "info",
+      "source": "script_client",
+      "text": "[FS-IG] RegisterMode id=1001 inits wired"
+    },
+    {
+      "seq": 160,
+      "level": "info",
+      "source": "script_client",
+      "text": "[GAMEMODE] RegisterGamemode fs_arenas id=1002"
+    },
+    {
+      "seq": 161,
+      "level": "info",
+      "source": "script_client",
+      "text": "GAMETYPE: survival"
+    },
+    {
+      "seq": 162,
+      "level": "info",
+      "source": "script_client",
+      "text": "MAX_TEAMS: 20"
+    },
+    {
+      "seq": 163,
+      "level": "info",
+      "source": "script_client",
+      "text": "MAX_PLAYERS: 20"
+    },
+    {
+      "seq": 164,
+      "level": "info",
+      "source": "script_client",
+      "text": "MAX_TEAM_PLAYERS: 3"
+    },
+    {
+      "seq": 165,
+      "level": "info",
+      "source": "script_client",
+      "text": "CRAFTING: Data parsed and registered"
+    },
+    {
+      "seq": 166,
+      "level": "info",
+      "source": "script_client",
+      "text": "CRAFTING: Getting datatable for category ammo"
+    },
+    {
+      "seq": 167,
+      "level": "info",
+      "source": "script_client",
+      "text": "CRAFTING: Getting datatable for category health_pickup"
+    },
+    {
+      "seq": 168,
+      "level": "info",
+      "source": "script_client",
+      "text": "CRAFTING: Getting datatable for category shield_pickup"
+    },
+    {
+      "seq": 169,
+      "level": "info",
+      "source": "script_client",
+      "text": "CRAFTING: Getting datatable for category banner"
+    },
+    {
+      "seq": 170,
+      "level": "info",
+      "source": "script_client",
+      "text": "[BYREF] init coreCount=41 maxId=169"
+    },
+    {
+      "seq": 171,
+      "level": "info",
+      "source": "script_client",
+      "text": "FS LocalMsg: registered 186 tokens (disk loc)"
+    },
+    {
+      "seq": 172,
+      "level": "info",
+      "source": "script_client",
+      "text": "[HELLOMOD] client ModInit"
+    },
+    {
+      "seq": 173,
+      "level": "info",
+      "source": "script_client",
+      "text": "[LOOT] dormant hopups enabled"
+    },
+    {
+      "seq": 174,
+      "level": "info",
+      "source": "script_client",
+      "text": "======================== SPIDER JUNGLE PRECACHE"
+    },
+    {
+      "seq": 175,
+      "level": "info",
+      "source": "script_client",
+      "text": "InitXPEvents"
+    },
+    {
+      "seq": 176,
+      "level": "info",
+      "source": "script_client",
+      "text": "PERKS: Perks_Init() called"
+    },
+    {
+      "seq": 177,
+      "level": "info",
+      "source": "script_client",
+      "text": "PERKS: Perks_Enabled() = true"
+    },
+    {
+      "seq": 178,
+      "level": "info",
+      "source": "script_client",
+      "text": "ShCups_LevelInit"
+    },
+    {
+      "seq": 179,
+      "level": "info",
+      "source": "script_client",
+      "text": "ShRankedRumble_Init"
+    },
+    {
+      "seq": 180,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: RegisterLoadoutData Completed"
+    },
+    {
+      "seq": 181,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: Getting datatable for loadout blitz"
+    },
+    {
+      "seq": 182,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: Getting datatable for loadout heavy"
+    },
+    {
+      "seq": 183,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: Getting datatable for loadout assault"
+    },
+    {
+      "seq": 184,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: Getting datatable for loadout specialist"
+    },
+    {
+      "seq": 185,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: Getting datatable for loadout longrange"
+    },
+    {
+      "seq": 186,
+      "level": "info",
+      "source": "script_client",
+      "text": "[LoadoutSelection] FullInit complete (freeroam force enable)"
+    },
+    {
+      "seq": 187,
+      "level": "info",
+      "source": "script_client",
+      "text": "[MRec] ClientInit keys F4 record / F5 play"
+    },
+    {
+      "seq": 188,
+      "level": "info",
+      "source": "script_client",
+      "text": "[AimTrainer] ClientInit"
+    },
+    {
+      "seq": 189,
+      "level": "info",
+      "source": "script_client",
+      "text": "ALLIANCE PROXIMITY: Running  AllianceProximity_Init"
+    },
+    {
+      "seq": 190,
+      "level": "info",
+      "source": "engine",
+      "text": "[SETTINGS-DISK] built 'settings/itemflav/loot/main_weapon/auto_hemlok.rpak' donor='settings/itemflav/loot/main_weapon/flatline.rpak' layout='settings_layout/settings_itemtype_loot_main_weapon_layout.rpak' uniqueId=1090000001 written=15 skipped=0 (attempt 1)"
+    },
+    {
+      "seq": 191,
+      "level": "info",
+      "source": "engine",
+      "text": "[SETTINGS-DISK] built 'settings/itemflav/loot/main_weapon/autopistol_fusion.rpak' donor='settings/itemflav/loot/main_weapon/flatline.rpak' layout='settings_layout/settings_itemtype_loot_main_weapon_layout.rpak' uniqueId=1090000002 written=15 skipped=0 (attempt 1)"
+    },
+    {
+      "seq": 192,
+      "level": "info",
+      "source": "script_client",
+      "text": "ImportBoostTypeFromBakery: Did not register boost type: dev_accountxp_global_2x"
+    },
+    {
+      "seq": 193,
+      "level": "info",
+      "source": "script_client",
+      "text": "ImportBoostEventFromBakery: Did not register boost event: dev_s17_accountxp_global_2x_event"
+    },
+    {
+      "seq": 194,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: RegisterArtifactComponentsForWeapon"
+    },
+    {
+      "seq": 195,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_mob.rmdl"
+    },
+    {
+      "seq": 196,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_artifact_mdl"
+    },
+    {
+      "seq": 197,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_hisoc.rmdl"
+    },
+    {
+      "seq": 198,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_hisoc_artifact_mdl"
+    },
+    {
+      "seq": 199,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_celes.rmdl"
+    },
+    {
+      "seq": 200,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_artifact_celes"
+    },
+    {
+      "seq": 201,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_stech.rmdl"
+    },
+    {
+      "seq": 202,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_artifact_stech"
+    },
+    {
+      "seq": 203,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_steam.rmdl"
+    },
+    {
+      "seq": 204,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_artifact_steampunk"
+    },
+    {
+      "seq": 205,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_death.rmdl"
+    },
+    {
+      "seq": 206,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_artifact_death_mdl"
+    },
+    {
+      "seq": 207,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_ragold.rmdl"
+    },
+    {
+      "seq": 208,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_fx_gh"
+    },
+    {
+      "seq": 209,
+      "level": "info",
+      "source": "script_client",
+      "text": "Kepler initialized with 7 scenarios"
+    },
+    {
+      "seq": 210,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox model mdl/techart/mshop/props/loot/deathbox/deathbox_lgnd_v23_ragold.rmdl"
+    },
+    {
+      "seq": 211,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: precaching Deathbox FX P_death_box_fx_gh"
+    },
+    {
+      "seq": 212,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons"
+    },
+    {
+      "seq": 213,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 214,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 215,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 216,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 217,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 218,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 219,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 220,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 221,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 222,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 223,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 224,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 225,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 226,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 227,
+      "level": "info",
+      "source": "script_client",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 228,
+      "level": "info",
+      "source": "script_client",
+      "text": "found autogen challenges array of length: 0"
+    },
+    {
+      "seq": 229,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** completed autogen statref challenge setup ***"
+    },
+    {
+      "seq": 230,
+      "level": "info",
+      "source": "script_client",
+      "text": "guid -> autogenslots mapping:"
+    },
+    {
+      "seq": 231,
+      "level": "info",
+      "source": "script_client",
+      "text": "hook -> guid mapping:"
+    },
+    {
+      "seq": 232,
+      "level": "info",
+      "source": "script_client",
+      "text": "ON_PLAYER_WIN (0) ---"
+    },
+    {
+      "seq": 233,
+      "level": "info",
+      "source": "script_client",
+      "text": "FR_Init_NetVars_And_PVars(): Dummie Movements Default PackedBool Int == 0 "
+    },
+    {
+      "seq": 234,
+      "level": "info",
+      "source": "script_client",
+      "text": "FR_Init_NetVars_And_PVars(): Dummie Modifiers Default PackedBool Int == 0 "
+    },
+    {
+      "seq": 235,
+      "level": "info",
+      "source": "script_client",
+      "text": "FR_Init_NetVars_And_PVars(): Dummie Spawn Settings Default PackedBool Int == 0 "
+    },
+    {
+      "seq": 236,
+      "level": "info",
+      "source": "script_client",
+      "text": "CombatRange_Init(): Map Name == mp_rr_canyonlands_staging_mu1"
+    },
+    {
+      "seq": 237,
+      "level": "info",
+      "source": "script_client",
+      "text": "PrintFunc: ShPlaylist_CacheData"
+    },
+    {
+      "seq": 238,
+      "level": "info",
+      "source": "script_client",
+      "text": "[LOOT] dormant hopups precharged=8 stripped=1"
+    },
+    {
+      "seq": 239,
+      "level": "info",
+      "source": "script_client",
+      "text": "TraceRoute Diagnostics are disabled"
+    },
+    {
+      "seq": 240,
+      "level": "info",
+      "source": "script_client",
+      "text": "[FSHealthBar] init"
+    },
+    {
+      "seq": 241,
+      "level": "info",
+      "source": "script_client",
+      "text": "[HealthBar] CL init style=0"
+    },
+    {
+      "seq": 242,
+      "level": "info",
+      "source": "script_client",
+      "text": "SurvivalCommentary_SetStringCallback called - Shicks"
+    },
+    {
+      "seq": 243,
+      "level": "info",
+      "source": "script_client",
+      "text": "[FS-HUD] mode chrome pl='survival_firingrange' name='#PL_FIRINGRANGE'"
+    },
+    {
+      "seq": 244,
+      "level": "info",
+      "source": "script_client",
+      "text": "[BYREF] finish total=41"
+    },
+    {
+      "seq": 245,
+      "level": "info",
+      "source": "script_client",
+      "text": "Canyonlands_MapInit_Common"
+    },
+    {
+      "seq": 246,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_LevelInit: mp_rr_canyonlands_staging_mu1, IsConnected():  true"
+    },
+    {
+      "seq": 247,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 44 bytes oob=0"
+    },
+    {
+      "seq": 248,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 47 bytes oob=0"
+    },
+    {
+      "seq": 249,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-REL] drop dup entry_seq=2 size=18 ack=3 (#8)"
+    },
+    {
+      "seq": 250,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 44 bytes oob=0"
+    },
+    {
+      "seq": 251,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 44 bytes oob=0"
+    },
+    {
+      "seq": 252,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE] poll inject 44 bytes oob=0"
+    },
+    {
+      "seq": 253,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(6) spawn=1 x1 unanswered (parked 297 ms)"
+    },
+    {
+      "seq": 254,
+      "level": "warn",
+      "source": "engine",
+      "text": "[WIRE-PEEK] m_mantleBoostState resolved, m_nDuckTransitionTimeMsecs resolved, m_forceStance resolved in the DT_Player decoder 00000195C2772B30 (flatN=1241) (#1)"
+    },
+    {
+      "seq": 255,
+      "level": "warn",
+      "source": "engine",
+      "text": "[MB-WIRE] dispatch ent=0 idx=1207 peek=1 value=0 (#1)"
+    },
+    {
+      "seq": 256,
+      "level": "warn",
+      "source": "engine",
+      "text": "[SCRIPTNAME] resolved ScriptNames table=000001959D32FB40"
+    },
+    {
+      "seq": 257,
+      "level": "info",
+      "source": "client",
+      "text": "[BRIDGE-FLAGS] call#1 thisptr=00000195C3CD0F38 client VM gen 1 piggyback fired: FlagSet(\"ClientInitComplete\") + FlagSet(\"ClientNetGlobalNonRewindEntity\")."
+    },
+    {
+      "seq": 258,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3DD24D0 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 259,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C37717D0 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 260,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3772DD0 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 261,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E3D930 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 262,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E3EF30 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 263,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E40530 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 264,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E48C00 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 265,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E4A200 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 266,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E4B800 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 267,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E78A50 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 268,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E82800 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 269,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E83E00 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 270,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E85400 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 271,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E18490 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 272,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E8CA20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 273,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E8E020 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 274,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E8F620 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 275,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E90C20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 276,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E92220 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 277,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E93820 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 278,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E94E20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 279,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E96420 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 280,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E97A20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 281,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E99020 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 282,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E9A620 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 283,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E9BC20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 284,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E9D220 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 285,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E9E820 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 286,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3E9FE20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 287,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA1420 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 288,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA2A20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 289,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA4020 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 290,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA5620 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 291,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA6C20 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 292,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA8220 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 293,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 3 -> 0 (bodyparts=1 entity=00000195C3EA9820 model='mdl/props/death_box/death_box_01.rmdl')"
+    },
+    {
+      "seq": 294,
+      "level": "info",
+      "source": "script_client",
+      "text": "Client_FullUpdate"
+    },
+    {
+      "seq": 295,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_FullyConnected: mp_rr_canyonlands_staging_mu1, IsFullyConnected():  true"
+    },
+    {
+      "seq": 296,
+      "level": "info",
+      "source": "script_ui",
+      "text": "InitXPEvents"
+    },
+    {
+      "seq": 297,
+      "level": "info",
+      "source": "script_ui",
+      "text": "PERKS: Perks_Init() called"
+    },
+    {
+      "seq": 298,
+      "level": "info",
+      "source": "script_ui",
+      "text": "PERKS: Perks_Enabled() = true"
+    },
+    {
+      "seq": 299,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ShCups_LevelInit"
+    },
+    {
+      "seq": 300,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ShRankedRumble_Init"
+    },
+    {
+      "seq": 301,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(7) spawn=1 x1 unanswered (parked 531 ms)"
+    },
+    {
+      "seq": 302,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ImportBoostTypeFromBakery: Did not register boost type: dev_accountxp_global_2x"
+    },
+    {
+      "seq": 303,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ImportBoostEventFromBakery: Did not register boost event: dev_s17_accountxp_global_2x_event"
+    },
+    {
+      "seq": 304,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: RegisterArtifactComponentsForWeapon"
+    },
+    {
+      "seq": 305,
+      "level": "info",
+      "source": "script_ui",
+      "text": "Kepler initialized with 7 scenarios"
+    },
+    {
+      "seq": 306,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons"
+    },
+    {
+      "seq": 307,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 308,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 309,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 310,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 311,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 312,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 313,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 314,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 315,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 316,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 317,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - blade"
+    },
+    {
+      "seq": 318,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - theme"
+    },
+    {
+      "seq": 319,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - power_source"
+    },
+    {
+      "seq": 320,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - deathbox"
+    },
+    {
+      "seq": 321,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ArtifactsDebug: BuildLoadoutEntries_ArtifactWeapons - activation_emote"
+    },
+    {
+      "seq": 322,
+      "level": "info",
+      "source": "script_ui",
+      "text": "found autogen challenges array of length: 0"
+    },
+    {
+      "seq": 323,
+      "level": "info",
+      "source": "script_ui",
+      "text": "*** completed autogen statref challenge setup ***"
+    },
+    {
+      "seq": 324,
+      "level": "info",
+      "source": "script_ui",
+      "text": "guid -> autogenslots mapping:"
+    },
+    {
+      "seq": 325,
+      "level": "info",
+      "source": "script_ui",
+      "text": "hook -> guid mapping:"
+    },
+    {
+      "seq": 326,
+      "level": "info",
+      "source": "script_ui",
+      "text": "ON_PLAYER_WIN (0) ---"
+    },
+    {
+      "seq": 327,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UpdateActiveUserInfoPanels Offers:true Inventory:true isReady:true AddCallbackAndCallNow_OnGRXInventoryStateChanged"
+    },
+    {
+      "seq": 328,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UpdateActiveUserInfoPanels Offers:true Inventory:true isReady:true AddCallbackAndCallNow_OnGRXOffersRefreshed"
+    },
+    {
+      "seq": 329,
+      "level": "info",
+      "source": "script_ui",
+      "text": "PrintFunc: ShPlaylist_CacheData"
+    },
+    {
+      "seq": 330,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[LOOT] dormant hopups precharged=8 stripped=1"
+    },
+    {
+      "seq": 331,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_LevelLoadingFinished:  (false)"
+    },
+    {
+      "seq": 332,
+      "level": "warn",
+      "source": "client",
+      "text": "[CMD-SEED] parity seed ACTIVE: cmd=1 seed=770B7539"
+    },
+    {
+      "seq": 333,
+      "level": "warn",
+      "source": "client",
+      "text": "[LOCAL-VIEW-INSTALL] (player+24=0x195C3CC3AB8, a2=0) --PRE=0x00080001 POST=0x00080001 | bridge.m_EHandle=0x00080001 | ret=0x8 (first fire)"
+    },
+    {
+      "seq": 334,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-OUT] s21body=141, cmds=1, body starts at byte=3 bit=6, first 19 bytes: C0 00 00 00 00 00 00 00 00 C1 E8 C7 00 00 C4 16 F4 E2 09 "
+    },
+    {
+      "seq": 335,
+      "level": "info",
+      "source": "engine",
+      "text": "[C2S-OPL] placement pose trailer active from cmd 1"
+    },
+    {
+      "seq": 336,
+      "level": "warn",
+      "source": "client",
+      "text": "[CMD-RATE] LOW usercmd supply: fps=59 but cmd/s=1 (focused; world will sim below real time) #2"
+    },
+    {
+      "seq": 337,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLK-DRIFT] hostFt=0.01358 clFt=0.01358 unb=0.01358 rawClamp=0.01358 svState=0 svTs=-1.0000 hostFr=0.0000 hostTs=1.0000 cheats=1 tsAvg=1.0000 ahead=0.0000 within=0.0000 svTick=51176 clTick=51174 lastSvTime=2558.800 clTime=2558.746 interval=0.05000 off=0.0000/0.0000/0.0000/0.0000 | host_sleep=0 not_focus_sleep=50 fps_max=0 fps_max_vsync=0 fps_max_use_refresh=0 sleep_when_meeting_framerate=1 fps_max_rt=0"
+    },
+    {
+      "seq": 338,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLK-DRIFT] scales idx=3: 0.00 0.39 0.18 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 "
+    },
+    {
+      "seq": 339,
+      "level": "warn",
+      "source": "engine",
+      "text": "[C2S-REL] seq lane ACTIVE (redundancy=2 spacing=50ms)"
+    },
+    {
+      "seq": 340,
+      "level": "info",
+      "source": "script_client",
+      "text": "DS: UpdateGladCardVisibility false"
+    },
+    {
+      "seq": 341,
+      "level": "info",
+      "source": "script_client",
+      "text": "RunLocalViewPlayerChangedCallbacks entity (1: player unnamed [1])"
+    },
+    {
+      "seq": 342,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos0_CommenceTime"
+    },
+    {
+      "seq": 343,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos0_ModeIndex"
+    },
+    {
+      "seq": 344,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos0_TransitionStyle"
+    },
+    {
+      "seq": 345,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos0_Player"
+    },
+    {
+      "seq": 346,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos1_CommenceTime"
+    },
+    {
+      "seq": 347,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos1_ModeIndex"
+    },
+    {
+      "seq": 348,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos1_TransitionStyle"
+    },
+    {
+      "seq": 349,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos1_Player"
+    },
+    {
+      "seq": 350,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos2_CommenceTime"
+    },
+    {
+      "seq": 351,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos2_ModeIndex"
+    },
+    {
+      "seq": 352,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos2_TransitionStyle"
+    },
+    {
+      "seq": 353,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ApexScreensMasterState_Pos2_Player"
+    },
+    {
+      "seq": 354,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: ringOpacityOverride"
+    },
+    {
+      "seq": 355,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: matchEndTime"
+    },
+    {
+      "seq": 356,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: uiDisableDev"
+    },
+    {
+      "seq": 357,
+      "level": "info",
+      "source": "script_client",
+      "text": "ExecuteNetBufferedCallbacks Run CB for: gameState"
+    },
+    {
+      "seq": 358,
+      "level": "info",
+      "source": "script_client",
+      "text": "ClGameState_Changed(): cachedGameState = -1, newVal = WaitingForPlayers"
+    },
+    {
+      "seq": 359,
+      "level": "info",
+      "source": "script_client",
+      "text": "ClGameState_Changed(): cachedGameState = WaitingForPlayers, newVal = WaitingForPlayers"
+    },
+    {
+      "seq": 360,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: loadouts using a rotation, loadout index: 1 for category: blitz"
+    },
+    {
+      "seq": 361,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: loadouts using a rotation, loadout index: 1 for category: heavy"
+    },
+    {
+      "seq": 362,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: loadouts using a rotation, loadout index: 1 for category: assault"
+    },
+    {
+      "seq": 363,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: loadouts using a rotation, loadout index: 1 for category: specialist"
+    },
+    {
+      "seq": 364,
+      "level": "info",
+      "source": "script_client",
+      "text": "LOADOUT SELECTION: loadouts using a rotation, loadout index: 1 for category: longrange"
+    },
+    {
+      "seq": 365,
+      "level": "info",
+      "source": "engine",
+      "text": "[ODL-XLAT] 'settings/rpak_roots/lgnd_skins/overdrive/classic.rpak' -> 'root_lgnd_skins_overdrive_classic.rpak'"
+    },
+    {
+      "seq": 366,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'root_lgnd_skins_overdrive_classic.rpak'"
+    },
+    {
+      "seq": 367,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/spectator.rpak"
+    },
+    {
+      "seq": 368,
+      "level": "warn",
+      "source": "script_client",
+      "text": "PlayerConnectedOrDisconnected() - Invalid team member index (-1) for player: entity (1: player unnamed [1])"
+    },
+    {
+      "seq": 369,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/spectator.rpak"
+    },
+    {
+      "seq": 370,
+      "level": "warn",
+      "source": "client",
+      "text": "[SKY-PROBE] player=00000195C3CC3AA0 hSkyCamera=0x0002011A camEnt=0000000000000000 scale=1000 area=0 has3DSky=1 skyCam=(-29090.0 20528.0 5076.0) invScale=0.001"
+    },
+    {
+      "seq": 371,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** NetVarCallback_Changed_Int(): Player == unnamed"
+    },
+    {
+      "seq": 372,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 373,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 374,
+      "level": "info",
+      "source": "engine",
+      "text": "[TEXSTREAM-SYNC] armed on the first feedback build"
+    },
+    {
+      "seq": 375,
+      "level": "info",
+      "source": "script_client",
+      "text": "[DmgHealthBar] native target-info panel disabled"
+    },
+    {
+      "seq": 376,
+      "level": "info",
+      "source": "script_client",
+      "text": "[CHARSETUP] published local slot 'character_pathfinder' to server"
+    },
+    {
+      "seq": 377,
+      "level": "info",
+      "source": "engine",
+      "text": "[RIG-EXTEND] rig 0x11565FFAF10E8D9E: 878 resident + 82 appended = 960 sequences"
+    },
+    {
+      "seq": 378,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 379,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-OUT] s21body=249, cmds=2, body starts at byte=3 bit=6, first 32 bytes: C0 00 00 00 00 00 00 00 00 C1 E8 C7 00 00 C4 16 F4 E2 11 00 78 F4 07 00 00 00 20 C0 31 BE 4E 9E "
+    },
+    {
+      "seq": 380,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-SCMD] redundant-send lane ACTIVE (redundancy=2 spacing=50ms)"
+    },
+    {
+      "seq": 381,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-OUT] s21body=357, cmds=3, body starts at byte=3 bit=6, first 32 bytes: C0 00 00 00 00 00 00 00 00 C1 E8 C7 00 00 C4 16 F4 E2 11 00 78 F4 07 00 00 00 20 C0 31 BE 4E 1E "
+    },
+    {
+      "seq": 382,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] re-ask SignonState(8) spawn=1 x1 unanswered (parked 250 ms)"
+    },
+    {
+      "seq": 383,
+      "level": "warn",
+      "source": "client",
+      "text": "[DUCK-RESTORE] ACTIVE -- cmd chain live (cmd=64 runs=64 restores=0); working timer @ +0x242C re-anchored per command"
+    },
+    {
+      "seq": 384,
+      "level": "info",
+      "source": "engine",
+      "text": "[RIG-EXTEND] rig 0xAF8CB1C8006E6A8E: 170 resident + 8 appended = 178 sequences"
+    },
+    {
+      "seq": 385,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/pilot_survival_grapple.rpak"
+    },
+    {
+      "seq": 386,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** NetVarCallback_Changed_Int(): Player == unnamed"
+    },
+    {
+      "seq": 387,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 388,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 389,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** NetVarCallback_Changed_Int(): Player == unnamed"
+    },
+    {
+      "seq": 390,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 391,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 392,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** NetVarCallback_Changed_Int(): Player == unnamed"
+    },
+    {
+      "seq": 393,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 394,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 395,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] punch mask retired: 6 CLIENT_TIMING m_vecPunch* rows (TOLERANCE/NO_ERRORCHECK punch rows stay live; bridge_punch_legacy_mask 1 restores ownership mask)"
+    },
+    {
+      "seq": 396,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] table validated: 145 entries (timing=40 cmpOnly=9 tol=36 transplant=21 simDiv=1 sat=1 noErrChk=13 forceErrChk=16 content=8) conflicts=0"
+    },
+    {
+      "seq": 397,
+      "level": "warn",
+      "source": "client",
+      "text": "[TIME-DOMAIN] latches reset -- clock domain broke (d=-2560.0198) at cmd=51 sinceFlush=47ms sinceFrame=31ms"
+    },
+    {
+      "seq": 398,
+      "level": "info",
+      "source": "client",
+      "text": "[PRED-AUTH] SaveData resolved 00007FF7543664A0"
+    },
+    {
+      "seq": 399,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] 'm_traversalAnimProgress' bound via leaf-name fallback to flat field 'm_currentFramePlayer.m_traversalAnimProgress' on kind=player"
+    },
+    {
+      "seq": 400,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] FIRST RESOLVE kind=player -- masking 48 never-fed predicted fields + tolerance on 35 drift fields (origin 0.60, velocity 2.00, fallV 3.00) on dmap=0x00007FF7552F5580"
+    },
+    {
+      "seq": 401,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-REPAIR] armed: member-offset self-check PASSED (tb member@+8344=2560.3948 vs originalData@+1984=2560.3948) -- baseline repair live"
+    },
+    {
+      "seq": 402,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-TELEPORT-ADOPT] #1 cmd=51 dOrg=3345.3 (-13472.0 114.7 4385.9)->(-11699.0 512.0 1577.0) -- skipped unfed"
+    },
+    {
+      "seq": 403,
+      "level": "warn",
+      "source": "client",
+      "text": "[TIME-DOMAIN] armed: convert absolute TIME props by d=clientTb-serverTb (first d=+0.0000 cmd=51)"
+    },
+    {
+      "seq": 404,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] FIRST RESOLVE kind=any -- masking 6 never-fed predicted fields + tolerance on 0 drift fields (origin 0.60, velocity 2.00, fallV 3.00) on dmap=0x00007FF7552F5030"
+    },
+    {
+      "seq": 405,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] FIRST RESOLVE kind=any -- masking 0 never-fed predicted fields + tolerance on 1 drift fields (origin 0.60, velocity 2.00, fallV 3.00) on dmap=0x00007FF7552F4EB0"
+    },
+    {
+      "seq": 406,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/pilot_survival_grapple.rpak"
+    },
+    {
+      "seq": 407,
+      "level": "info",
+      "source": "script_client",
+      "text": "DS: UpdateGladCardVisibility false"
+    },
+    {
+      "seq": 408,
+      "level": "info",
+      "source": "client",
+      "text": "[DODGE] settings fields live (dodge=EC2 speed=A7C keep=AA0 vert=A98)"
+    },
+    {
+      "seq": 409,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/pilot_survival_grapple.rpak"
+    },
+    {
+      "seq": 410,
+      "level": "info",
+      "source": "script_client",
+      "text": "0.48 1"
+    },
+    {
+      "seq": 411,
+      "level": "info",
+      "source": "client",
+      "text": "[LOCAL-AMMO-PROBE] player=00000195C3CC3AA0 weapon=00000195C466F6E0 ammo=0"
+    },
+    {
+      "seq": 412,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 1 -> 0 (bodyparts=1 entity=00000195C4899820 model='mdl/door/metal_swinging_door_01.rmdl')"
+    },
+    {
+      "seq": 413,
+      "level": "warn",
+      "source": "client",
+      "text": "[PRED-AUTH] FIRST RESOLVE kind=weapon -- masking 15 never-fed predicted fields + tolerance on 9 drift fields (origin 0.60, velocity 2.00, fallV 3.00) on dmap=0x00007FF7552F5170"
+    },
+    {
+      "seq": 414,
+      "level": "warn",
+      "source": "client",
+      "text": "[WEAP-CLOCK] armed: borrowed player tb d=0.0000 + 12 weapon stamps on dmap=0x00007FF7552F5170 (eps=0.350 absTol=0.500)"
+    },
+    {
+      "seq": 415,
+      "level": "warn",
+      "source": "client",
+      "text": "[KICK-ROW-LAG] armed: bases |d|<=2.00 hipfire |d|<=5.00 (compare-only; hard/multi-step miss still exact)"
+    },
+    {
+      "seq": 416,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-S2C-SR] injector active (first call) -- name-carried S->C ScriptRemote via CSquirrelVM::ExecuteFunction (bridge_s2c_scriptremote)"
+    },
+    {
+      "seq": 417,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BRIDGE-S2C-SR] resolved C_BaseEntity::GetScriptInstance @ 00007FF7545CA880 (S21) -- entity args live"
+    },
+    {
+      "seq": 418,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-S2C-SR] dict dx11 singleton=00007FF755A5DFF0 state=2 count=457"
+    },
+    {
+      "seq": 419,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/pilot_survival_grapple.rpak"
+    },
+    {
+      "seq": 420,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 421,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 422,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 423,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 424,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 425,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 426,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 427,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 428,
+      "level": "info",
+      "source": "script_client",
+      "text": "[DmgHealthBar] dummy bars=true"
+    },
+    {
+      "seq": 429,
+      "level": "info",
+      "source": "script_client",
+      "text": "[AimTrainer] CL SyncDevMenu hit=false shot=false kill=true dyn=false bars=true dur=60 god=false speed=10 shield=1 body=1 legIdx=-1"
+    },
+    {
+      "seq": 430,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[AimTrainer] UI SyncDevMenu hit=false shot=false kill=true dyn=false bars=true dur=60 god=false speed=10 shield=1 body=1 legIdx=-1"
+    },
+    {
+      "seq": 431,
+      "level": "info",
+      "source": "script_client",
+      "text": "[CafeMod] CL sync bits=0x40 (was 0x0)"
+    },
+    {
+      "seq": 432,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[CafeMod] UI sync bits=0x40"
+    },
+    {
+      "seq": 433,
+      "level": "info",
+      "source": "script_client",
+      "text": "[SUR-HUD] populate character=character_pathfinder settings=settings/player/mp/pilot_survival_grapple.rpak"
+    },
+    {
+      "seq": 434,
+      "level": "info",
+      "source": "script_client",
+      "text": "[DmgHealthBar] dummy bars=true"
+    },
+    {
+      "seq": 435,
+      "level": "info",
+      "source": "script_client",
+      "text": "[AimTrainer] CL SyncDevMenu hit=false shot=false kill=true dyn=false bars=true dur=60 god=false speed=10 shield=1 body=1 legIdx=-1"
+    },
+    {
+      "seq": 436,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[AimTrainer] UI SyncDevMenu hit=false shot=false kill=true dyn=false bars=true dur=60 god=false speed=10 shield=1 body=1 legIdx=-1"
+    },
+    {
+      "seq": 437,
+      "level": "info",
+      "source": "script_client",
+      "text": "[CafeMod] CL sync bits=0x40 (was 0x40)"
+    },
+    {
+      "seq": 438,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[CafeMod] UI sync bits=0x40"
+    },
+    {
+      "seq": 439,
+      "level": "info",
+      "source": "script_client",
+      "text": "[CafeMod] CL items profile=0 physics=1"
+    },
+    {
+      "seq": 440,
+      "level": "info",
+      "source": "script_ui",
+      "text": "[CafeMod] UI items profile=0 physics=true"
+    },
+    {
+      "seq": 441,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 442,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 443,
+      "level": "info",
+      "source": "script_ui",
+      "text": "UICodeCallback_LoadscreenFinished"
+    },
+    {
+      "seq": 444,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 445,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 446,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'mp_rr_canyonlands_staging_mu1_loadscreen.rpak' (wait=1)"
+    },
+    {
+      "seq": 447,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=1 maxTick=51225 (was 51224)"
+    },
+    {
+      "seq": 448,
+      "level": "warn",
+      "source": "engine",
+      "text": "[BODY-SKIN-GUARD] clamped prev body/skin index 1 -> 0 (bodyparts=1 entity=00000195C4899820 model='mdl/door/metal_swinging_door_01.rmdl')"
+    },
+    {
+      "seq": 449,
+      "level": "info",
+      "source": "client",
+      "text": "[DBGDRAW] overlay walk is ticking with an empty list"
+    },
+    {
+      "seq": 450,
+      "level": "info",
+      "source": "client",
+      "text": "[ENTITY-PROBE] class=CAI_BaseNPC worldPose=SDK mins=968 maxs=980"
+    },
+    {
+      "seq": 451,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 452,
+      "level": "info",
+      "source": "engine",
+      "text": "[RIG-EXTEND] rig 0xB256864E1B159F54: 27 resident + 20 appended = 47 sequences"
+    },
+    {
+      "seq": 453,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 454,
+      "level": "info",
+      "source": "engine",
+      "text": "[ODL-XLAT] 'settings/rpak_roots/lgnd_skins/pathfinder/classic.rpak' -> 'root_lgnd_skins_pathfinder_classic.rpak'"
+    },
+    {
+      "seq": 455,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=2 maxTick=51267 (was 51266)"
+    },
+    {
+      "seq": 456,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'root_lgnd_skins_pathfinder_classic.rpak'"
+    },
+    {
+      "seq": 457,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #2000 GetGameTimescale=1"
+    },
+    {
+      "seq": 458,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 459,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myBestDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 460,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'match_myRankedDatacenter' '...' -> '...'"
+    },
+    {
+      "seq": 461,
+      "level": "info",
+      "source": "engine",
+      "text": "[BRIDGE-C2S] userinfo resync 'net_minimumPacketLossDC' '100' -> '2.000000'"
+    },
+    {
+      "seq": 462,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** FRSettings_Client_Update(): for unnamed"
+    },
+    {
+      "seq": 463,
+      "level": "info",
+      "source": "script_client",
+      "text": "*** Latest Player Settings: \n\nYou are the RANGE LEADER\n\n[[  PERSONAL RANGE SETTINGS  ]]\n\n[[  FIRING RANGE SETTINGS ( SHARED )  ]]"
+    },
+    {
+      "seq": 464,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    },
+    {
+      "seq": 465,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #4000 GetGameTimescale=1"
+    },
+    {
+      "seq": 466,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 467,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 468,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #6000 GetGameTimescale=1"
+    },
+    {
+      "seq": 469,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    },
+    {
+      "seq": 470,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 471,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 472,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #8000 GetGameTimescale=1"
+    },
+    {
+      "seq": 473,
+      "level": "warn",
+      "source": "client",
+      "text": "[TIME-DOMAIN] window ents=256 props=58 held=656 mean|d|=0.0300 last_d=-0.0037"
+    },
+    {
+      "seq": 474,
+      "level": "warn",
+      "source": "client",
+      "text": "[TIME-DOMAIN] window ents=256 props=32 held=672 mean|d|=0.0045 last_d=+0.0051"
+    },
+    {
+      "seq": 475,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] cl_checkForFrametimeHitch forced 0 (unfocused)"
+    },
+    {
+      "seq": 476,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=3 maxTick=51753 (was 51752)"
+    },
+    {
+      "seq": 477,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=4 maxTick=51757 (was 51756)"
+    },
+    {
+      "seq": 478,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=5 maxTick=51762 (was 51761)"
+    },
+    {
+      "seq": 479,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=6 maxTick=51767 (was 51766)"
+    },
+    {
+      "seq": 480,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=7 maxTick=51772 (was 51771)"
+    },
+    {
+      "seq": 481,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=8 maxTick=51774 (was 51773)"
+    },
+    {
+      "seq": 482,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=9 maxTick=51780 (was 51779)"
+    },
+    {
+      "seq": 483,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=10 maxTick=51784 (was 51783)"
+    },
+    {
+      "seq": 484,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    },
+    {
+      "seq": 485,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=11 maxTick=51788 (was 51787)"
+    },
+    {
+      "seq": 486,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=12 maxTick=51794 (was 51793)"
+    },
+    {
+      "seq": 487,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=13 maxTick=51795 (was 51794)"
+    },
+    {
+      "seq": 488,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=14 maxTick=51801 (was 51800)"
+    },
+    {
+      "seq": 489,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=15 maxTick=51807 (was 51806)"
+    },
+    {
+      "seq": 490,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=16 maxTick=51811 (was 51810)"
+    },
+    {
+      "seq": 491,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=17 maxTick=51813 (was 51812)"
+    },
+    {
+      "seq": 492,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=18 maxTick=51819 (was 51818)"
+    },
+    {
+      "seq": 493,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=19 maxTick=51824 (was 51823)"
+    },
+    {
+      "seq": 494,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] coalesced burst n=20 maxTick=51830 (was 51829)"
+    },
+    {
+      "seq": 495,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 496,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 497,
+      "level": "warn",
+      "source": "client",
+      "text": "[TIME-DOMAIN] window ents=256 props=9 held=695 mean|d|=0.0275 last_d=+0.0452"
+    },
+    {
+      "seq": 498,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    },
+    {
+      "seq": 499,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #10000 GetGameTimescale=1"
+    },
+    {
+      "seq": 500,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 501,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 502,
+      "level": "warn",
+      "source": "client",
+      "text": "[SHOT-IDX-FANOUT] live: m_shotCount=1 -> m_shotIndexForSpread (offs 5892 -> 5888)"
+    },
+    {
+      "seq": 503,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #12000 GetGameTimescale=1"
+    },
+    {
+      "seq": 504,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    },
+    {
+      "seq": 505,
+      "level": "info",
+      "source": "script_client",
+      "text": "FiringRangeDebug: ApplyAppropriateCharacterSkin called for entity (-327: dynamicprop [-327])"
+    },
+    {
+      "seq": 506,
+      "level": "info",
+      "source": "engine",
+      "text": "pak loaded. 'gcard_frame_pathfinder_common_01.rpak'"
+    },
+    {
+      "seq": 507,
+      "level": "warn",
+      "source": "client",
+      "text": "[GTS-PROBE] #14000 GetGameTimescale=1"
+    },
+    {
+      "seq": 508,
+      "level": "warn",
+      "source": "client",
+      "text": "[CLKDRIFT] carried 0.001s discarded usercmd dt (true=0.101 max=0.100) #1"
+    },
+    {
+      "seq": 509,
+      "level": "info",
+      "source": "engine",
+      "text": "pak unload requested. 'gcard_frame_pathfinder_common_01.rpak' (wait=1)"
+    }
+  ],
+  "gap": false,
+  "next": 509
+}

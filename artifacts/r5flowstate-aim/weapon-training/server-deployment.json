@@ -1,0 +1,29 @@
+﻿{
+    "timestampUtc":  "2026-11-15T13:35:36.7075102+00:00",
+    "pid":  26476,
+    "executable":  "D:\\R5Flowstate\\Game\\r5apex_ds.exe",
+    "dllSha256":  "DACD2D7BF66D306DCD9609DE7EFEB386E0F12B8EE7B5D3E7F74DE05A09E9AC91",
+    "arguments":  [
+                      "-dedicated",
+                      "-port",
+                      "37015",
+                      "-devsdk",
+                      "-dev",
+                      "-logfiles",
+                      "+net_usesocketsforloopback",
+                      "1",
+                      "-offline",
+                      "+sv_onlineAuthEnable",
+                      "0",
+                      "+spire_host_visibility",
+                      "0",
+                      "+sv_cheats",
+                      "1",
+                      "+launchplaylist",
+                      "survival_firingrange",
+                      "+map",
+                      "mp_rr_canyonlands_staging_mu1",
+                      "+sv_modPolicy",
+                      "0"
+                  ]
+}

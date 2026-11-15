@@ -1,0 +1,21 @@
+
+setang string=0x1413ce9dc
+CODE XREF 0x14024ae39
+FUNCTION 0x14024adfc..0x14024ae54
+ 0x14024adfc: mov rax, qword ptr [rcx]
+ 0x14024adff: mov dl, 1
+ 0x14024ae01: call qword ptr [rax + 0x3d8]
+ 0x14024ae07: mov dword ptr [rip + 0x14ca447], ebx
+ 0x14024ae0d: cmp dword ptr [rsi + 4], 0xa
+ 0x14024ae11: jne 0x14024af89
+ 0x14024ae17: mov rcx, qword ptr [rsi + 0x420]
+ 0x14024ae1e: lea rdx, [rip + 0x1183baf]
+ 0x14024ae25: call 0x140536de0
+ 0x14024ae2a: test eax, eax
+ 0x14024ae2c: jne 0x14024af89
+ 0x14024ae32: mov rcx, qword ptr [rsi + 0x440]
+ 0x14024ae39: lea rdx, [rip + 0x1183b9c]
+ 0x14024ae40: call 0x140536de0
+ 0x14024ae45: test eax, eax
+ 0x14024ae47: jne 0x14024af89
+ 0x14024ae4d: mov rcx, qword ptr [rsi + 0x428]

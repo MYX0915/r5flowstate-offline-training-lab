@@ -1,0 +1,149 @@
+//
+// Copyright (c) 2009-2010 Mikko Mononen memon@inside.org
+//
+// This software is provided 'as-is', without any express or implied
+// warranty.  In no event will the authors be held liable for any damages
+// arising from the use of this software.
+// Permission is granted to anyone to use this software for any purpose,
+// including commercial applications, and to alter it and redistribute it
+// freely, subject to the following restrictions:
+// 1. The origin of this software must not be misrepresented; you must not
+//    claim that you wrote the original software. If you use this software
+//    in a product, an acknowledgment in the product documentation would be
+//    appreciated but is not required.
+// 2. Altered source versions must be plainly marked as such, and must not be
+//    misrepresented as being the original software.
+// 3. This notice may not be removed or altered from any source distribution.
+//
+
+#ifndef CROWDTOOL_H
+#define CROWDTOOL_H
+
+#include "Detour/Include/DetourNavMesh.h"
+#include "DetourCrowd/Include/DetourObstacleAvoidance.h"
+#include "DetourCrowd/Include/DetourCrowd.h"
+#include "NavEditor/Include/ValueHistory.h"
+#include "NavEditor/Include/Editor.h"
+
+#include "game/server/ai_navmesh.h"
+
+// Tool to create crowds.
+
+struct CrowdToolParams
+{
+	bool m_showCorners;
+	bool m_showCollisionSegments;
+	bool m_showPath;
+	bool m_showVO;
+	bool m_showOpt;
+	bool m_showNeis;
+	
+	bool m_showLabels;
+	bool m_showGrid;
+	bool m_showNodes;
+	bool m_showPerfGraph;
+	bool m_showDetailAll;
+	
+	bool m_anticipateTurns;
+	bool m_optimizeVis;
+	bool m_optimizeTopo;
+	bool m_obstacleAvoidance;
+	int m_obstacleAvoidanceType;
+	bool m_separation;
+	float m_separationWeight;
+
+	float m_maxAcceleration;
+	float m_maxSpeed;
+
+	TraverseAnimType_e m_traverseAnimType;
+};
+
+class CrowdToolState : public EditorToolState
+{
+	Editor* m_editor;
+	dtNavMesh* m_nav;
+	dtCrowd* m_crowd;
+	
+	rdVec3D m_targetPos;
+	dtPolyRef m_targetRef;
+
+	dtCrowdAgentDebugInfo m_agentDebug;
+	dtObstacleAvoidanceDebugData* m_vod;
+	
+	static const int AGENT_MAX_TRAIL = 64;
+	static const int MAX_AGENTS = 128;
+	struct AgentTrail
+	{
+		rdVec3D trail[AGENT_MAX_TRAIL];
+		int htrail;
+	};
+	AgentTrail m_trails[MAX_AGENTS];
+	
+	ValueHistory m_crowdTotalTime;
+	ValueHistory m_crowdSampleCount;
+	float m_graphSampleTime;
+
+	CrowdToolParams m_toolParams;
+
+	bool m_run;
+
+public:
+	CrowdToolState();
+	virtual ~CrowdToolState();
+	
+	virtual void init(class Editor* editor);
+	virtual void reset();
+	virtual void handleRender();
+	virtual void handleRenderOverlay(double* model, double* proj, int* view);
+	virtual void handleUpdate(const float dt);
+
+	inline bool isRunning() const { return m_run; }
+	inline void setRunning(const bool s) { m_run = s; }
+	
+	void addAgent(const rdVec3D* pos);
+	void removeAgent(const int idx);
+	void hilightAgent(const int idx);
+	void updateAgentParams();
+	int hitTestAgents(const rdVec3D* s, const rdVec3D* p);
+	void setMoveTarget(const rdVec3D* p, bool adjust);
+	void updateTick(const float dt);
+
+	inline CrowdToolParams* getToolParams() { return &m_toolParams; }
+	
+private:
+	// Explicitly disabled copy constructor and copy assignment operator.
+	CrowdToolState(const CrowdToolState&);
+	CrowdToolState& operator=(const CrowdToolState&);
+};
+
+
+class CrowdTool : public EditorTool
+{
+	Editor* m_editor;
+	CrowdToolState* m_state;
+	
+	enum ToolMode
+	{
+		TOOLMODE_CREATE,
+		TOOLMODE_MOVE_TARGET,
+		TOOLMODE_SELECT,
+		TOOLMODE_TOGGLE_POLYS,
+	};
+	ToolMode m_mode;
+	
+public:
+	CrowdTool();
+	
+	virtual int type() { return TOOL_CROWD; }
+	virtual void init(Editor* editor);
+	virtual void reset();
+	virtual void handleMenu();
+	virtual void handleClick(const rdVec3D* s, const rdVec3D* p, const int v, bool shift);
+	virtual void handleToggle();
+	virtual void handleStep();
+	virtual void handleUpdate(const float dt);
+	virtual void handleRender();
+	virtual void handleRenderOverlay(double* model, double* proj, int* view);
+};
+
+#endif // CROWDTOOL_H

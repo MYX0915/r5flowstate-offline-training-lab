@@ -1,0 +1,12 @@
+"ImguiFonts"
+{
+	"resource\training_msyh.ttc"
+	{
+		size 18
+		"ranges"
+		{
+			1 latin
+			2 tchinese
+		}
+	}
+}

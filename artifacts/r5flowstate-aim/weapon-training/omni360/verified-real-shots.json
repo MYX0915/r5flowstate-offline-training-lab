@@ -1,0 +1,137 @@
+{
+  "scope": "Actual offline shots; direction fixed at launch",
+  "targetArrayIndex": 0,
+  "targetEntityIndex": 8098,
+  "aimOffsetDegrees": 180.0,
+  "correctionHalfAngle": 180.0,
+  "phases": [
+    {
+      "name": "disabled_visible",
+      "enabled": false,
+      "eye": [
+        -6219.56445,
+        -1150.00952,
+        -24.0
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        2.703228368468162,
+        -1.2644539842035272
+      ],
+      "flags": 1,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.97461987 1",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 100,
+      "damage": 0,
+      "ammoBefore": 35,
+      "ammoAfter": 31,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    },
+    {
+      "name": "enabled_visible",
+      "enabled": true,
+      "eye": [
+        -6219.56641,
+        -1150.00952,
+        -24.0
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        2.703257282414437,
+        -1.264467531195237
+      ],
+      "flags": 3,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.97301209 1",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 19,
+      "damage": 81,
+      "ammoBefore": 35,
+      "ammoAfter": 31,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    },
+    {
+      "name": "enabled_stone_occluded",
+      "enabled": true,
+      "eye": [
+        -6399.50635,
+        -930.009583,
+        -29.5902252
+      ],
+      "targetEye": [
+        -6402.4502,
+        -1145.97278,
+        -32.637104
+      ],
+      "aimAngles": [
+        0.8082187324062231,
+        -270.7809651694897
+      ],
+      "flags": 3,
+      "trace": {
+        "ran": true,
+        "error": false,
+        "reply": "0.31626499 0",
+        "log": [],
+        "logDropped": 0
+      },
+      "healthBefore": 10000,
+      "healthAfter": 10000,
+      "shieldBefore": 100,
+      "shieldAfter": 100,
+      "damage": 0,
+      "ammoBefore": 35,
+      "ammoAfter": 31,
+      "release": {
+        "ran": true,
+        "error": false,
+        "reply": null,
+        "log": [],
+        "logDropped": 0
+      }
+    }
+  ],
+  "cleanup": {
+    "ran": true,
+    "error": false,
+    "reply": null,
+    "log": [],
+    "logDropped": 0
+  },
+  "targetShieldCleanup": "Restored to the dummy's normal full shield capacity"
+}

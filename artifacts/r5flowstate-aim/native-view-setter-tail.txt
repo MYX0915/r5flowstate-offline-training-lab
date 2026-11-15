@@ -1,0 +1,26 @@
+FUNCTION 0x1402194f8..0x140219570
+ 0x1402194f8: mov rax, qword ptr [rip + 0x15cf661]
+ 0x1402194ff: lea rcx, [rip + 0x15cf65a]
+ 0x140219506: call qword ptr [rax + 0x28]
+ 0x140219509: movsxd rcx, eax
+ 0x14021950c: lea rax, [rip + 0x15f049d]
+ 0x140219513: imul rbx, rcx, 0x41358
+ 0x14021951a: mov rcx, r14
+ 0x14021951d: add rbx, rax
+ 0x140219520: call 0x140210440
+ 0x140219525: test al, al
+ 0x140219527: jne 0x14021955b
+ 0x140219529: movss xmm0, dword ptr [rip + 0xcd047ff]
+ 0x140219531: movss xmm1, dword ptr [rip + 0xcd047fb]
+ 0x140219539: movss dword ptr [rbx], xmm0
+ 0x14021953d: movss xmm0, dword ptr [rip + 0xcd047f3]
+ 0x140219545: movss dword ptr [rbx + 8], xmm0
+ 0x14021954a: movss dword ptr [rbx + 4], xmm1
+ 0x14021954f: add rsp, 0x15e0
+ 0x140219556: pop r14
+ 0x140219558: pop rbx
+ 0x140219559: pop rbp
+ 0x14021955a: ret 
+ 0x14021955b: movss xmm0, dword ptr [r14]
+ 0x140219560: movaps xmmword ptr [rsp + 0x15b0], xmm6
+ 0x140219568: movaps xmmword ptr [rsp + 0x15a0], xmm7
